@@ -1,0 +1,233 @@
+---
+title: "Measures of Disease in Clinical Epidemiology<br/>"
+subtitle: "How We Learn About the Distributions & Determinants of Disease<br/><hr/>"
+author: "Brendan J. Kelly"
+institute: "Infectious Diseases & Epidemiology<br/><br/>![](penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg){width=160px}" 
+date: "updated: `r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["bjk_xaringan.css",default-fonts]
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+
+---
+
+# Disclosures <hr/>
+
+- No conflicts of interest.
+
+- Presentation contains GIFs.
+
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringan::summon_remark()
+```
+
+# Learning Objectives <hr/>
+
+--
+
+- Use population data in the description of health and disease.
+
+--
+
+- Describe types of data and data distributions.
+
+--
+
+- Calculate prevalence, incidence (warning: a few different types), relative risk, and odds ratios from study data.
+
+--
+
+- Explain the meaning of prevalence, incidence, relative risk, and odds ratios.
+
+
+---
+
+background-image: url(gifs/magnum_pi.gif)
+background-size: cover
+
+
+???
+
+Image credit: [GIPHY](https://gph.is/1AUItZt)
+
+---
+
+# Disclosures <hr/>
+
+- No conflicts of interest.
+
+
+---
+
+---
+class: inverse, center, middle
+
+# Long-term acute care & *Pseudomonas* resistome
+
+
+---
+class: center, middle
+
+# antibiotic resistance
+
+### (control and consequences)
+
+---
+
+Demonstrate code and figures side-by-side. `r emo::ji("moon")`
+
+.left-code[
+```{r plot-label-fc1, fig.show="hide", warning=FALSE, message=FALSE, fig.dim=c(4.8, 4), fig.retina=2, out.width="100%"}
+# code chunk here
+library(ggplot2)
+ggplot(iris) + 
+  aes(Sepal.Length, 
+      Sepal.Width, 
+      color = Species) + 
+  geom_point() #<<
+```
+]
+
+.right-plot[
+![](`r knitr::fig_chunk("plot-label-fc1", "png")`)
+]
+
+
+---
+
+Demonstrate code and figures side-by-side. `r emo::ji("moon")`
+
+.left-code[
+```{r plot-label-fc2, fig.show="hide", warning=FALSE, message=FALSE, fig.dim=c(4.8, 4), fig.retina=2, out.width="100%"}
+# code chunk here
+library(ggplot2)
+ggplot(iris) + 
+  aes(Sepal.Length, 
+      Sepal.Width, 
+      color = Species) + 
+  geom_point() + #<<
+  stat_ellipse() #<<
+```
+]
+
+.right-plot[
+![](`r knitr::fig_chunk("plot-label-fc2", "png")`)
+]
+
+
+---
+
+# Test gifs <hr/>
+
+.center[![](gifs/frink_shake.gif)]
+
+
+---
+background-image: url(gifs/frink_shake.gif)
+background-size: contain
+
+
+---
+
+# Test DiagrammeR <hr/>
+
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, , fig.asp=9/16, out.width="100%", fig.retina=2}
+library(DiagrammeR)
+
+c_graph <-
+  create_graph() %>%
+  add_node(label = 'colonizing\nS.aureus', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90')) %>%
+  add_node(label = 'S.aureus\nVA-LRTI', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90')) %>%
+  add_node(label = 'respiratory\nmicrobiome', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90')) %>%
+  add_node(label = 'antibiotics', node_aes = node_aes(fontsize = 6, color = 'grey90', fillcolor = 'grey90')) %>%
+  add_edge(
+    from = 'colonizing\nS.aureus',
+    to = 'S.aureus\nVA-LRTI', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'respiratory\nmicrobiome', to = 'S.aureus\nVA-LRTI', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'respiratory\nmicrobiome', to = 'colonizing\nS.aureus', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'antibiotics', to = 'colonizing\nS.aureus', edge_aes = edge_aes(color = 'grey90')) %>%
+  add_edge(from = 'antibiotics', to = 'respiratory\nmicrobiome', edge_aes = edge_aes(color = 'grey90')) %>%
+  set_node_position(node = 1, x = -1, y = 0) %>%
+  set_node_position(node = 2, x = 1, y = 0) %>%
+  set_node_position(node = 3, x = -0.25, y = 0.5) %>%
+  set_node_position(node = 4, x = -1, y = 0.75)
+
+c_graph %>% render_graph()
+
+
+```
+
+
+---
+class: inverse, center, middle
+
+# Get Started
+
+---
+---
+
+# remark.js vs xaringan <hr/>
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;<sup>*</sup>
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+---
+
+# Math Expressions <hr/>
+
+You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+
+Limitations:
+
+1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+
+1. There should not be spaces after the opening `$` or before the closing `$`.
+
+1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+
+---

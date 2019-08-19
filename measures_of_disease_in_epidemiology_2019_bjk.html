@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Measures of Disease in Clinical Epidemiology</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Brendan J. Kelly" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/viz/viz.js"></script>
+    <link href="libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding/grViz.js"></script>
+    <link rel="stylesheet" href="bjk_xaringan.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Measures of Disease in Clinical Epidemiology<br/>
+## How We Learn About the Distributions &amp; Determinants of Disease<br/>
+<hr/>
+### Brendan J. Kelly
+### Infectious Diseases &amp; Epidemiology<br/><br/><img src="penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg" width="160" />
+### updated: 2019-08-19
+
+---
+
+
+# Disclosures &lt;hr/&gt;
+
+- No conflicts of interest.
+
+- Presentation contains GIFs.
+
+---
+
+
+
+
+# Learning Objectives &lt;hr/&gt;
+
+--
+
+- Use population data in the description of health and disease.
+
+--
+
+- Describe types of data and data distributions.
+
+--
+
+- Calculate prevalence, incidence (warning: a few different types), relative risk, and odds ratios from study data.
+
+--
+
+- Explain the meaning of prevalence, incidence, relative risk, and odds ratios.
+
+
+---
+
+background-image: url(gifs/magnum_pi.gif)
+background-size: cover
+
+
+???
+
+Image credit: [GIPHY](https://gph.is/1AUItZt)
+
+---
+
+# Disclosures &lt;hr/&gt;
+
+- No conflicts of interest.
+
+
+---
+
+---
+class: inverse, center, middle
+
+# Long-term acute care &amp; *Pseudomonas* resistome
+
+
+---
+class: center, middle
+
+# antibiotic resistance
+
+### (control and consequences)
+
+---
+
+Demonstrate code and figures side-by-side. 🌔
+
+.left-code[
+
+```r
+# code chunk here
+library(ggplot2)
+ggplot(iris) + 
+  aes(Sepal.Length, 
+      Sepal.Width, 
+      color = Species) + 
+* geom_point()
+```
+]
+
+.right-plot[
+![](measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/plot-label-fc1-1.png)
+]
+
+
+---
+
+Demonstrate code and figures side-by-side. 🌔
+
+.left-code[
+
+```r
+# code chunk here
+library(ggplot2)
+ggplot(iris) + 
+  aes(Sepal.Length, 
+      Sepal.Width, 
+      color = Species) + 
+* geom_point() +
+* stat_ellipse()
+```
+]
+
+.right-plot[
+![](measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/plot-label-fc2-1.png)
+]
+
+
+---
+
+# Test gifs &lt;hr/&gt;
+
+.center[![](gifs/frink_shake.gif)]
+
+
+---
+background-image: url(gifs/frink_shake.gif)
+background-size: contain
+
+
+---
+
+# Test DiagrammeR &lt;hr/&gt;
+
+<div id="htmlwidget-c1f108c350c57a64c3ab" style="width:100%;height:283.5px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c1f108c350c57a64c3ab">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"colonizing\nS.aureus\", color = \"black\", fontsize = \"6\", fillcolor = \"#E5E5E5\", fontcolor = \"#000000\", pos = \"-1,0!\"] \n  \"2\" [label = \"S.aureus\nVA-LRTI\", color = \"black\", fontsize = \"6\", fillcolor = \"#E5E5E5\", fontcolor = \"#000000\", pos = \"1,0!\"] \n  \"3\" [label = \"respiratory\nmicrobiome\", color = \"black\", fontsize = \"6\", fillcolor = \"#E5E5E5\", fontcolor = \"#000000\", pos = \"-0.25,0.5!\"] \n  \"4\" [label = \"antibiotics\", color = \"grey90\", fontsize = \"6\", fillcolor = \"#E5E5E5\", fontcolor = \"#000000\", pos = \"-1,0.75!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"3\"->\"2\" [color = \"black\"] \n\"3\"->\"1\" [color = \"black\"] \n\"4\"->\"1\" [color = \"grey90\"] \n\"4\"->\"3\" [color = \"grey90\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+class: inverse, center, middle
+
+# Get Started
+
+---
+---
+
+# remark.js vs xaringan &lt;hr/&gt;
+
+Some differences between using remark.js (left) and using **xaringan** (right):
+
+.pull-left[
+1. Start with a boilerplate HTML file;
+
+1. Plain Markdown;
+
+1. Write JavaScript to autoplay slides;
+
+1. Manually configure MathJax;
+
+1. Highlight code with `*`;
+
+1. Edit Markdown source and refresh browser to see updated slides;
+]
+
+.pull-right[
+1. Start with an R Markdown document;
+
+1. R Markdown (can embed R/other code chunks);
+
+1. Provide an option `autoplay`;
+
+1. MathJax just works;&lt;sup&gt;*&lt;/sup&gt;
+
+1. Highlight code with `{{}}`;
+
+1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+]
+
+.footnote[[*] Not really. See next page.]
+
+---
+
+# Math Expressions &lt;hr/&gt;
+
+You can write LaTeX math expressions inside a pair of dollar signs, e.g. &amp;#36;\alpha+\beta$ renders `\(\alpha+\beta\)`. You can use the display style with double dollar signs:
+
+```
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+```
+
+`$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
+
+Limitations:
+
+1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+
+1. There should not be spaces after the opening `$` or before the closing `$`.
+
+1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

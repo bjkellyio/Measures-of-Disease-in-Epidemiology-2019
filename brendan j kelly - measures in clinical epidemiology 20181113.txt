@@ -1,0 +1,391 @@
+Measures of Disease in Clinical Epidemiology
+Brendan J. Kelly, MD, MSCE
+Infectious Diseases & Epidemiology
+Perelman School of Medicine
+University of Pennsylvania
+
+Learning Objectives
+Be able to:
+Use population data in the description of health and disease.
+Describe types of data and data distributions.
+Calculate prevalence, incidence (warning: a few different types), relative risk, and odds ratios from study data.
+Explain the meaning of prevalence, incidence, relative risk, and odds ratios.
+
+Learning Objectives
+Why?
+Understand distributions and determinants of diseases.
+inform differential diagnoses
+counsel patients
+design public health interventions
+direct new diagnostics and therapies
+How?
+Lots of definitions.
+A bit of arithmetic.
+
+Suess 1965.
+
+Definitions: A Reference for Later
+Point Prevalence: # with disease / # population, at a single moment
+Period Prevalence: # with disease / # population, over time interval
+Cumulative Incidence: # new cases / # at risk @ start (long) time interval
+“Incidence Rate”: # new cases / # at risk @ start (short) time interval
+Incidence Density or “Rate”: # new cases / person-time at risk *more precise*
+Relative Risk: (# cases exposed / # exposed) / (# cases unexposed / # unexposed)
+Absolute Risk: risk of developing disease over time period (cumulative incidence)
+AR Reduction: (# cases exposed / # exposed) - (# cases unexposed / # unexposed)
+Number Needed to Treat: # treated for 1 to benefit = 1 / ARR
+Odds Ratio: (# exp cases / # unexp cases) / (# exp controls / # unexp controls)
+
+Case from 1981: HIV and PCP
+36-year-old man presents with a 4-month history of fever, dyspnea, and cough...
+Differential diagnosis must be grounded in understanding:
+distributions of disease (prevalence / incidence)
+determinants of disease (associations / risk factors)
+(in infectious diseases, the differential is always evolving)
+
+Case from 1981: HIV and PCP
+36-year-old man presents with a 4-month history of fever, dyspnea, and cough...
+Differential diagnosis must be grounded in understanding:
+distributions of disease (prevalence / incidence)
+determinants of disease (associations / risk factors)
+(in infectious diseases, the differential is always evolving)
+
+https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline
+
+MMWR June 5, 1981
+“All the above observations suggest the possibility of a cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of P. carinii infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia.”
+
+Measures of Disease Occurrence
+
+Prevalence
+How common is Pneumocystis pneumonia?
+Prevalence: 
+# with the disease / # in specified population
+“point prevalence” - at a specific point in time
+“period prevalence” - during a given period (e.g., 12-month prevalence)
+a proportion: unitless, ranges from 0-1
+numerator includes all people who have the disease, both new and ongoing cases, so represents a cross-sectional “snapshot” of the population
+
+Prevalence of Pneumocystis pneumonia
+In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP.
+Period prevalence published in 1974: 579 cases (194 confirmed) over 3 years.
+What’s the denominator?
+What’s the prevalence?
+Walzer PD et al Annals Int Med 1974
+
+Prevalence != Risk
+Prevalence: numerator includes all people who have the disease, both new and ongoing cases, so represents a cross-sectional “snapshot” of the population. 
+Prevalence does NOT estimate the risk of developing the disease because prevalence does not fully account for time (are the measured cases old cases or new cases?).
+
+Prevalence: Question #1
+How can an infection have high prevalence if it occurs infrequently?
+(1) the infection is rapidly fatal
+(2) the infection rapidly resolves
+(3) a few children get the infection every year, but the infection persists for the rest of their lives
+(4) the infection results in lifelong protective immunity
+
+
+Incidence
+Among MSM, Pneumocystis pneumonia is occurring more frequently...
+Incidence: occurrence of new cases over a given period of time
+cumulative incidence = # new cases / # population at risk @ start time interval
+incidence density = # new cases / person-time at risk (more precise)
+
+Notes on Cumulative Incidence
+Cumulative incidence:
+must specify population consisting of at-risk individuals
+must specify a time period of observation
+numerator = all new cases during a specified time period 
+denominator = all individuals at risk in the specified population at the start of the specified time period (does NOT account for deaths due to other causes)
+ranges from 0 to 1 (a.k.a., “incidence proportion”)
+like prevalence, is a proportion and therefore has no units (but only makes sense if you specify the time period of observation, e.g., % per year)
+
+Notes on Incidence Density
+Incidence density:
+in a specified population consisting of at risk individuals over a specified period of observation, more precisely quantifies the person-time at risk
+numerator = all new cases during a specified time period 
+denominator = the sum, over all individuals in the population, of time at risk until the event of interest, death, loss to follow-up, the end of the study, or when they are no longer at risk for whatever reason
+not a proportion; range depends on the units of person-time (0 to infinity)
+accounts for death from other causes!
+
+Notes on Population at Risk
+In a population, individuals are at risk of disease if they: 
+(1) do not have the disease at baseline
+(2) are capable of developing the disease(e.g., have the organ of interest; have not been successfully immunized against the disease;haven’t developed lifelong immunity)
+The difference between cumulative incidence and incidence density is that the latter attempts a more precise quantification of population at risk -- it’s harder to evaluate, but more informative if you can.
+
+Caution with “Incidence Rate”
+“Incidence rate” is used to mean two different things:
+# new cases / # population at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)
+# new cases / person-time at risk (i.e., incidence density, the precise rate)
+
+Incidence: Which Denominator?
+To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:
+10 subjects enrolled at the start of a two-year observation period
+5 cases of PCP (red on plot); each receives 3 weeks of antibiotic treatment
+2 subjects started on PCP prophylaxis during follow-up (blue on plot)
+
+
+Incidence: Which Denominator?
+To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:
+10 subjects enrolled at the start of a two year period
+5 cases of PCP (red on plot); each receives 3 weeks of antibiotic treatment
+3 subjects started on PCP prophylaxis during follow-up (yellow on plot)
+What’s the annual cumulative incidence of PCP?
+If you don’t count time on prophylaxis or treatment antibiotics as “time at risk”, how does the incidence density compare to the annual cumulative incidence?
+What if the end of the black line is death / loss to follow-up?
+
+Incidence: Question #2
+Your patient with HIV is considering starting prophylactic antibiotics for PCP. You have PCP prevalence, cumulative incidence, and incidence density data available. Which data provide the most precise information on the patient’s risk of PCP off of prophylaxis?
+(1) prevalence
+(2) cumulative incidence
+(3) incidence density
+
+Morris A et al. EID 2004.
+
+Can you tell prevalence from incidence?
+Prevalence
+Incidence
+Death or Recovery
+Former Cases
+Birth - Death | Migration
+
+Prevalence vs Incidence: Examples
+Pancreatic cancer versus leukemia:
+new cases per year: pancreatic 24,120; leukemia 23,370
+deaths per year: pancreatic 19,850; leukemia 10,240
+which is more prevalent?
+HIV in Rakai, Uganda 1994-2003:
+intensive “ABC” intervention (Abstinence, Be faithful, Condoms)
+prevalence declined, but incidence remained constant at 1.5% per year
+what happened?
+Wawer M et al CROI 2005. Roehr B BMJ 2005.
+
+Morris A et al. EID 2004.
+What’s the most prevalent OI???
+
+Prevalence vs Incidence: When Used?
+Prevalence:
+public health planning
+diagnostic test evaluation
+Cumulative Incidence: 
+prognosis
+evaluation of therapies
+Incidence Density:
+rate of appearance of new cases
+changes can reflect the effect of risk factors
+
+Data Types & Data Descriptions
+
+Case: HIV and PCP
+36-year-old man presents with a 4-month history of fever, dyspnea, and cough...
+What do you want to know and why?
+vital signs and physical exam
+laboratory test values
+radiology
+
+What Data Types?
+Vital signs and physical exam:
+Temperature (degrees) - continuous
+Heart / respiratory rate (beats or breaths / min) - continuous
+Oxygen saturation (%) - continuous
+Laboratory values:
+WBC / CD4 (cells / uL) - continuous
+HIV viral load (copies / mL) - continuous
+Radiology:
+Ground glass - dichotomous
+
+Types of Data - Exposures
+Dichotomous: history of diabetes, history of breast cancer, etc
+Continuous: age, height, weight, blood pressure, etc
+Nominal: race, ethnicity, state of residence 
+Ordinal: age category, weight category
+
+Types of Data - Outcomes
+Dichotomous: survival, pneumonia, MI
+Continuous: probability of treatment result 
+Ordinal: patient satisfaction* NOTE: diagnoses and clinical decisions are dichotomous *
+
+Describing Continuous Data - Normal
+Normally distributed data can be well characterized by its mean and standard deviation:
+Mean: 				m	Standard Deviation:(N = total number in the population; μ = mean)
+
+Describing Continuous Data - Normal
+To calculate standard deviation (SD):(1) for each value, subtract the mean of the group and square the result; (2) find the mean of these squared (this is the variance); (3) SD is square root of variance  
+
+Describing Continuous Data - Normal
+What makes standard deviation greater?
+Mean: 				m	Standard Deviation:(N = total number in the population; μ = mean)
+
+
+Standard Deviation: Question #3
+What makes standard deviation increase?
+(1) More subjects?
+(2) Higher mean value?
+(3) Higher maximum value?
+(4) Greater difference between extreme and mean values? 
+
+Describing Continuous Data - NOT Normal
+“Non-parametric” data have a mean and standard deviation, but these do NOT characterize the data well.
+For uniform or skewed data, we prefer to use median and interquartile range (IQR) to describe the distribution of a continuous variable. (Note: for normal data, mean and median have the same value).
+
+Describing Continuous Data - NOT Normal
+Mean, Median, Mode:
+
+Median and mode depend on ranking the values: median is the “middle value” when data are ordered; mode is most frequently occurring value.
+(n = # of data values)
+
+Describing Continuous Data - NOT Normal
+Which is least affected by outliers? Mean, median, or mode?
+(n = # of data values)
+
+Study Types & Inference from Data
+
+Case from 1981: HIV and PCP
+36-year-old man presents with a 4-month history of fever, dyspnea, and cough. On admission he is found to have fever to 101.2F, tachycardia, tachypnea, and hypoxemia, which worsens with ambulation. He is also noted to have oral thrush and distant breath sounds on exam. A lung biopsy confirms Pneumocystis pneumonia.
+Differential diagnosis must be grounded in understanding:
+distributions of disease (prevalence / incidence)
+determinants of disease (associations / risk factors)
+
+Masur et al Ann Int Med 1989
+
+Basics of Study Types
+We want to understand the relationship between risk factors (exposures) and disease (outcomes). For example, between CD4 count and PCP in HIV.
+To calculate incidence need to know how many are in a population:
+randomized trials: pick the population, randomize, control the treatment, and measure the outcome
+cohort studies: pick the population, divide into preselected exposure (treatment or risk factor) groups, and measure the outcome
+But do NOT know this generally in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know how many in population).
+
+“2x2” Table
+Dichotomous exposures and outcomes.
+Examine relationships between exposures and outcomes.
+Caution!!!
+you need to know whether study is trial/cohort vs case-control
+you can always calculate a relative risk (RR) from 2x2 table, but only appropriate for trial/cohort study
+you can always calculate an odds ratio (OR) from 2x2 table, but only appropriate for case-control study (can do better with RR if trial/cohort)
+
+“2x2” Table: Calculation for Cohort/Trial
+Relative Risk (RR)= [A/(A+B) / C/(C+D)]
+Absolute Risk Reduction (ARR) = [A/(A+B) – C/(C+D)]
+Number Needed to Treat (NNT)= 1/ARR
+Outcome Yes
+Outcome No
+Totals
+Risk of Outcome
+Exposure Yes
+A
+B
+(A+B)
+A/(A+B)
+Exposure No
+C
+D
+(C+D)
+C/C+D)
+Totals
+(A+C)
+(B+D)
+A+B+C+D
+
+
+Relative Risk (RR)
+Compares risk between two groups of people:
+if 2 in 10 are cured in the control group and 3 in 10 in the treatment group, the RR is (2/10)/(3/10) = 0.66 (i.e. 0.33 less likely to have the disease after treatment) 
+Can also be calculated as the inverse:
+if 3 in 10 are cured in the treatment group and 2 in 10 in the control group, the RR is (3/10)/(2/10) = 1.5 (i.e. 0.5 times more likely to be cured if treated)
+
+Relative Risk (RR)
+
+Absolute Risk (AR) & Reduction (ARR)
+Absolute risk (AR): risk of developing a given disease over a period of time
+this is the incidence!
+if you have a 1 in 10 chance of developing skin cancer in your lifetime, you are said to have a 10% absolute risk
+Absolute risk reduction (ARR): difference in risk between the treatment/ exposure group and the control group
+if 2 in 10 are cured in the control group and 3 in 10 in the treatment group, the ARR is 3/10 – 2/10 = 10%
+
+Number Needed to Treat (NNT)
+Number needed to treat (NNT): Number of patients who need to be treated for one person to benefit from the treatment  (= 1/ARR)
+using ARR numbers above, NNT = 1/ARR = 1/0.1 = 10
+in this example, you need to treat 10 people to prevent one bad outcome
+
+
+Number Needed to Treat (NNT)
+Number needed to treat (NNT): Number of patients who need to be treated for one person to benefit from the treatment  (= 1/ARR)
+using ARR numbers above, NNT = 1/ARR = 1/0.1 = 10
+in this example, you need to treat 10 people to prevent one bad outcome
+Return to example of CD4 count and PCP… imagine a pill that can maintain CD4 count above 250… what’s the NNT to prevent one case of PCP?
+RR = (26 / 50) / (2 / 50) = 13
+ARR = (26 / 50) - (2 / 50) = 0.48
+NNT = 1 / 0.48 = 2.08
+
+
+“2x2” Table: Calculation for Case-Control
+Odds Ratio (OR)= (A/C)/(B/D) = AD / BC
+Absolute Risk Reduction (ARR) = not appropriate to calculate
+Number Needed to Treat (NNT) = not appropriate to calculate
+Outcome Yes
+Outcome No
+Totals
+Exposure Yes
+A
+B
+NA
+Exposure No
+C
+D
+NA
+Odds
+A/C
+B/D
+
+Relative Risk vs Odds Ratio
+
+Utility of Odds Ratio (OR) & Case-Control
+If the disease incidence is low, then:
+A + B ~ B & C + D ~ D
+RR = (A / A + B) / (C / C + D) ~ (A / B) / (C / D) = AD / BC = OR
+Outcome Yes
+Outcome No
+Totals
+Exposure Yes
+A
+B
+NA
+Exposure No
+C
+D
+NA
+Odds
+A/C
+B/D
+
+Utility of Odds Ratio (OR) & Case-Control
+OR will be close to RR if outcome occurs infrequently (<15%).
+If outcome is more common, OR will differ increasingly from RR:
+
+Summary
+
+Wickramasekaran et al Mycoses 2017
+
+Suess 1965.
+
+Definitions: A Reference for Later
+Point Prevalence: # with disease / # population, at a single moment
+Period Prevalence: # with disease / # population, over time interval
+Cumulative Incidence: # new cases / # at risk @ start (long) time interval
+“Incidence Rate”: # new cases / # at risk @ start (short) time interval
+Incidence Density or “Rate”: # new cases / person-time at risk *more precise*
+Relative Risk: (# cases exposed / # exposed) / (# cases unexposed / # unexposed)
+Absolute Risk: risk of developing disease over time period (cumulative incidence)
+AR Reduction: (# cases exposed / # exposed) - (# cases unexposed / # unexposed)
+Number Needed to Treat: # treated for 1 to benefit = 1 / ARR
+Odds Ratio: (# exp cases / # unexp cases) / (# exp controls / # unexp controls)
+
+Summary
+Prevalence is determined by incidence and survival time.
+Distribution of data determines how we describe them:
+mean and SD vs median and IQR
+Relative risk (RR) and odds ratio (OR) are measures of a difference between the incidence of the outcome for two or more exposures or treatments.
+RR and OR approximate each other when outcome is rare.
+NNT can be a clinically useful number.
+
