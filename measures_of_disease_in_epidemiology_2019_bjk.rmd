@@ -79,7 +79,7 @@ class: inverse, center, middle
 
 ---
 
-# A case from 1981... <hr/>
+# A case from 1981... _Pneumocystis_ pneumonia <hr/>
 
 ---
 
@@ -94,9 +94,7 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 
 ---
 
-# A case from 1981... <hr/>
-
---
+# A case from 1981... _Pneumocystis_ pneumonia <hr/>
 
 - 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
 
@@ -126,8 +124,8 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 
 - Laboratory values:
 
-    - WBC / CD4 (cells / uL) - continuous
-    - HIV viral load (copies / mL) - continuous
+    - white blood cell count (cells / uL) - continuous
+    - *if it weren't 1981... CD4 cell count (cells / uL) and HIV viral load (copies / mL) - continuous*
 
 --
 
@@ -150,13 +148,13 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 <br/>
 <br/>
 <br/>
-**Note: diagnoses and clinical decisions are dichotomous**
+*Note: in medicine, we regard diagnoses and clinical decisions as dichotomous*
 
 ---
 
 # Characterizing Continuous Data <hr/>
 
-- "Normally distributed" data can be well characterized by its mean and standard deviation.
+- "Normally distributed" data can be well characterized by their mean and standard deviation.
 
     - mean:
 $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
@@ -174,14 +172,24 @@ $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
 
 library(tidyverse)
 
-tibble(`Mean = 90%, SD = 2%` = rnorm(n = 1000, mean = 0.9, sd = 0.02), `Mean = 90%, SD = 3%` = rnorm(n = 1000, mean = 0.9, sd = 0.03)) %>%
-  gather(key = sd_type, value = `O2 Saturation`) %>%
+tibble(`Mean = 90%, SD = 1%` = rnorm(n = 1000, mean = 0.9, sd = 0.01), `Mean = 90%, SD = 3%` = rnorm(n = 1000, mean = 0.9, sd = 0.03)) %>%
+  gather(key = sd_type, value = `O2 Saturation`) -> pcp_o2
+
+tibble(`O2 Saturation` = with(pcp_o2, seq(min(`O2 Saturation`), max(`O2 Saturation`), length = 100))) %>%
+  mutate(`Mean = 90%, SD = 1%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.01),
+         `Mean = 90%, SD = 3%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.03)) %>%
+  gather(key = sd_type, value = norm_density, -`O2 Saturation`) -> pcp_norm
+
+pcp_o2 %>%
   ggplot(data = .) + 
-  geom_histogram(aes(x = `O2 Saturation`, fill = sd_type)) +
+  geom_histogram(aes(x = `O2 Saturation`, y = ..density.., fill = sd_type)) +
+  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
+  geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black") +
   facet_wrap(facets = ~ sd_type, ncol = 2) +
+  scale_x_continuous(limits = c(0.8,1)) +
   theme_bw() +
   theme(legend.position = 'none', text = element_text(size = 16), line = element_line(colour = "black")) +
-  labs(title = "1000 Subjects with Pneumocystis*", x = "O2 Saturation (%)", y = "Count")
+  labs(title = "1000 Subjects with Pneumocystis*", x = "O2 Saturation (%)", y = "Density")
 
 ```
 
@@ -189,17 +197,17 @@ tibble(`Mean = 90%, SD = 2%` = rnorm(n = 1000, mean = 0.9, sd = 0.02), `Mean = 9
 
 ---
 
-# Audience Response Question <hr/>
+# Reflection Question <hr/>
 
 What makes standard deviation increase?
 
-1. More subjects?
+- (A) More subjects?
 
-2. Higher mean value?
+- (B) Higher mean value?
 
-3. Higher maximum value?
+- (C) Higher maximum value?
 
-4. Greater difference between extreme and mean values? 
+- (D) Greater difference between extreme and mean values? 
 
 ---
 
@@ -210,7 +218,7 @@ What makes standard deviation increase?
 - For uniform or skewed data, we prefer to use median and interquartile range (IQR) to describe the distribution of a continuous variable. <br/>
 <br/>
 <br/>
-**Note: for normal data, mean and median have the same value**
+*Note: for normal data, mean and median have the same value*
 
 ---
 
@@ -229,26 +237,15 @@ What makes standard deviation increase?
 
 ---
 
-# Audience Response Question <hr/>
+# Reflection Question <hr/>
 
 Which is least affected by outliers?
 
-1. Mean?
+- (A) Mean?
 
-2. Median?
+- (B) Median?
 
-3. Mode?
-
-
----
-
-background-image: url(gifs/magnum_detroit.gif)
-background-size: cover
-
-
-???
-
-Image credit: [GIPHY](https://gph.is/1AUItZt)
+- (C) Mode?
 
 
 ---
@@ -293,7 +290,11 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 
 --
 
-- But we're doing it anyway &#x1F600;
+- But we're doing it anyway &#x1F600; ... why?
+
+--
+
+- Medicine focuses on dichotomous diagnostic and treatment decisions.
 
 ---
 
@@ -305,17 +306,14 @@ background-size: cover
 
 Image credit: [GIPHY](https://gph.is/1AUItZt)
 
-
-
 ---
 class: inverse, center, middle
 
 # Population Data to Describe Health & Disease
 
-
 ---
 
-# A case from 1981... <hr/>
+# A case from 1981... _Pneumocystis_ pneumonia <hr/>
 
 --
 
@@ -325,12 +323,18 @@ class: inverse, center, middle
 
 - Differential diagnosis must be grounded in understanding:
 
-    - distributions of disease (prevalence & incidence)
-    - determinants of disease (associations & risk factors)
+    - distributions of disease: we'll learn about **prevalence** & **incidence**
+    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
+
+--
+
+- In 1981, _Pneumocystis_ was known to be a low **prevalence** disease.
+
+- But new data would show an increasing **incidence** in certain populations.
 <br/>
 <br/>
 <br/>
-**Note: in infectious diseases, the differential is always evolving**
+*Note: in infectious diseases, the differential is always evolving*
 
 
 ---
@@ -386,13 +390,17 @@ class: inverse, center, middle
 
 # Prevalence of _Pneumocystis_ pneumonia <hr/>
 
-- In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP.
+- In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP:
 
-- Period prevalence published in 1974*: 579 cases (194 confirmed) over 3 years.
+    - period prevalence published in 1974*: 579 cases (194 confirmed) over 3 years.
+    - what’s the denominator?
+    - what’s the prevalence?
 
-- What’s the denominator?
+--
 
-- What’s the prevalence?
+- __Point prevalence__ of _Pneumocystis_ would be vanishingly small given limited duration of disease.
+
+- In 1967, even the __period prevalence__ is very small.
 
 .footnote[[*] Walzer PD et al _Annals Int Med_ 1974]
 
@@ -410,17 +418,17 @@ class: inverse, center, middle
 
 ---
 
-# Audience Response Question <hr/>
+# Reflection Question <hr/>
 
 How can an infection have high prevalence if it occurs infrequently?
 
-1. the infection is rapidly fatal
+- (A) the infection is rapidly fatal
 
-2. the infection rapidly resolves
+- (B) the infection rapidly resolves
 
-3. a few children get the infection every year, but the infection persists for the rest of their lives
+- (C) a few children get the infection every year, but the infection persists for the rest of their lives
 
-4. the infection results in lifelong protective immunity
+- (D) the infection results in lifelong protective immunity
 
 
 ---
@@ -536,15 +544,15 @@ background-size: contain
 
 ---
 
-# Audience Response Question:
+# Reflection Question <hr/>
 
 Your patient with HIV is considering starting prophylactic antibiotics for PCP. You have PCP prevalence, cumulative incidence, and incidence density data available. Which data provide the most precise information on the patient’s risk of PCP off of prophylaxis?
 
-1. prevalence
+- (A) prevalence
 
-2. cumulative incidence
+- (B) cumulative incidence
 
-3. incidence density
+- (C) incidence density
 
 ---
 
@@ -579,41 +587,31 @@ background-size: contain
     - prevalence declined, but incidence remained constant at 1.5% per year
     - what happened?
 
-- What's the most prevalent OI?
-    
 .footnote[[*] Wawer M et al CROI 2005; Roehr B BMJ 2005]
 
----
-
-background-image: url(figs/morris_et_al_EID_2004.png)
-background-size: contain
 
 ---
+class: inverse, center, middle
 
-background-image: url(gifs/maggie_sideeye.gif)
+# We're not done yet...
+
+---
+
+background-image: url(gifs/abbi_no.gif)
+background-size: cover
+
+---
+class: inverse, center, middle
+
+# ... and coming now are the formulas you really need to know...
+
+---
+
+background-image: url(gifs/abbi_no.gif)
 background-size: cover
 
 ---
 
-# Prevalence vs Incidence: When Used? <hr/>
-
-- Prevalence: 
-
-    - public health planning
-    - diagnostic test evaluation
-
-- Cumulative Incidence: 
-
-    - prognosis
-    - evaluation of therapies
-
-- Incidence Density:
-
-    - rate of appearance of new cases
-    - changes can reflect the effect of risk factors
-
-
----
 class: inverse, center, middle
 
 # Inference from Epidemiologic Measures
@@ -633,6 +631,56 @@ class: inverse, center, middle
 
 ---
 
+# Measuring True Risk versus Odds <hr/>
+
+
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='left', fig.width=16, fig.height=5, fig.retina=2}
+library(DiagrammeR)
+
+c_graph <-
+  create_graph() %>%
+  add_node(label = 'Study\nDesign', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Cohort', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Randomized\nControlled\nTrial', node_aes = node_aes(fontsize = 5.5, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Case-\nControl', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Denominator\nKnown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
+  add_node(label = 'Denominator\nUnknown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'red', fontcolor = 'black')) %>%
+  add_node(label = 'Measure\nTrue\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Measure\nOdds', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Relative\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Odds\nRatio', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'AR\nARR\nNNT', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_edge(from = 'Study\nDesign',to = 'Cohort', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Study\nDesign',to = 'Randomized\nControlled\nTrial', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Study\nDesign',to = 'Case-\nControl', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Cohort', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Randomized\nControlled\nTrial', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Case-\nControl', to = 'Denominator\nUnknown', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Denominator\nKnown', to = 'Measure\nTrue\nRisk', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Denominator\nUnknown', to = 'Measure\nOdds', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Measure\nTrue\nRisk', to = 'Relative\nRisk', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Measure\nOdds', to = 'Odds\nRatio', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Relative\nRisk', to = 'AR\nARR\nNNT', edge_aes = edge_aes(color = 'black')) %>%
+  set_node_position(node = 1, x = -3, y = 0) %>%
+  set_node_position(node = 2, x = -2, y = 0) %>%
+  set_node_position(node = 3, x = -2, y = 1) %>%
+  set_node_position(node = 4, x = -2, y = -1) %>%
+  set_node_position(node = 5, x = -1, y = 0.5) %>%
+  set_node_position(node = 6, x = -1, y = -0.5) %>%
+  set_node_position(node = 7, x = 0, y = 0.5) %>%
+  set_node_position(node = 8, x = 0, y = -0.5) %>%
+  set_node_position(node = 9, x = 1, y = 0.5) %>%
+  set_node_position(node = 10, x = 1, y = -0.5) %>%
+  set_node_position(node = 11, x = 2, y = 0.5)
+
+c_graph %>% render_graph()
+
+
+```
+
+
+---
+
 # “2x2” Table <hr/>
 
 - Dichotomous exposures and outcomes.
@@ -644,11 +692,6 @@ class: inverse, center, middle
     - you need to know whether study is trial/cohort vs case-control
     - you can always calculate a relative risk (RR) from 2x2 table, but only appropriate for trial/cohort study
     - you can always calculate an odds ratio (OR) from 2x2 table, but only appropriate for case-control study (can do better with RR if trial/cohort)
-
----
-
-background-image: url(gifs/abbi_no.gif)
-background-size: cover
 
 ---
 
@@ -713,12 +756,7 @@ background-size: cover
 
 ---
 
-background-image: url(gifs/abbi_no.gif)
-background-size: cover
-
----
-
-# Utility of Odds Ratio (OR) & Case-Control
+# Utility of Odds Ratio (OR) & Case-Control <hr/>
 
 - if the disease incidence is low, then:
 
@@ -760,41 +798,7 @@ background-size: cover
 
 ---
 
----
-
----
-
-# Test DiagrammeR <hr/>
-
-```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, , fig.asp=9/16, out.width="100%", fig.retina=2}
-library(DiagrammeR)
-
-c_graph <-
-  create_graph() %>%
-  add_node(label = 'colonizing\nS.aureus', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90')) %>%
-  add_node(label = 'S.aureus\nVA-LRTI', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90')) %>%
-  add_node(label = 'respiratory\nmicrobiome', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90')) %>%
-  add_node(label = 'antibiotics', node_aes = node_aes(fontsize = 6, color = 'grey90', fillcolor = 'grey90')) %>%
-  add_edge(
-    from = 'colonizing\nS.aureus',
-    to = 'S.aureus\nVA-LRTI', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'respiratory\nmicrobiome', to = 'S.aureus\nVA-LRTI', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'respiratory\nmicrobiome', to = 'colonizing\nS.aureus', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'antibiotics', to = 'colonizing\nS.aureus', edge_aes = edge_aes(color = 'grey90')) %>%
-  add_edge(from = 'antibiotics', to = 'respiratory\nmicrobiome', edge_aes = edge_aes(color = 'grey90')) %>%
-  set_node_position(node = 1, x = -1, y = 0) %>%
-  set_node_position(node = 2, x = 1, y = 0) %>%
-  set_node_position(node = 3, x = -0.25, y = 0.5) %>%
-  set_node_position(node = 4, x = -1, y = 0.75)
-
-c_graph %>% render_graph()
-
-
-```
-
-
----
 class: inverse, center, middle
 
-# Get Started
+
 
