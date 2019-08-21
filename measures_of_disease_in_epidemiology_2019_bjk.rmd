@@ -562,7 +562,7 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 
 ---
 
-background-image: url(figs/bathtub.png)
+background-image: url(figs/bathtub_labelled.svg)
 background-size: contain
 
 ---
@@ -633,7 +633,6 @@ class: inverse, center, middle
 
 # Measuring True Risk versus Odds <hr/>
 
-
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='left', fig.width=16, fig.height=5, fig.retina=2}
 library(DiagrammeR)
 
@@ -644,7 +643,7 @@ c_graph <-
   add_node(label = 'Randomized\nControlled\nTrial', node_aes = node_aes(fontsize = 5.5, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Case-\nControl', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Denominator\nKnown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
-  add_node(label = 'Denominator\nUnknown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'red', fontcolor = 'black')) %>%
+  add_node(label = 'Denominator\nUnknown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'dodgerblue', fontcolor = 'black')) %>%
   add_node(label = 'Measure\nTrue\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Measure\nOdds', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Relative\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
