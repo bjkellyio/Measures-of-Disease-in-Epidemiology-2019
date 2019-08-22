@@ -686,11 +686,11 @@ c_graph %>% render_graph()
 
 - Examine relationships between exposures and outcomes.
 
-- Caution!!!
+- __Caution!!!__
 
-    - you need to know whether study is trial/cohort vs case-control
-    - you can always calculate a relative risk (RR) from 2x2 table, but only appropriate for trial/cohort study
-    - you can always calculate an odds ratio (OR) from 2x2 table, but only appropriate for case-control study (can do better with RR if trial/cohort)
+    - need to know whether study is __RCT/cohort__ vs __case-control__<br/><br/>
+    - can always calculate a __relative risk (RR)__ from 2x2 table but only appropriate for __RCT/cohort__<br/><br/>
+    - can always calculate an __odds ratio (OR)__ from 2x2 table but only appropriate for __case-control study__<br/>(can do better with RR if RCT/cohort)
 
 ---
 
@@ -702,7 +702,30 @@ c_graph %>% render_graph()
 
 - Number Needed to Treat (NNT)= 1/ARR
 
-- ############## insert table
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(Exposure,Outcome) %>%
+  mutate(cells = c("C","D","A","B")) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Outcome, y = Exposure, fill = cells)) +
+  geom_text(aes(x = Outcome, y = Exposure, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+
+---
+
+background-image: url(figs/twobytwo_summary.png)
+background-size: contain
 
 ---
 
