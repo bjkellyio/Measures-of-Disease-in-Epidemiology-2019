@@ -1,6 +1,6 @@
 ---
 title: "Measures of Disease in Clinical Epidemiology<br/>"
-subtitle: "Approaches to Uncertainty About the Distributions & Determinants of Disease<br/><hr/>"
+subtitle: "<hr/>"
 author: "Brendan J. Kelly"
 institute: "Infectious Diseases & Epidemiology<br/><br/>![](penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg){width=160px}" 
 date: "updated: `r Sys.Date()`"
@@ -26,7 +26,9 @@ xaringan::summon_remark()
 
 - No conflicts of interest.
 
-- Presentation contains GIFs.
+- Too many topics covered.
+
+- May contain GIFs.
 
 ---
 
@@ -42,11 +44,16 @@ xaringan::summon_remark()
 
 --
 
-- Explain the meaning of prevalence, incidence (*warning*: multiple types), relative risk, and odds ratios.
+- Explain the meaning of:
+
+    - prevalence
+    - incidence (<ins>warning</ins>: multiple types)
+    - relative risk (RR)
+    - odds ratios (OR)
 
 --
 
-- Calculate prevalence, incidence, relative risk, and odds ratios from study data.
+- Calculate prevalence, incidence, RR, and OR from study data.
 
 
 
@@ -58,28 +65,20 @@ xaringan::summon_remark()
 
 - Why use these tools (prevalence, incidence, RR, OR)?
 
-     - inform differential diagnoses
-     - counsel patients
-     - design public health interventions
-     - direct new diagnostics and therapies
+     - inform differential diagnoses & counsel patients
+     - design public health interventions & direct new diagnostics/therapies
      - understand distributions and determinants of diseases
 
 --
 
 - How to use these tools?
 
-     - learn the precise definitions (RR vs OR, cumulative incidence vs incidence density)
-     - a bit of arithmetic.
-
----
-class: inverse, center, middle
-
-# Data Types & Data Distributions
-
+     - precise definitions: <ins>RR vs OR</ins> & <ins>cumulative incidence vs incidence density</ins>
+     - a bit of arithmetic
 
 ---
 
-# A case from 1981... _Pneumocystis_ pneumonia <hr/>
+# A case from 1981... <hr/>
 
 ---
 
@@ -107,6 +106,72 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
     - physical exam
     - laboratory test values
     - radiology
+
+--
+
+- What is his diagnosis? Does he have _Pneumocystis_ pneumonia?
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia <hr/>
+
+- Differential diagnosis must be grounded in understanding:
+
+    - distributions of disease: we'll learn about **prevalence** & **incidence**
+    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
+
+- In 1981, _Pneumocystis_ was known to be a low <ins>prevalence</ins> disease.
+
+- New data would show an increasing <ins>incidence</ins>.
+<br/>
+<br/>
+<br/>
+*Note: in infectious diseases, the differential is always evolving*
+
+
+---
+
+background-image: url(figs/hiv_timeline_mmwr_1981.png)
+background-size: contain
+
+
+???
+
+Image credit: [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline)
+
+
+---
+
+# MMWR June 5, 1981 <hr/>
+
+.pull-left[
+_All the above observations suggest the possibility of a cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of_ P. carinii _infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia._
+
+\- Gottlieb MS et al <ins>MMWR</ins> 1981
+]
+
+.pull-right[
+![an image](figs/cover_mmwr_1981.jpg)
+]
+
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia <hr/>
+
+- We want to know how the distribution of _Pneumocystis_ pneumonia is changing.
+
+- We want to know whether our patient has _Pneumocystis_ pneumonia.
+
+- This is a dichotomous measure (yes/no _Pneumocystis_).
+
+- We have to start by thinking about how continuous data become dichotomous.
+
+
+---
+class: inverse, center, middle
+
+# Data Types & Data Distributions
 
 ---
 
@@ -156,10 +221,10 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 
 - "Normally distributed" data can be well characterized by their mean and standard deviation.
 
-    - mean:
+    - **mean ( $\mu$)**:
 $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
 
-    - standard deviation:
+    - **standard deviation (SD or $\sigma$)**:
 $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
 
 ---
@@ -215,7 +280,7 @@ What makes standard deviation increase?
 
 - “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well.
 
-- For uniform or skewed data, we prefer to use median and interquartile range (IQR) to describe the distribution of a continuous variable. <br/>
+- For uniform or skewed data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable. <br/>
 <br/>
 <br/>
 *Note: for normal data, mean and median have the same value*
@@ -307,58 +372,10 @@ background-size: cover
 Image credit: [GIPHY](https://gph.is/1AUItZt)
 
 ---
-class: inverse, center, middle
-
-# Population Data to Describe Health & Disease
-
----
 
 # A case from 1981... _Pneumocystis_ pneumonia <hr/>
 
---
-
-- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
-
---
-
-- Differential diagnosis must be grounded in understanding:
-
-    - distributions of disease: we'll learn about **prevalence** & **incidence**
-    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
-
---
-
-- In 1981, _Pneumocystis_ was known to be a low **prevalence** disease.
-
-- But new data would show an increasing **incidence** in certain populations.
-<br/>
-<br/>
-<br/>
-*Note: in infectious diseases, the differential is always evolving*
-
-
----
-
-background-image: url(figs/mmwr_1981.png)
-background-size: contain
-
-
-???
-
-Image credit: [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline)
-
-
----
-
-# MMWR June 5, 1981 <hr/>
-
-.pull-left[
-“All the above observations suggest the possibility of a cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of P. carinii infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia.”
-]
-
-.pull-right[
-![an image](figs/cover_mmwr_1981.jpg)
-]
+- What did we know about _Pneumocystis_ pneumonia in the United States in 1981?
 
 
 ---
@@ -638,23 +655,23 @@ c_graph <-
   add_node(label = 'Cohort', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Randomized\nControlled\nTrial', node_aes = node_aes(fontsize = 5.5, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Case-\nControl', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
-  add_node(label = 'Denominator\nKnown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
-  add_node(label = 'Denominator\nUnknown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'dodgerblue', fontcolor = 'black')) %>%
-  add_node(label = 'Measure\nRisk\n(Incidence)', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
-  add_node(label = 'Measure\nOdds', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Know\nDenominator', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
+  add_node(label = 'Dont Know\nDenominator', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'dodgerblue', fontcolor = 'black')) %>%
+  add_node(label = 'Measure\nOutcome\nIncidence', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Measure\nExposure\nOdds', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Relative\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Odds\nRatio', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'AR\nARR\nNNT', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_edge(from = 'Study\nDesign',to = 'Cohort', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Study\nDesign',to = 'Randomized\nControlled\nTrial', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Study\nDesign',to = 'Case-\nControl', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Cohort', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Randomized\nControlled\nTrial', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Case-\nControl', to = 'Denominator\nUnknown', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Denominator\nKnown', to = 'Measure\nRisk\n(Incidence)', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Denominator\nUnknown', to = 'Measure\nOdds', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Measure\nRisk\n(Incidence)', to = 'Relative\nRisk', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Measure\nOdds', to = 'Odds\nRatio', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Cohort', to = 'Know\nDenominator', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Randomized\nControlled\nTrial', to = 'Know\nDenominator', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Case-\nControl', to = 'Dont Know\nDenominator', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Know\nDenominator', to = 'Measure\nOutcome\nIncidence', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Dont Know\nDenominator', to = 'Measure\nExposure\nOdds', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Measure\nOutcome\nIncidence', to = 'Relative\nRisk', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Measure\nExposure\nOdds', to = 'Odds\nRatio', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Relative\nRisk', to = 'AR\nARR\nNNT', edge_aes = edge_aes(color = 'black')) %>%
   set_node_position(node = 1, x = -3, y = 0) %>%
   set_node_position(node = 2, x = -2, y = 0) %>%
@@ -676,21 +693,48 @@ c_graph %>% render_graph()
 
 ---
 
-# “2x2” Table <hr/>
+# 2x2 Table <hr/>
 
+.pull-left[
 - Dichotomous exposures and outcomes.
 
-- Examine relationships between exposures and outcomes.
+- Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
 
-- __Caution!!!__
+- Caution!!!
 
-    - need to know whether study is __RCT/cohort__ vs __case-control__<br/><br/>
-    - can always calculate a __relative risk (RR)__ from 2x2 table but only appropriate for __RCT/cohort__<br/><br/>
-    - can always calculate an __odds ratio (OR)__ from 2x2 table but only appropriate for __case-control study__<br/>(can do better with RR if RCT/cohort)
+    - need to know whether study is <ins>RCT/cohort vs case-control</ins>
+    - can always calculate a <ins>relative risk (RR)</ins> from 2x2 table but only appropriate for <ins>RCT/cohort</ins>
+    - can always calculate an <ins>odds ratio (OR)</ins> from 2x2 table but only appropriate for <ins>case-control study</ins><br/>(can do better with RR if RCT/cohort)
+]
+
+.pull-right[
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(Exposure,Outcome) %>%
+  mutate(cells = c("C","D","A","B"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Outcome, y = Exposure, fill = cells_order)) +
+  geom_text(aes(x = Outcome, y = Exposure, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+]
+
 
 ---
 
-# “2x2” Table: Calculation for Cohort/Trial <hr/>
+# 2x2 Table: Calculation for Cohort/Trial <hr/>
 
 .pull-left[
 - Relative Risk (RR)= [A/(A+B) / C/(C+D)]
@@ -717,11 +761,13 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
   theme(axis.text.y = element_text(size = 28),
         axis.text.x.top = element_text(size = 28),
         axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
         legend.position = 'none') +
   coord_equal()
 
 ```
 ]
+
 
 ---
 
@@ -767,7 +813,7 @@ background-size: contain
 
 ---
 
-# “2x2” Table: Calculation for Case-Control <hr/>
+# 2x2 Table: Calculation for Case-Control <hr/>
 
 - Odds Ratio (OR)= (A/C)/(B/D) = AD / BC
 
