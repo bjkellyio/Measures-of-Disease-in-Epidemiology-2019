@@ -182,14 +182,14 @@ tibble(`O2 Saturation` = with(pcp_o2, seq(min(`O2 Saturation`), max(`O2 Saturati
 
 pcp_o2 %>%
   ggplot(data = .) + 
-  geom_histogram(aes(x = `O2 Saturation`, y = ..density.., fill = sd_type)) +
+  geom_histogram(aes(x = `O2 Saturation`, y = ..density.., fill = sd_type), colour = "black") +
   #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
-  geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black") +
+  geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
   facet_wrap(facets = ~ sd_type, ncol = 2) +
   scale_x_continuous(limits = c(0.8,1)) +
   theme_bw() +
-  theme(legend.position = 'none', text = element_text(size = 16), line = element_line(colour = "black")) +
-  labs(title = "1000 Subjects with Pneumocystis*", x = "O2 Saturation (%)", y = "Density")
+  theme(legend.position = 'none', text = element_text(size = 24), line = element_line(colour = "black")) +
+  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Density")
 
 ```
 
@@ -395,8 +395,6 @@ class: inverse, center, middle
     - period prevalence published in 1974*: 579 cases (194 confirmed) over 3 years.
     - what’s the denominator?
     - what’s the prevalence?
-
---
 
 - __Point prevalence__ of _Pneumocystis_ would be vanishingly small given limited duration of disease.
 
@@ -631,9 +629,7 @@ class: inverse, center, middle
 
 ---
 
-# Measuring True Risk versus Odds <hr/>
-
-```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='left', fig.width=16, fig.height=5, fig.retina=2}
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='left', fig.width=15, fig.height=9, fig.retina=2}
 library(DiagrammeR)
 
 c_graph <-
@@ -644,7 +640,7 @@ c_graph <-
   add_node(label = 'Case-\nControl', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Denominator\nKnown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
   add_node(label = 'Denominator\nUnknown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'dodgerblue', fontcolor = 'black')) %>%
-  add_node(label = 'Measure\nTrue\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Measure\nRisk\n(Incidence)', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Measure\nOdds', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Relative\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Odds\nRatio', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
@@ -655,9 +651,9 @@ c_graph <-
   add_edge(from = 'Cohort', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Randomized\nControlled\nTrial', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Case-\nControl', to = 'Denominator\nUnknown', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Denominator\nKnown', to = 'Measure\nTrue\nRisk', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Denominator\nKnown', to = 'Measure\nRisk\n(Incidence)', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Denominator\nUnknown', to = 'Measure\nOdds', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Measure\nTrue\nRisk', to = 'Relative\nRisk', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Measure\nRisk\n(Incidence)', to = 'Relative\nRisk', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Measure\nOdds', to = 'Odds\nRatio', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Relative\nRisk', to = 'AR\nARR\nNNT', edge_aes = edge_aes(color = 'black')) %>%
   set_node_position(node = 1, x = -3, y = 0) %>%
@@ -696,20 +692,24 @@ c_graph %>% render_graph()
 
 # “2x2” Table: Calculation for Cohort/Trial <hr/>
 
+.pull-left[
 - Relative Risk (RR)= [A/(A+B) / C/(C+D)]
 
 - Absolute Risk Reduction (ARR) = [A/(A+B) – C/(C+D)]
 
 - Number Needed to Treat (NNT)= 1/ARR
+]
 
+.pull-right[
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
 library(tidyverse)
 
 tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(x = c("+","-"), levels = c("+","-"))) %>%
   complete(Exposure,Outcome) %>%
-  mutate(cells = c("C","D","A","B")) %>%
+  mutate(cells = c("C","D","A","B"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
   ggplot(data = .) +
-  geom_tile(aes(x = Outcome, y = Exposure, fill = cells)) +
+  geom_tile(aes(x = Outcome, y = Exposure, fill = cells_order)) +
   geom_text(aes(x = Outcome, y = Exposure, label = cells), size = 16) +
   scale_x_discrete(position = 'top') +
   ggsci::scale_fill_nejm() +
@@ -721,6 +721,7 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
   coord_equal()
 
 ```
+]
 
 ---
 
