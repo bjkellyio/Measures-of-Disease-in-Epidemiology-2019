@@ -49,7 +49,7 @@ xaringan::summon_remark()
     - prevalence
     - incidence (<ins>warning</ins>: multiple types)
     - relative risk (RR)
-    - odds ratios (OR)
+    - odds ratio (OR)
 
 --
 
@@ -80,6 +80,9 @@ xaringan::summon_remark()
 
 # A case from 1981... <hr/>
 
+- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+
 ---
 
 background-image: url(gifs/magnum_pi.gif)
@@ -89,44 +92,6 @@ background-size: cover
 ???
 
 Image credit: [GIPHY](https://gph.is/1AUItZt)
-
-
----
-
-# A case from 1981... _Pneumocystis_ pneumonia <hr/>
-
-- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
-
-- What do you want to know and why?
-
---
-
-    - history
-    - vital signs
-    - physical exam
-    - laboratory test values
-    - radiology
-
---
-
-- What is his diagnosis? Does he have _Pneumocystis_ pneumonia?
-
----
-
-# A case from 1981... _Pneumocystis_ pneumonia <hr/>
-
-- Differential diagnosis must be grounded in understanding:
-
-    - distributions of disease: we'll learn about **prevalence** & **incidence**
-    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
-
-- In 1981, _Pneumocystis_ was known to be a low <ins>prevalence</ins> disease.
-
-- New data would show an increasing <ins>incidence</ins>.
-<br/>
-<br/>
-<br/>
-*Note: in infectious diseases, the differential is always evolving*
 
 
 ---
@@ -157,7 +122,45 @@ _All the above observations suggest the possibility of a cellular-immune dysfunc
 
 ---
 
-# A case from 1981... _Pneumocystis_ pneumonia <hr/>
+# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
+
+- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+- What do you want to know and why?
+
+--
+
+    - history
+    - vital signs
+    - physical exam
+    - laboratory test values
+    - radiology
+
+--
+
+- What is his diagnosis? Does he have _Pneumocystis_ pneumonia?
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
+
+- Differential diagnosis must be grounded in understanding:
+
+    - distributions of disease: we'll learn about **prevalence** & **incidence**
+    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
+
+- In 1981, _Pneumocystis_ was known to be a low <ins>prevalence</ins> disease.
+
+- New data would show an increasing <ins>incidence</ins>.
+<br/>
+<br/>
+<br/>
+*Note: in infectious diseases, the differential is always evolving*
+
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
 
 - We want to know how the distribution of _Pneumocystis_ pneumonia is changing.
 
@@ -264,7 +267,7 @@ pcp_o2 %>%
 
 # Reflection Question <hr/>
 
-What makes standard deviation increase?
+What makes standard deviation greater?
 
 - (A) More subjects?
 
@@ -284,6 +287,41 @@ What makes standard deviation increase?
 <br/>
 <br/>
 *Note: for normal data, mean and median have the same value*
+
+---
+
+```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4.5, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+
+tibble("Uniform" = runif(n = 1000, min = 0.85, max = 0.95), "Skewed" = log(rnorm(n = 1000, mean = exp(0.9), sd = exp(0.03)))) %>%
+  gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
+
+pcp_skew_o2 %>%
+  group_by(dis_type) %>%
+  summarise(median = median(o2_sat, na.rm = TRUE),
+            mean = mean(o2_sat, na.rm = TRUE)) %>%
+  ungroup() -> pcp_dist
+
+pcp_skew_o2 %>%
+  ggplot(data = .) + 
+  geom_histogram(aes(x = o2_sat, y = ..density.., fill = dis_type), colour = "black") +
+  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
+  #geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
+  geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue") +
+  geom_vline(data = pcp_dist, aes(xintercept = mean), colour = "darkgreen") +
+  facet_wrap(facets = ~ dis_type, ncol = 2) +
+  scale_x_continuous(limits = c(0.8,1)) +
+  theme_bw() +
+  theme(legend.position = 'none', text = element_text(size = 24), line = element_line(colour = "black")) +
+  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Density")
+
+```
+
+.footnote[[*] Data made up.]
+
+
+
 
 ---
 
@@ -340,6 +378,14 @@ Which is least affected by outliers?
 
 ---
 
+# Dichotomizing Continuous Data <hr/>
+
+- Imagine diagnosing _Pneumocystis_ pneumonia based on threshold of oxygen saturation:
+
+
+
+---
+
 # Dichotomania <hr/>
 
 --
@@ -361,27 +407,19 @@ Which is least affected by outliers?
 
 - Medicine focuses on dichotomous diagnostic and treatment decisions.
 
----
-
-background-image: url(gifs/magnum_pi.gif)
-background-size: cover
-
-
-???
-
-Image credit: [GIPHY](https://gph.is/1AUItZt)
-
----
-
-# A case from 1981... _Pneumocystis_ pneumonia <hr/>
-
-- What did we know about _Pneumocystis_ pneumonia in the United States in 1981?
-
 
 ---
 class: inverse, center, middle
 
 # Measures of Disease Occurrence
+
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
+
+- What did we know about _Pneumocystis_ pneumonia in the United States in 1981?
+
 
 ---
 

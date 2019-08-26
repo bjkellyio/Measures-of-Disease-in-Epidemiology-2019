@@ -19,7 +19,7 @@ class: center, middle, inverse, title-slide
 ## <hr/>
 ### Brendan J. Kelly
 ### Infectious Diseases &amp; Epidemiology<br/><br/><img src="penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg" width="160" />
-### updated: 2019-08-22
+### updated: 2019-08-26
 
 ---
 
@@ -53,7 +53,7 @@ class: center, middle, inverse, title-slide
     - prevalence
     - incidence (&lt;ins&gt;warning&lt;/ins&gt;: multiple types)
     - relative risk (RR)
-    - odds ratios (OR)
+    - odds ratio (OR)
 
 --
 
@@ -84,6 +84,9 @@ class: center, middle, inverse, title-slide
 
 # A case from 1981... &lt;hr/&gt;
 
+- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+
 ---
 
 background-image: url(gifs/magnum_pi.gif)
@@ -93,44 +96,6 @@ background-size: cover
 ???
 
 Image credit: [GIPHY](https://gph.is/1AUItZt)
-
-
----
-
-# A case from 1981... _Pneumocystis_ pneumonia &lt;hr/&gt;
-
-- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
-
-- What do you want to know and why?
-
---
-
-    - history
-    - vital signs
-    - physical exam
-    - laboratory test values
-    - radiology
-
---
-
-- What is his diagnosis? Does he have _Pneumocystis_ pneumonia?
-
----
-
-# A case from 1981... _Pneumocystis_ pneumonia &lt;hr/&gt;
-
-- Differential diagnosis must be grounded in understanding:
-
-    - distributions of disease: we'll learn about **prevalence** &amp; **incidence**
-    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
-
-- In 1981, _Pneumocystis_ was known to be a low &lt;ins&gt;prevalence&lt;/ins&gt; disease.
-
-- New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;.
-&lt;br/&gt;
-&lt;br/&gt;
-&lt;br/&gt;
-*Note: in infectious diseases, the differential is always evolving*
 
 
 ---
@@ -161,7 +126,45 @@ _All the above observations suggest the possibility of a cellular-immune dysfunc
 
 ---
 
-# A case from 1981... _Pneumocystis_ pneumonia &lt;hr/&gt;
+# A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
+
+- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+- What do you want to know and why?
+
+--
+
+    - history
+    - vital signs
+    - physical exam
+    - laboratory test values
+    - radiology
+
+--
+
+- What is his diagnosis? Does he have _Pneumocystis_ pneumonia?
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
+
+- Differential diagnosis must be grounded in understanding:
+
+    - distributions of disease: we'll learn about **prevalence** &amp; **incidence**
+    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
+
+- In 1981, _Pneumocystis_ was known to be a low &lt;ins&gt;prevalence&lt;/ins&gt; disease.
+
+- New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;.
+&lt;br/&gt;
+&lt;br/&gt;
+&lt;br/&gt;
+*Note: in infectious diseases, the differential is always evolving*
+
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
 
 - We want to know how the distribution of _Pneumocystis_ pneumonia is changing.
 
@@ -245,7 +248,7 @@ class: inverse, center, middle
 
 # Reflection Question &lt;hr/&gt;
 
-What makes standard deviation increase?
+What makes standard deviation greater?
 
 - (A) More subjects?
 
@@ -265,6 +268,15 @@ What makes standard deviation increase?
 &lt;br/&gt;
 &lt;br/&gt;
 *Note: for normal data, mean and median have the same value*
+
+---
+
+&lt;img src="measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/skewed_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+.footnote[[*] Data made up.]
+
+
+
 
 ---
 
@@ -321,6 +333,14 @@ Which is least affected by outliers?
 
 ---
 
+# Dichotomizing Continuous Data &lt;hr/&gt;
+
+- Imagine diagnosing _Pneumocystis_ pneumonia based on threshold of oxygen saturation:
+
+
+
+---
+
 # Dichotomania &lt;hr/&gt;
 
 --
@@ -342,27 +362,19 @@ Which is least affected by outliers?
 
 - Medicine focuses on dichotomous diagnostic and treatment decisions.
 
----
-
-background-image: url(gifs/magnum_pi.gif)
-background-size: cover
-
-
-???
-
-Image credit: [GIPHY](https://gph.is/1AUItZt)
-
----
-
-# A case from 1981... _Pneumocystis_ pneumonia &lt;hr/&gt;
-
-- What did we know about _Pneumocystis_ pneumonia in the United States in 1981?
-
 
 ---
 class: inverse, center, middle
 
 # Measures of Disease Occurrence
+
+
+---
+
+# A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
+
+- What did we know about _Pneumocystis_ pneumonia in the United States in 1981?
+
 
 ---
 
@@ -627,8 +639,8 @@ class: inverse, center, middle
 
 ---
 
-<div id="htmlwidget-83dfeb0c469e6f43840e" style="width:1080px;height:648px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-83dfeb0c469e6f43840e">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Study\nDesign\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-3,0!\"] \n  \"2\" [label = \"Cohort\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,0!\"] \n  \"3\" [label = \"Randomized\nControlled\nTrial\", color = \"black\", fontsize = \"5.5\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,1!\"] \n  \"4\" [label = \"Case-\nControl\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,-1!\"] \n  \"5\" [label = \"Know\nDenominator\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#00FF00\", pos = \"-1,0.5!\"] \n  \"6\" [label = \"Dont Know\nDenominator\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#1E90FF\", pos = \"-1,-0.5!\"] \n  \"7\" [label = \"Measure\nOutcome\nIncidence\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,0.5!\"] \n  \"8\" [label = \"Measure\nExposure\nOdds\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,-0.5!\"] \n  \"9\" [label = \"Relative\nRisk\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,0.5!\"] \n  \"10\" [label = \"Odds\nRatio\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,-0.5!\"] \n  \"11\" [label = \"AR\nARR\nNNT\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"2,0.5!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"1\"->\"3\" [color = \"black\"] \n\"1\"->\"4\" [color = \"black\"] \n\"2\"->\"5\" [color = \"black\"] \n\"3\"->\"5\" [color = \"black\"] \n\"4\"->\"6\" [color = \"black\"] \n\"5\"->\"7\" [color = \"black\"] \n\"6\"->\"8\" [color = \"black\"] \n\"7\"->\"9\" [color = \"black\"] \n\"8\"->\"10\" [color = \"black\"] \n\"9\"->\"11\" [color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d2133ff821faa5986c2a" style="width:1080px;height:648px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d2133ff821faa5986c2a">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Study\nDesign\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-3,0!\"] \n  \"2\" [label = \"Cohort\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,0!\"] \n  \"3\" [label = \"Randomized\nControlled\nTrial\", color = \"black\", fontsize = \"5.5\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,1!\"] \n  \"4\" [label = \"Case-\nControl\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,-1!\"] \n  \"5\" [label = \"Know\nDenominator\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#00FF00\", pos = \"-1,0.5!\"] \n  \"6\" [label = \"Dont Know\nDenominator\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#1E90FF\", pos = \"-1,-0.5!\"] \n  \"7\" [label = \"Measure\nOutcome\nIncidence\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,0.5!\"] \n  \"8\" [label = \"Measure\nExposure\nOdds\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,-0.5!\"] \n  \"9\" [label = \"Relative\nRisk\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,0.5!\"] \n  \"10\" [label = \"Odds\nRatio\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,-0.5!\"] \n  \"11\" [label = \"AR\nARR\nNNT\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"2,0.5!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"1\"->\"3\" [color = \"black\"] \n\"1\"->\"4\" [color = \"black\"] \n\"2\"->\"5\" [color = \"black\"] \n\"3\"->\"5\" [color = \"black\"] \n\"4\"->\"6\" [color = \"black\"] \n\"5\"->\"7\" [color = \"black\"] \n\"6\"->\"8\" [color = \"black\"] \n\"7\"->\"9\" [color = \"black\"] \n\"8\"->\"10\" [color = \"black\"] \n\"9\"->\"11\" [color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 ---
