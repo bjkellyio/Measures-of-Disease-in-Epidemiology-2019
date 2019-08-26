@@ -257,7 +257,7 @@ pcp_o2 %>%
   scale_x_continuous(limits = c(0.8,1)) +
   theme_bw() +
   theme(legend.position = 'none', text = element_text(size = 24), line = element_line(colour = "black")) +
-  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Density")
+  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
 
 ```
 
@@ -290,11 +290,13 @@ What makes standard deviation greater?
 
 ---
 
+# Characterizing Continuous Data <hr/>
+
 ```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4.5, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
 
-tibble("Uniform" = runif(n = 1000, min = 0.85, max = 0.95), "Skewed" = log(rnorm(n = 1000, mean = exp(0.9), sd = exp(0.03)))) %>%
+tibble("Uniform" = runif(n = 1000, min = 0.85, max = 0.95), "Skewed" = log(rnorm(n = 1000, mean = exp(0.9), sd = exp(0.3)))) %>%
   gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
 
 pcp_skew_o2 %>%
@@ -305,7 +307,7 @@ pcp_skew_o2 %>%
 
 pcp_skew_o2 %>%
   ggplot(data = .) + 
-  geom_histogram(aes(x = o2_sat, y = ..density.., fill = dis_type), colour = "black") +
+  geom_histogram(aes(x = o2_sat, fill = dis_type), colour = "black") +
   #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
   #geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
   geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue") +
@@ -314,7 +316,7 @@ pcp_skew_o2 %>%
   scale_x_continuous(limits = c(0.8,1)) +
   theme_bw() +
   theme(legend.position = 'none', text = element_text(size = 24), line = element_line(colour = "black")) +
-  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Density")
+  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
 
 ```
 
@@ -418,7 +420,7 @@ class: inverse, center, middle
 
 # A case from 1981... _Pneumocystis_ pneumonia? <hr/>
 
-- What did we know about _Pneumocystis_ pneumonia in the United States in 1981?
+- How common is _Pneumocystis_ pneumonia?
 
 
 ---
@@ -693,8 +695,8 @@ c_graph <-
   add_node(label = 'Cohort', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Randomized\nControlled\nTrial', node_aes = node_aes(fontsize = 5.5, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Case-\nControl', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
-  add_node(label = 'Know\nDenominator', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
-  add_node(label = 'Dont Know\nDenominator', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'dodgerblue', fontcolor = 'black')) %>%
+  add_node(label = 'Denominator\nKnown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
+  add_node(label = 'Denominator\nNOT Known', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'dodgerblue', fontcolor = 'black')) %>%
   add_node(label = 'Measure\nOutcome\nIncidence', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Measure\nExposure\nOdds', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
   add_node(label = 'Relative\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
@@ -703,11 +705,11 @@ c_graph <-
   add_edge(from = 'Study\nDesign',to = 'Cohort', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Study\nDesign',to = 'Randomized\nControlled\nTrial', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Study\nDesign',to = 'Case-\nControl', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Cohort', to = 'Know\nDenominator', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Randomized\nControlled\nTrial', to = 'Know\nDenominator', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Case-\nControl', to = 'Dont Know\nDenominator', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Know\nDenominator', to = 'Measure\nOutcome\nIncidence', edge_aes = edge_aes(color = 'black')) %>%
-  add_edge(from = 'Dont Know\nDenominator', to = 'Measure\nExposure\nOdds', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Cohort', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Randomized\nControlled\nTrial', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Case-\nControl', to = 'Denominator\nNOT Known', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Denominator\nKnown', to = 'Measure\nOutcome\nIncidence', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Denominator\nNOT Known', to = 'Measure\nExposure\nOdds', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Measure\nOutcome\nIncidence', to = 'Relative\nRisk', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Measure\nExposure\nOdds', to = 'Odds\nRatio', edge_aes = edge_aes(color = 'black')) %>%
   add_edge(from = 'Relative\nRisk', to = 'AR\nARR\nNNT', edge_aes = edge_aes(color = 'black')) %>%
@@ -901,7 +903,12 @@ background-size: cover
 
 - NNT can be a clinically useful number.
 
-- ######### figure from Wickramasekaran et al Mycoses 2017
+
+---
+
+![an image](figs/Wickramasekaran_Mycoses_2017.jpg)
+
+.footnote[Wickramasekaran et al _Mycoses_ 2017]
 
 ---
 
