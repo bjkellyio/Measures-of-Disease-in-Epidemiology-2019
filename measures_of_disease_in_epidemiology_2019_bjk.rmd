@@ -56,6 +56,19 @@ xaringan::summon_remark()
 - Calculate prevalence, incidence, RR, and OR from study data.
 
 
+---
+
+Notes from John:
+
+a.       "Incidence rate" crept into the notes and lecture (I missed that again! sorry!).  I think we need to remove this term and stick with cumulative incidence and incidence density.  "Incidence rate" is still confusing (even to me because I think of it as just the 'colloquial' version of either.)
+
+b.       It would be good to have a separate slide on 'person time' and calculating person time.
+
+c.       I think we should use the term "Risk Difference" instead of "Absolute risk reduction."  This should always be "Ie-Iu" but in one of the examples in the lecture, it's reversed and it's presented as "Iu-Ie" which was confusing to them.  We could also define both terms and say RD=Ie-Iu and then absolute risk reduction has to do with the way in which the question is phrased (i.e., improvement is a good outcome or adverse event where the outcome is bad).
+
+d.       Calculating annual cumulative incidence on slides 23-24; I think the answer given during lecture was 0.3 but I think it should actually be 0.15.  This was confusing to them (and me).
+
+
 
 ---
 
@@ -73,7 +86,7 @@ xaringan::summon_remark()
 
 - How to use these tools?
 
-     - precise definitions: <ins>RR vs OR</ins> & <ins>cumulative incidence vs incidence density</ins>
+     - precise definitions (e.g., RR vs OR, cumulative incidence vs incidence density)
      - a bit of arithmetic
 
 ---
