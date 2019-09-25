@@ -34,7 +34,7 @@ filenames <- sprintf("slides/slides_%02d.png", 1:pages)
 
 # create slides/ and convert PDF to PNG files
 dir.create("slides")
-pdftools::pdf_convert("slides.pdf", filenames = filenames)
+pdftools::pdf_convert("slides.pdf", filenames = filenames, dpi = 600)
 
 # Template for markdown containing slide images
 slide_images <- glue::glue("
