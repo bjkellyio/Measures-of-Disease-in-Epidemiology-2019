@@ -22,39 +22,13 @@ options(htmltools.dir.version = FALSE)
 xaringan::summon_remark()
 ```
 
-# Disclosures <hr/>
+## Disclosures <hr/>
 
 - No conflicts of interest.
 
 - Too many topics covered.
 
 - May contain GIFs.
-
----
-
-# Learning Objectives <hr/>
-
---
-
-- Describe types of data and data distributions.
-
---
-
-- Use population data in the description of health and disease.
-
---
-
-- Explain the meaning of:
-
-    - prevalence
-    - incidence (<ins>warning</ins>: multiple types)
-    - relative risk (RR)
-    - odds ratio (OR)
-
---
-
-- Calculate prevalence, incidence, RR, and OR from study data.
-
 
 ---
 
@@ -72,28 +46,50 @@ d.       Calculating annual cumulative incidence on slides 23-24; I think the an
 
 ---
 
-# Learning Objectives <hr/>
+## Learning Objectives <hr/>
 
---
+- How we measure: describe types of data and data distributions.
 
-- Why use these tools (prevalence, incidence, RR, OR)?
+- Measures of disease occurrence: use population data in the description of health and disease.
 
-     - inform differential diagnoses & counsel patients
-     - design public health interventions & direct new diagnostics/therapies
-     - understand distributions and determinants of diseases
+- Key concepts -- explain the meaning of:
 
---
+    - prevalence
+    - incidence (<ins>warning</ins>: multiple types)
+    - relative risk (RR)
+    - odds ratio (OR)
 
-- How to use these tools?
+- Implementation: calculate prevalence, incidence, RR, and OR from study data (2x2 tables!).
 
-     - precise definitions (e.g., RR vs OR, cumulative incidence vs incidence density)
-     - a bit of arithmetic
 
 ---
 
-# A case from 1981... <hr/>
+## Why Do I Care? ... <hr/>
 
-- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+- Why use these tools (prevalence, incidence, RR, OR)?
+
+     - inform differential diagnoses & counsel patients (<ins>your job</ins>)  
+     
+     - design public health interventions & direct new diagnostics/therapies (society!)   
+     
+     - understand distributions and determinants of diseases (science!)  
+
+
+---
+
+## ... What Do I Need to Know for the Test? <hr/>
+
+- How to use these tools:
+
+     - precise definitions 
+     (e.g., RR vs OR, cumulative incidence vs incidence density)  
+     
+     - a bit of arithmetic  
+
+
+---
+
+## A case from 1981... <hr/>
 
 
 ---
@@ -109,6 +105,13 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 
 ---
 
+## A case from 1981... <hr/>  
+
+- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+
+---
+
 background-image: url(figs/hiv_timeline_mmwr_1981.png)
 background-size: contain
 
@@ -120,10 +123,10 @@ Image credit: [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aid
 
 ---
 
-# MMWR June 5, 1981 <hr/>
+## MMWR June 5, 1981 <hr/>
 
 .pull-left[
-_All the above observations suggest the possibility of a cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of_ P. carinii _infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia._
+_All the above observations suggest the possibility of a <mark>cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis</mark>. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of_ P. carinii _infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia._
 
 \- Gottlieb MS et al <ins>MMWR</ins> 1981
 ]
@@ -135,53 +138,58 @@ _All the above observations suggest the possibility of a cellular-immune dysfunc
 
 ---
 
-# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
+## A case from 1981... _Pneumocystis_ pneumonia? <hr/>
 
 - 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
 
-- What do you want to know and why?
-
---
+- What do you want to know and why?  
 
     - history
     - vital signs
     - physical exam
     - laboratory test values
-    - radiology
-
---
+    - radiology  
 
 - What is his diagnosis? Does he have _Pneumocystis_ pneumonia?
 
+
 ---
 
-# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
+## A case from 1981... _Pneumocystis_ pneumonia? <hr/>
 
 - Differential diagnosis must be grounded in understanding:
 
-    - distributions of disease: we'll learn about **prevalence** & **incidence**
-    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes
-
+    - distributions of disease: we'll learn about **prevalence** & **incidence**  
+    
+    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes  
+  
+<br/>
+  
 - In 1981, _Pneumocystis_ was known to be a low <ins>prevalence</ins> disease.
 
 - New data would show an increasing <ins>incidence</ins>.
+  
 <br/>
-<br/>
-<br/>
-*Note: in infectious diseases, the differential is always evolving*
+  
+<p style="text-align: center;"> <mark>Note: in infectious diseases, the differential is always evolving</mark> </p>
+
+
 
 
 ---
 
-# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
+## A case from 1981... _Pneumocystis_ pneumonia? <hr/>
 
-- We want to know how the distribution of _Pneumocystis_ pneumonia is changing.
+- Does our patient have _Pneumocystis_ pneumonia?
 
-- We want to know whether our patient has _Pneumocystis_ pneumonia.
+- How is the distribution of _Pneumocystis_ pneumonia changing?
 
-- This is a dichotomous measure (yes/no _Pneumocystis_).
-
-- We have to start by thinking about how continuous data become dichotomous.
+- What are the determinants of _Pneumocystis_ pneumonia?
+  
+<br/>
+  
+<p style="text-align: center;"> <mark>Note: questions depend on <strong>dichotomous</strong> definition of disease (yes/no <em>Pneumocystis</em>)</mark> </p>
+  
 
 
 ---
@@ -189,11 +197,11 @@ class: inverse, center, middle
 
 # Data Types & Data Distributions
 
+
+
 ---
 
-# Data Types <hr/>
-
---
+## Data Types <hr/>
 
 - Vital signs and physical exam:
 
@@ -201,23 +209,20 @@ class: inverse, center, middle
     - heart / respiratory rate (beats or breaths / min) - continuous
     - oxygen saturation (%) - continuous
 
---
-
 - Laboratory values:
 
     - white blood cell count (cells / uL) - continuous
     - *if it weren't 1981... CD4 cell count (cells / uL) and HIV viral load (copies / mL) - continuous*
-
---
 
 - Radiology:
 
     - ground glass - dichotomous
 
 
+
 ---
 
-# Data Types <hr/>
+## Data Types <hr/>
 
 - __Dichotomous__: history of diabetes, history of breast cancer; survival, pneumonia, MI
 
@@ -226,16 +231,17 @@ class: inverse, center, middle
 - __Nominal__: race, ethnicity, state of residence
 
 - __Ordinal__: age category, weight category; patient satisfaction
+  
 <br/>
-<br/>
-<br/>
-*Note: in medicine, we regard diagnoses and clinical decisions as dichotomous*
-
+  
+<p style="text-align: center;"> <mark>Note: in medicine, we regard diagnoses and clinical decisions as dichotomous</mark> </p>
+  
+  
 ---
 
-# Characterizing Continuous Data <hr/>
+## Characterizing Continuous Data: Normal <hr/>
 
-- "Normally distributed" data can be well characterized by their mean and standard deviation.
+- "Normally distributed" data are well characterized by their mean and standard deviation.
 
     - **mean ( $\mu$)**:
 $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
@@ -245,7 +251,7 @@ $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
 
 ---
 
-# Characterizing Continuous Data <hr/>
+## Characterizing Continuous Data: Normal <hr/>
 
 - What makes standard deviation greater?
 
@@ -268,8 +274,8 @@ pcp_o2 %>%
   geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
   facet_wrap(facets = ~ sd_type, ncol = 2) +
   scale_x_continuous(limits = c(0.8,1)) +
-  theme_bw() +
-  theme(legend.position = 'none', text = element_text(size = 24), line = element_line(colour = "black")) +
+  theme_classic() +
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22)) +
   labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
 
 ```
@@ -278,7 +284,7 @@ pcp_o2 %>%
 
 ---
 
-# Reflection Question <hr/>
+## Reflection Question <hr/>
 
 What makes standard deviation greater?
 
@@ -290,26 +296,29 @@ What makes standard deviation greater?
 
 - (D) Greater difference between extreme and mean values? 
 
+
+
 ---
 
-# Characterizing Continuous Data <hr/>
+## Characterizing Continuous Data: Skewed or Uniform <hr/>
 
 - “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well.
 
-- For uniform or skewed data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable. <br/>
-<br/>
-<br/>
-*Note: for normal data, mean and median have the same value*
+- For uniform or skewed data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+  
+- For normal data, mean and median have the same value.  
+
+
 
 ---
 
-# Characterizing Continuous Data <hr/>
+## Characterizing Continuous Data: Skewed or Uniform <hr/>
 
 ```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4.5, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
 
-tibble("Uniform" = runif(n = 1000, min = 0.85, max = 0.95), "Skewed" = log(rnorm(n = 1000, mean = exp(0.9), sd = exp(0.3)))) %>%
+tibble("Uniform" = runif(n = 1000, min = 0.85, max = 0.95), "Skewed" = rbeta(1000,9,1)) %>%
   gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
 
 pcp_skew_o2 %>%
@@ -320,16 +329,17 @@ pcp_skew_o2 %>%
 
 pcp_skew_o2 %>%
   ggplot(data = .) + 
-  geom_histogram(aes(x = o2_sat, fill = dis_type), colour = "black") +
+  geom_histogram(aes(x = o2_sat, fill = dis_type), colour = "black", binwidth = 0.005) +
   #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
   #geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
-  geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue") +
-  geom_vline(data = pcp_dist, aes(xintercept = mean), colour = "darkgreen") +
+  geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue", size = 2) +
+  geom_vline(data = pcp_dist, aes(xintercept = mean), colour = "black", size = 2) +
   facet_wrap(facets = ~ dis_type, ncol = 2) +
   scale_x_continuous(limits = c(0.8,1)) +
-  theme_bw() +
-  theme(legend.position = 'none', text = element_text(size = 24), line = element_line(colour = "black")) +
-  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
+  theme_classic() +
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22), plot.subtitle = element_text(size = 22)) +
+  labs(title = "1000 Subjects with Pneumocystis*", subtitle = "(Blue Line = Median & Black Line = Mean)", x = "Oxygen Saturation (%)", y = "Count")
+
 
 ```
 
@@ -340,7 +350,7 @@ pcp_skew_o2 %>%
 
 ---
 
-# Characterizing Continuous Data <hr/>
+## Characterizing Continuous Data <hr/>
 
 - Median and mode depend on ranking the values:
 
@@ -353,9 +363,11 @@ pcp_skew_o2 %>%
     - the third quartile is the "middle" value of the second half of the ordered set
     - IQR is the range of values between first and third quartiles
 
+
+
 ---
 
-# Reflection Question <hr/>
+## Reflection Question <hr/>
 
 Which is least affected by outliers?
 
@@ -368,57 +380,42 @@ Which is least affected by outliers?
 
 ---
 
-# Characterizing Continuous Data <hr/>
-
---
+## How to Characterize Continuous Data <hr/>
 
 - Pair a measure of central tendency with a measure of dispersion:
 
-    - mean and SD
+    - mean and SD   
     
-    - median and IQR
+    - median and IQR  
 
---
+- In doing so, account for <ins>uncertainty</ins> in measures.  
 
-- In doing so, account for **uncertainty** in measures.
 
---
 
-- But if we use a threshold to transform continuous data into dichotomous data, we lose information about uncertainty.
+---
 
---
+## Dichotomizing Continuous Data <hr/>
+
+- Using a threshold to transform continuous data into dichotomous data, means losing information about uncertainty.
 
 - This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?
 
-
+- Remember the diagnosis lecture: what threshold of oxygen saturation diagnoses _Pneumocystis_ pneumonia?
+  
+  
+  
 ---
 
-# Dichotomizing Continuous Data <hr/>
+## Dichotomania <hr/>
 
-- Imagine diagnosing _Pneumocystis_ pneumonia based on threshold of oxygen saturation:
-
-
-
----
-
-# Dichotomania <hr/>
-
---
-
-- As we discuss prevalence, incidence, RR, and OR, we will focus on __dichotomous__ exposures and outcomes.
-
---
+- As we discuss prevalence, incidence, RR, and OR, we will focus on <ins>dichotomous</ins> exposures and outcomes.
 
 - Remember -- with dichotomous data:
 
     - information is lost
     - misclassification is common
 
---
-
 - But we're doing it anyway &#x1F600; ... why?
-
---
 
 - Medicine focuses on dichotomous diagnostic and treatment decisions.
 
@@ -431,14 +428,14 @@ class: inverse, center, middle
 
 ---
 
-# A case from 1981... _Pneumocystis_ pneumonia? <hr/>
+## A case from 1981... _Pneumocystis_ pneumonia? <hr/>
 
 - How common is _Pneumocystis_ pneumonia?
 
 
 ---
 
-# Prevalence <hr/>
+## Prevalence <hr/>
 
 --
 
@@ -458,7 +455,7 @@ class: inverse, center, middle
 
 ---
 
-# Prevalence of _Pneumocystis_ pneumonia <hr/>
+## Prevalence of _Pneumocystis_ pneumonia <hr/>
 
 - In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP:
 
@@ -475,7 +472,7 @@ class: inverse, center, middle
 
 ---
 
-# Prevalence <hr/>
+## Prevalence <hr/>
 
 - Prevalence is **NOT** the same as risk.
 
@@ -486,7 +483,7 @@ class: inverse, center, middle
 
 ---
 
-# Reflection Question <hr/>
+## Reflection Question <hr/>
 
 How can an infection have high prevalence if it occurs infrequently?
 
@@ -507,7 +504,7 @@ background-size: contain
 
 ---
 
-# Incidence <hr/>
+## Incidence <hr/>
 
 - Among MSM, _Pneumocystis_ pneumonia is occurring more frequently...
 
@@ -518,7 +515,7 @@ background-size: contain
 
 ---
 
-# Notes on Cumulative Incidence <hr/>
+## Notes on Cumulative Incidence <hr/>
 
 - Cumulative incidence:
 
@@ -531,7 +528,7 @@ background-size: contain
 
 ---
 
-# Notes on Incidence Density <hr/>
+## Notes on Incidence Density <hr/>
 
 - Incidence density:
 
@@ -544,7 +541,7 @@ background-size: contain
 
 ---
 
-# Notes on Population at Risk <hr/>
+## Notes on Population at Risk <hr/>
 
 - In a population, individuals are at risk of disease if they: 
 
@@ -556,7 +553,7 @@ background-size: contain
 
 ---
 
-# Caution with “Incidence Rate” <hr/>
+## Caution with “Incidence Rate” <hr/>
 
 - “Incidence rate” is used to mean two different things:
 
@@ -572,7 +569,7 @@ background-size: cover
 
 ---
 
-# Incidence: Which Denominator? <hr/>
+## Incidence: Which Denominator? <hr/>
 
 - To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:
 10 subjects enrolled at the start of a two-year observation period
@@ -588,7 +585,7 @@ background-size: contain
 
 ---
 
-# Incidence: Which Denominator? <hr/>
+## Incidence: Which Denominator? <hr/>
 
 - To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:
 10 subjects enrolled at the start of a two-year observation period
@@ -612,7 +609,7 @@ background-size: contain
 
 ---
 
-# Reflection Question <hr/>
+## Reflection Question <hr/>
 
 Your patient with HIV is considering starting prophylactic antibiotics for PCP. You have PCP prevalence, cumulative incidence, and incidence density data available. Which data provide the most precise information on the patient’s risk of PCP off of prophylaxis?
 
@@ -624,7 +621,7 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 
 ---
 
-# Prevalence vs Incidence <hr/>
+## Prevalence vs Incidence <hr/>
 
 - Can you tell prevalence from incidence?
 
@@ -635,7 +632,7 @@ background-size: contain
 
 ---
 
-# Prevalence vs Incidence <hr/>
+## Prevalence vs Incidence <hr/>
 
 - Can you tell prevalence from incidence?
 
@@ -661,7 +658,7 @@ background-size: contain
 ---
 class: inverse, center, middle
 
-# We're not done yet...
+## We're not done yet...
 
 ---
 
@@ -671,7 +668,7 @@ background-size: cover
 ---
 class: inverse, center, middle
 
-# ... and coming now are the formulas you really need to know...
+## ... and coming now are the formulas you really need to know...
 
 ---
 
@@ -682,11 +679,11 @@ background-size: cover
 
 class: inverse, center, middle
 
-# Inference from Epidemiologic Measures
+## Inference from Epidemiologic Measures
 
 ---
 
-# Basics of Study Types <hr/>
+## Basics of Study Types <hr/>
 
 - We want to understand the relationship between risk factors (exposures) and disease (outcomes). For example, between CD4 count and PCP in HIV.
 
@@ -746,7 +743,7 @@ c_graph %>% render_graph()
 
 ---
 
-# 2x2 Table <hr/>
+## 2x2 Table <hr/>
 
 .pull-left[
 - Dichotomous exposures and outcomes.
@@ -787,7 +784,7 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 
 ---
 
-# 2x2 Table: Calculation for Cohort/Trial <hr/>
+## 2x2 Table: Calculation for Cohort/Trial <hr/>
 
 .pull-left[
 - Relative Risk (RR)= [A/(A+B) / C/(C+D)]
@@ -829,7 +826,7 @@ background-size: contain
 
 ---
 
-# Relative Risk (RR) <hr/>
+## Relative Risk (RR) <hr/>
 
 - Compares risk between two groups of people:
 
@@ -838,7 +835,7 @@ background-size: contain
 
 ---
 
-# Absolute Risk (AR) & Reduction (ARR) <hr/>
+## Absolute Risk (AR) & Reduction (ARR) <hr/>
 
 - Absolute risk (AR): risk of developing a given disease over a period of time
 
@@ -851,7 +848,7 @@ background-size: contain
 
 ---
 
-# Number Needed to Treat (NNT) <hr/>
+## Number Needed to Treat (NNT) <hr/>
 
 - Number needed to treat (NNT): Number of patients who need to be treated for one person to benefit from the treatment  (= 1/ARR)
 
@@ -866,7 +863,7 @@ background-size: contain
 
 ---
 
-# 2x2 Table: Calculation for Case-Control <hr/>
+## 2x2 Table: Calculation for Case-Control <hr/>
 
 - Odds Ratio (OR)= (A/C)/(B/D) = AD / BC
 
@@ -878,7 +875,7 @@ background-size: contain
 
 ---
 
-# Utility of Odds Ratio (OR) & Case-Control <hr/>
+## Utility of Odds Ratio (OR) & Case-Control <hr/>
 
 - if the disease incidence is low, then:
 
@@ -895,7 +892,7 @@ background-size: contain
 
 class: inverse, center, middle
 
-# Conclusions
+## Conclusions
 
 ---
 
@@ -904,7 +901,7 @@ background-size: cover
 
 ---
 
-# Measures of Disease in Clinical Epidemiology <hr/>
+## Measures of Disease in Clinical Epidemiology <hr/>
 
 - Prevalence is determined by incidence and survival time.
 
