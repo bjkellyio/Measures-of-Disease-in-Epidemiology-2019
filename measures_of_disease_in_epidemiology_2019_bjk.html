@@ -19,7 +19,7 @@ class: center, middle, inverse, title-slide
 ## <hr/>
 ### Brendan J. Kelly
 ### Infectious Diseases &amp; Epidemiology<br/><br/><img src="penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg" width="160" />
-### updated: 2019-10-11
+### updated: 2019-10-12
 
 ---
 
@@ -38,7 +38,6 @@ class: center, middle, inverse, title-slide
 
 Notes from John:
 
-a.       "Incidence rate" crept into the notes and lecture (I missed that again! sorry!).  I think we need to remove this term and stick with cumulative incidence and incidence density.  "Incidence rate" is still confusing (even to me because I think of it as just the 'colloquial' version of either.)
 
 b.       It would be good to have a separate slide on 'person time' and calculating person time.
 
@@ -92,8 +91,9 @@ d.       Calculating annual cumulative incidence on slides 23-24; I think the an
 
 
 ---
+class: inverse, center, middle
 
-## A case from 1981... &lt;hr/&gt;
+# A case from 1981...
 
 
 ---
@@ -132,11 +132,12 @@ Image credit: [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aid
 .pull-left[
 _All the above observations suggest the possibility of a &lt;mark&gt;cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis&lt;/mark&gt;. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of_ P. carinii _infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia._
 
-\- Gottlieb MS et al &lt;ins&gt;MMWR&lt;/ins&gt; 1981
+&lt;p style="margin-left: 30px"&gt; - Gottlieb MS et al &lt;ins&gt;MMWR&lt;/ins&gt; 1981 &lt;/p&gt; 
+
 ]
 
 .pull-right[
-![an image](figs/cover_mmwr_1981.jpg)
+![](figs/cover_mmwr_1981.jpg)
 ]
 
 
@@ -167,16 +168,10 @@ _All the above observations suggest the possibility of a &lt;mark&gt;cellular-im
     
     - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes  
   
-&lt;br/&gt;
-  
 - In 1981, _Pneumocystis_ was known to be a low &lt;ins&gt;prevalence&lt;/ins&gt; disease.
 
-- New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;.
+- New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;. (In ID, the differential is always evolving).  
   
-&lt;br/&gt;
-  
-&lt;p style="text-align: center;"&gt; &lt;mark&gt;Note: in infectious diseases, the differential is always evolving&lt;/mark&gt; &lt;/p&gt;
-
 
 
 
@@ -236,9 +231,6 @@ class: inverse, center, middle
 
 - __Ordinal__: age category, weight category; patient satisfaction
   
-&lt;br/&gt;
-  
-&lt;p style="text-align: center;"&gt; &lt;mark&gt;Note: in medicine, we regard diagnoses and clinical decisions as dichotomous&lt;/mark&gt; &lt;/p&gt;
   
   
 ---
@@ -252,6 +244,12 @@ class: inverse, center, middle
 
     - **standard deviation (SD or `\(\sigma\)`)**:
 `$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$`
+  
+&lt;br/&gt;
+  
+&lt;p style="text-align: center;"&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/p&gt;
+
+
 
 ---
 
@@ -262,6 +260,8 @@ class: inverse, center, middle
 &lt;img src="measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/continuous_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
 
 .footnote[[*] Data made up.]
+
+
 
 ---
 
@@ -308,14 +308,15 @@ What makes standard deviation greater?
 
 - Median and mode depend on ranking the values:
 
-    - median is the “middle value” when data are ordered
-    - mode is most frequently occurring value.
+    - median is the “middle value” when data are ordered / ranked 
+    - mode is most frequently occurring value  
+    
 
 - Interquartile range (IQR) also depends on ranking the values:
 
     - the first quartile is the "middle" value of the first half of the ordered set
     - the third quartile is the "middle" value of the second half of the ordered set
-    - IQR is the range of values between first and third quartiles
+    - IQR is the range of values between first and third quartiles  
 
 
 
@@ -330,6 +331,7 @@ Which is least affected by outliers?
 - (B) Median?
 
 - (C) Mode?
+
 
 
 ---
@@ -349,13 +351,12 @@ Which is least affected by outliers?
 ---
 
 ## Dichotomizing Continuous Data &lt;hr/&gt;
-
-- Using a threshold to transform continuous data into dichotomous data, means losing information about uncertainty.
-
-- This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?
-
-- Remember the diagnosis lecture: what threshold of oxygen saturation diagnoses _Pneumocystis_ pneumonia?
   
+- Remember the diagnosis lecture: no perfect threshold of oxygen saturation with which to diagnose _Pneumocystis_ pneumonia.
+
+- Using a threshold to transform continuous data into dichotomous data, means losing information about uncertainty.  
+
+- This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
   
   
 ---
@@ -366,8 +367,9 @@ Which is least affected by outliers?
 
 - Remember -- with dichotomous data:
 
-    - information is lost
-    - misclassification is common
+    - information about uncertainty is lost  
+    
+    - misclassification is a risk  
 
 - But we're doing it anyway &amp;#x1F600; ... why?
 
@@ -380,31 +382,27 @@ class: inverse, center, middle
 # Measures of Disease Occurrence
 
 
----
-
-## A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
-
-- How common is _Pneumocystis_ pneumonia?
-
 
 ---
 
 ## Prevalence &lt;hr/&gt;
 
---
-
 - How common is _Pneumocystis_ pneumonia?
-
---
 
 - Prevalence: 
 
-    - number with the disease / number in specified population
-    - **point prevalence**: at a specific point in time
-    - **period prevalence**: during a given period (e.g., 12-month prevalence)
-    - a proportion (unitless, ranges from 0-1)
-    - numerator includes all people who have the disease, both new and ongoing cases
-    - represents a cross-sectional “snapshot” of the population
+    - number with the disease / number in specified population  
+    
+    - **point prevalence**: at a specific point in time  
+    
+    - **period prevalence**: during a given period (e.g., 12-month prevalence)  
+    
+    - a proportion (unitless, ranges from 0-1)  
+    
+    - numerator includes all people who have the disease, both new and ongoing cases  
+    
+    - represents a &lt;ins&gt;cross-sectional&lt;/ins&gt; “snapshot” of the population
+
 
 
 ---
@@ -413,15 +411,16 @@ class: inverse, center, middle
 
 - In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP:
 
-    - period prevalence published in 1974*: 579 cases (194 confirmed) over 3 years.
+    - period prevalence published in 1974&lt;sup&gt;*&lt;/sup&gt;: 579 cases (194 confirmed) over 3 years
     - what’s the denominator?
     - what’s the prevalence?
 
 - __Point prevalence__ of _Pneumocystis_ would be vanishingly small given limited duration of disease.
 
-- In 1967, even the __period prevalence__ is very small.
+- From 1967-1974, even the __period prevalence__ was very small.
 
 .footnote[[*] Walzer PD et al _Annals Int Med_ 1974]
+
 
 
 ---
@@ -432,7 +431,8 @@ class: inverse, center, middle
 
 - Prevalence numerator includes all people who have the disease, both new and ongoing cases, so represents a cross-sectional “snapshot” of the population. 
 
-- Prevalence does **NOT** estimate the risk of developing the disease because prevalence does not fully account for time (are the measured cases old cases or new cases?).
+- Prevalence does **NOT** estimate the risk of developing the disease because &lt;mark&gt;prevalence does **NOT** fully account for time &lt;/mark&gt; (are the measured cases old cases or new cases?).
+
 
 
 ---
@@ -452,8 +452,30 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-background-image: url(figs/nejm_combined.png)
-background-size: contain
+## A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
+
+.pull-left[
+![](figs/nejm_combined.png)
+]
+
+.pull-right[
+
+&lt;br/&gt;
+
+- new _Pneumocystis_ cases (NYC&lt;sup&gt;1&lt;/sup&gt;): 13 cases over 21 months  
+
+- new _Pneumocystis_ cases (LA&lt;sup&gt;2&lt;/sup&gt;): 5 cases over 7 months  
+
+- concurrent opportunistic infections:  
+
+    - CMV
+    - _Candida_
+    - Kaposi's sarcoma  
+
+]
+
+.footnote[[1,2] Masur H et al _NEJM_ 1981; Gottlieb MS et al _MMWR_ 1981]
+
 
 
 ---
@@ -464,7 +486,8 @@ background-size: contain
 
 - Incidence: occurrence of new cases over a given period of time:
 
-    - **cumulative incidence**: # new cases / # population at risk @ start time interval
+    - **cumulative incidence**: # new cases / # population at risk @ start time interval  
+    
     - **incidence density**: # new cases / person-time at risk (more precise)
 
 ---
@@ -473,12 +496,19 @@ background-size: contain
 
 - Cumulative incidence:
 
-    - must specify population consisting of at-risk individuals
-    - must specify a time period of observation
-    - numerator = all new cases during a specified time period 
-    - denominator = all individuals at risk in the specified population at the start of the specified time period (does NOT account for deaths due to other causes)
-    - ranges from 0 to 1 (a.k.a., “incidence proportion”)
-    - like prevalence, is a proportion and therefore has no units (but only makes sense if you specify the time period of observation, e.g., % per year)
+    - must specify population consisting of at-risk individuals  
+    
+    - must specify a time period of observation  
+    
+    - &lt;ins&gt;numerator&lt;/ins&gt; = all new cases during a specified time period  
+    
+    - &lt;ins&gt;denominator&lt;/ins&gt; = all individuals at risk in the specified population at the start of the specified time period (does NOT account for deaths due to other causes)  
+    
+    - ranges from 0 to 1 (a.k.a., “incidence proportion”)  
+    
+    - like prevalence, is a proportion and therefore has no units (but only makes sense if you specify the time period of observation, e.g., % per year)  
+    
+    
 
 ---
 
@@ -486,11 +516,16 @@ background-size: contain
 
 - Incidence density:
 
-    - in a specified population consisting of at risk individuals over a specified period of observation, more precisely quantifies the person-time at risk
-    - numerator = all new cases during a specified time period 
-    - denominator = the sum, over all individuals in the population, of time at risk until the event of interest, death, loss to follow-up, the end of the study, or when they are no longer at risk for whatever reason
-    - not a proportion; range depends on the units of person-time (0 to infinity)
-    - **accounts for death from other causes!**
+    - in a specified population consisting of at risk individuals over a specified period of observation, more precisely quantifies the person-time at risk  
+    
+    - &lt;ins&gt;numerator&lt;/ins&gt; = all new cases during a specified time period  
+    
+    - &lt;ins&gt;denominator&lt;/ins&gt; = the sum, over all individuals in the population, of time at risk until the event of interest, death, loss to follow-up, the end of the study, or when they are no longer at risk for whatever reason  
+    
+    - not a proportion; range depends on the units of person-time (0 to infinity)  
+    
+    - &lt;mark&gt;accounts for death from other causes!&lt;/mark&gt;
+
 
 
 ---
@@ -499,37 +534,51 @@ background-size: contain
 
 - In a population, individuals are at risk of disease if they: 
 
-    (1) do not have the disease at baseline
-    (2) are capable of developing the disease(e.g., have the organ of interest; have not been successfully immunized against the disease;haven’t developed lifelong immunity)
+    (1) do not have the disease at baseline  
+    
+    (2) are capable of developing the disease(e.g., have the organ of interest; have not been successfully immunized against the disease;haven’t developed lifelong immunity)  
+    
 
 - The difference between cumulative incidence and incidence density is that the latter attempts a more precise quantification of population at risk -- it’s harder to evaluate, but more informative if you can.
 
 
----
-
-## Caution with “Incidence Rate” &lt;hr/&gt;
-
-- “Incidence rate” is used to mean two different things:
-
-    - number new cases / number population at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)
-    - number new cases / person-time at risk (i.e., incidence density, the precise rate)
 
 
 ---
 
-background-image: url(gifs/frink_shake.gif)
-background-size: cover
+## Notes on "Person-Time" &lt;hr/&gt;
+
+- To improve precision of risk estimate (&lt;ins&gt;incidence density&lt;/ins&gt;), we measure:  
+
+    - population at risk of outcome  
+    
+    - actual time at risk (during which outcome could)
+
+- **Person-time**:  
+
+    - denominator for incidence density  
+    
+    - the product of population at risk and time at risk (e.g., patient-months)
+
 
 
 ---
 
 ## Incidence: Which Denominator? &lt;hr/&gt;
 
-- To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:
-10 subjects enrolled at the start of a two-year observation period
+- To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:  
 
-    - 5 cases of PCP (red on plot); each receives 3 weeks of antibiotic treatment
-    - 2 subjects started on PCP prophylaxis during follow-up (blue on plot)
+    - 100 high-risk subjects enrolled at the start of a two-year observation period  
+    
+    - 5 cases of PCP (red on plot); each receives 3 weeks of antibiotic treatment  
+    
+    - 2 subjects started on PCP prophylaxis during follow-up (blue on plot)  
+
+
+---
+
+&lt;img src="measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/pcp_prevalence-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -537,6 +586,7 @@ background-image: url(figs/pcp_incidence_study.png)
 background-size: contain
 
 
+
 ---
 
 ## Incidence: Which Denominator? &lt;hr/&gt;
@@ -546,8 +596,6 @@ background-size: contain
 
     - 5 cases of PCP (red on plot); each receives 3 weeks of antibiotic treatment
     - 2 subjects started on PCP prophylaxis during follow-up (blue on plot)
-
---
 
 - What’s the annual cumulative incidence of PCP?
 
@@ -555,10 +603,31 @@ background-size: contain
     - what if the end of the black line is death / loss to follow-up?
 
 
+
 ---
 
 background-image: url(figs/pcp_incidence_study.png)
 background-size: contain
+
+
+
+---
+
+## Beware the Phrase “Incidence Rate”! &lt;hr/&gt;
+
+- “Incidence rate” is used to mean two different things:
+
+    - number new cases / number population at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
+    
+    - number new cases / person-time at risk (i.e., incidence density, the precise rate)
+
+
+
+---
+
+background-image: url(gifs/frink_shake.gif)
+background-size: cover
+
 
 
 ---
@@ -573,32 +642,34 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 
 - (C) incidence density
 
+
+
 ---
 
 ## Prevalence vs Incidence &lt;hr/&gt;
 
 - Can you tell prevalence from incidence?
+
+
 
 ---
 
 background-image: url(figs/bathtub_labelled.svg)
 background-size: contain
 
+
+
 ---
 
 ## Prevalence vs Incidence &lt;hr/&gt;
 
 - Can you tell prevalence from incidence?
 
---
-
 - pancreatic cancer versus leukemia:
 
     - new cases per year: pancreatic 24,120; leukemia 23,370
     - deaths per year: pancreatic 19,850; leukemia 10,240
     - which is more prevalent?
-
---
 
 - HIV in Rakai, Uganda 1994-2003*:
 
@@ -609,31 +680,42 @@ background-size: contain
 .footnote[[*] Wawer M et al CROI 2005; Roehr B BMJ 2005]
 
 
+
 ---
 class: inverse, center, middle
 
-## We're not done yet...
+# We're not done yet...
+
+
 
 ---
 
 background-image: url(gifs/abbi_no.gif)
 background-size: cover
 
+
+
 ---
 class: inverse, center, middle
 
-## ... and coming now are the formulas you really need to know...
+# ... and coming now are the formulas you really need to know...
+
+
 
 ---
 
 background-image: url(gifs/abbi_no.gif)
 background-size: cover
+
+
 
 ---
 
 class: inverse, center, middle
 
 ## Inference from Epidemiologic Measures
+
+
 
 ---
 
@@ -648,10 +730,13 @@ class: inverse, center, middle
 
 - But do NOT know this generally in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know how many in population).
 
+
+
 ---
 
-<div id="htmlwidget-216a81042aee92961a79" style="width:1080px;height:648px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-216a81042aee92961a79">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Study\nDesign\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-3,0!\"] \n  \"2\" [label = \"Cohort\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,0!\"] \n  \"3\" [label = \"Randomized\nControlled\nTrial\", color = \"black\", fontsize = \"5.5\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,1!\"] \n  \"4\" [label = \"Case-\nControl\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,-1!\"] \n  \"5\" [label = \"Denominator\nKnown\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#00FF00\", pos = \"-1,0.5!\"] \n  \"6\" [label = \"Denominator\nNOT Known\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#1E90FF\", pos = \"-1,-0.5!\"] \n  \"7\" [label = \"Measure\nOutcome\nIncidence\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,0.5!\"] \n  \"8\" [label = \"Measure\nExposure\nOdds\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,-0.5!\"] \n  \"9\" [label = \"Relative\nRisk\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,0.5!\"] \n  \"10\" [label = \"Odds\nRatio\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,-0.5!\"] \n  \"11\" [label = \"AR\nARR\nNNT\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"2,0.5!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"1\"->\"3\" [color = \"black\"] \n\"1\"->\"4\" [color = \"black\"] \n\"2\"->\"5\" [color = \"black\"] \n\"3\"->\"5\" [color = \"black\"] \n\"4\"->\"6\" [color = \"black\"] \n\"5\"->\"7\" [color = \"black\"] \n\"6\"->\"8\" [color = \"black\"] \n\"7\"->\"9\" [color = \"black\"] \n\"8\"->\"10\" [color = \"black\"] \n\"9\"->\"11\" [color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b87f2151a2a728669175" style="width:1080px;height:648px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b87f2151a2a728669175">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Study\nDesign\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-3,0!\"] \n  \"2\" [label = \"Cohort\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,0!\"] \n  \"3\" [label = \"Randomized\nControlled\nTrial\", color = \"black\", fontsize = \"5.5\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,1!\"] \n  \"4\" [label = \"Case-\nControl\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,-1!\"] \n  \"5\" [label = \"Denominator\nKnown\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#00FF00\", pos = \"-1,0.5!\"] \n  \"6\" [label = \"Denominator\nNOT Known\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#1E90FF\", pos = \"-1,-0.5!\"] \n  \"7\" [label = \"Measure\nOutcome\nIncidence\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,0.5!\"] \n  \"8\" [label = \"Measure\nExposure\nOdds\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,-0.5!\"] \n  \"9\" [label = \"Relative\nRisk\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,0.5!\"] \n  \"10\" [label = \"Odds\nRatio\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,-0.5!\"] \n  \"11\" [label = \"AR\nARR\nNNT\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"2,0.5!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"1\"->\"3\" [color = \"black\"] \n\"1\"->\"4\" [color = \"black\"] \n\"2\"->\"5\" [color = \"black\"] \n\"3\"->\"5\" [color = \"black\"] \n\"4\"->\"6\" [color = \"black\"] \n\"5\"->\"7\" [color = \"black\"] \n\"6\"->\"8\" [color = \"black\"] \n\"7\"->\"9\" [color = \"black\"] \n\"8\"->\"10\" [color = \"black\"] \n\"9\"->\"11\" [color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
 
 
 ---
