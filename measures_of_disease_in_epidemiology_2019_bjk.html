@@ -34,14 +34,6 @@ class: center, middle, inverse, title-slide
 
 - May contain GIFs.
 
----
-
-Notes from John:
-
-c.       I think we should use the term "Risk Difference" instead of "Absolute risk reduction."  This should always be "Ie-Iu" but in one of the examples in the lecture, it's reversed and it's presented as "Iu-Ie" which was confusing to them.  We could also define both terms and say RD=Ie-Iu and then absolute risk reduction has to do with the way in which the question is phrased (i.e., improvement is a good outcome or adverse event where the outcome is bad).
-
-d.       Calculating annual cumulative incidence on slides 23-24; I think the answer given during lecture was 0.3 but I think it should actually be 0.15.  This was confusing to them (and me).
-
 
 
 ---
@@ -285,7 +277,7 @@ What makes standard deviation greater?
     
     - **uniform** data: distributed with equal probability of each value across whole range of values  
 
-- For uniform or skewed data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
   
 - For normal data, mean and median have the same value.  
 
@@ -431,7 +423,7 @@ class: inverse, center, middle
 
     - 50 high-risk subjects enrolled at the start of a two-year observation period  
     
-    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plots)  
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plot)  
     
     - incomplete follow-up (abbreviated grey lines on plot)
     
@@ -589,7 +581,7 @@ class: inverse, center, middle
 
     - 50 high-risk subjects enrolled at the start of a two-year observation period  
     
-    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plots)  
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plot)  
     
     - incomplete follow-up (abbreviated grey lines on plot)
     
@@ -894,7 +886,7 @@ class: inverse, center, middle
 
 ---
 
-## _Pneumocystis_ ~ CD4 Cell Count: Relative Risk (RR) &lt;hr/&gt;
+## _Pneumocystis_ ~ CD4 Cell Count: Number Needed to Treat (NNT) &lt;hr/&gt;
 
 .pull-left[
 
@@ -920,18 +912,18 @@ class: inverse, center, middle
 
 ## Absolute Risk (AR), Risk Difference (RD) &amp; Number Needed to Treat (NNT) &lt;hr/&gt;
 
-- absolute risk (AR): risk of developing a given disease over a period of time
+- **absolute risk (AR)**: risk of developing a given disease over a period of time
 
     - this is the incidence!!!
     - if you have a 1 in 10 chance of developing skin cancer in your lifetime, you are said to have a 10% absolute risk
 
-- risk difference (RD): difference in risk between the treatment/exposure group and the control group
+- **risk difference (RD)**: difference in risk between the treatment/exposure group and the control group
 
-    - if 2 in 10 are cured in the control group and 3 in 10 in the treatment group, the RD is 3/10 – 2/10 = 10%
+    - if 3 in 10 are cured in the treatment group and 2 in 10 in the control group, the RD is 3/10 – 2/10 = 10%
 
-- number needed to treat (NNT): number of patients who need to be treated for one person to benefit from the treatment  (= 1/RD)
+- **number needed to treat (NNT)**: number of patients who need to be treated for one person to benefit from the treatment  (= 1/RD)
 
-    - using RD numbers above, NNT = 1/RD = 1/0.1 = 10 (treat 10 people to prevent one bad outcome)
+    - using RD numbers above, NNT = 1/RD = 1/0.1 = 10 (treat 10 people to cure one additional person)
 
 
 ---
@@ -940,13 +932,13 @@ class: inverse, center, middle
 
 .pull-left[
 
-- Denominators are deceptive in case-control study because determined by investigator
+- Denominators are deceptive in case-control study because determined by investigator.
 
 - Impossible to measure true risk/incidence. Instead, measure exposure odds in cases &amp; controls.
 
 - Odds Ratio (OR): odds exposure in cases / odds exposure in controls:    
 
-`$$OR = \frac{\frac{A}{C}}{\frac{C}{D}} = \frac{A*D}{B*C}$$`  
+`$$OR = \frac{\frac{A}{C}}{\frac{B}{D}} = \frac{A*D}{B*C}$$`  
 ]
 
 
@@ -957,34 +949,43 @@ class: inverse, center, middle
 
 ---
 
+## _Pneumocystis_ Cases vs Controls: Odds Ratio (OR) &lt;hr/&gt;
+
+.pull-left[
+
+- Imagine a different study: 100 _Pneumocystis_ cases and 100 controls; measure whether 'low CD4' (exposure) differs between groups chosen by investigator.
+
+- Odds Ratio (OR): odds exposure in cases / odds exposure in controls:    
+
+`$$OR = \frac{\frac{90}{10}}{\frac{50}{50}} = \frac{90*50}{50*10} = 9$$`  
+]
 
 
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/unnamed-chunk-8-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
 
 ---
 
-## 2x2 Table: Calculation for Case-Control &lt;hr/&gt;
+## Utility of Odds Ratio (OR) &amp; Case-Control Study Design &lt;hr/&gt;
 
-- Odds Ratio (OR)= (A/C)/(B/D) = AD / BC
+.pull-left[
 
-- risk difference (RD) = not appropriate to calculate
+- Because ratio of cases and controls determined by investigator, not valid to calculate incidence of outcome (AR or RR, RD, NNT), but if outcome incidence is low, then A + B ~ B &amp; C + D ~ D:
 
-- Number Needed to Treat (NNT) = not appropriate to calculate
+`$$RR = \frac{\frac{A}{(A + B)}}{\frac{C}{(C + D)}} \sim \frac{\frac{A}{B}}{\frac{C}{D}} = \frac{A*D}{B*C} = \frac{\frac{A}{C}}{\frac{B}{D}} = OR$$`  
 
-- #################### add table
+- OR approximates RR if outcome occurs infrequently (&lt;15%). &lt;mark&gt;Though OR is fundamentally different from RR, we use it as an approximation of RR&lt;/mark&gt;.  
 
----
+- If outcome is more common, OR will differ increasingly from RR.
 
-## Utility of Odds Ratio (OR) &amp; Case-Control &lt;hr/&gt;
+]
 
-- if the disease incidence is low, then:
 
-- A + B ~ B &amp; C + D ~ D
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/unnamed-chunk-9-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
 
-- RR = (A / A + B) / (C / C + D) ~ (A / B) / (C / D) = AD / BC = OR
-
-- OR will be close to RR if outcome occurs infrequently (&lt;15%).
-
-- If outcome is more common, OR will differ increasingly from RR:
 
 
 ---
@@ -1009,9 +1010,9 @@ background-size: cover
 
 - Incidence density best accounts for time at risk for disease.
 
-- Relative risk (RR) and odds ratio (OR) are measures of a difference between the incidence of the outcome for two or more exposures or treatments.
+- Relative risk (RR) is the ratio of incidence in exposed over incidence in unexposed. Odds ratio (OR) is the ratio of exposure odds in cases over exposure odds in controls.
 
-- RR and OR approximate each other when outcome is rare.
+- OR approximates RR when outcome is rare.
 
 - NNT can be a clinically useful number.
 
