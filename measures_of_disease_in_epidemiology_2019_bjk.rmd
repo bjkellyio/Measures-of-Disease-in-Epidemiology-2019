@@ -423,7 +423,8 @@ Which is least affected by outliers?
 ---
 class: inverse, center, middle
 
-# Measures of Disease Occurrence
+# Measures of Disease Occurrence:
+# Prevalence
 
 
 
@@ -469,6 +470,89 @@ class: inverse, center, middle
 
 ---
 
+## Point Prevalence versus Period Prevalence <hr/>
+
+- To understand the difference between point and period prevalence, let's imagine a cohort of people living with HIV/AIDS at risk for _Pneumocystis_:  
+
+    - 50 high-risk subjects enrolled at the start of a two-year observation period  
+    
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plots)  
+    
+    - incomplete follow-up (abbreviated grey lines on plot)
+    
+    - at end of study, subjects started on _Pneumocystis_ prophylaxis (blue lines on plot)  
+
+
+---
+
+## Cohort of Patients at Risk for _Pneumocystis_ <hr/>
+
+```{r pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+
+tibble(subject_id = factor(seq(50)),
+       enrollment = rep(0,50),
+       exit = sample(x = c(rep(2,35),runif(n = 15, min = 1.7, max = 2)), size = 50, replace = FALSE),
+       pcp_start = c(rep(NA,5),1.2,rep(NA,5),0.4,rep(NA,4),1.1,rep(NA,6),0.8,rep(NA,4),1.4,NA,0.3,rep(NA,3),1.0,rep(NA,6),0.1,rep(NA,4),0.9,rep(NA,3)),
+       pcp_stop = pcp_start + 0.0577,
+       ppx_start = c(rep(NA,4),1.5,rep(NA,5),1.6,rep(NA,6),1.4,rep(NA,3),1.7,rep(NA,3),1.4,rep(NA,1),1.3,rep(NA,2),1.55,rep(NA,9),1.2,rep(NA,5),1.5,rep(NA,3))) %>%
+  group_by(subject_id) %>%
+  nest() %>%
+  mutate(exit_adjust = map_dbl(data, ~ ifelse(is.na(.x[["pcp_start"]]) & is.na(.x[["ppx_start"]]), sample(x = seq(1.5,2,0.1), size = 1), .x[["exit"]]))) %>%
+  unnest(cols = c(data)) %>%
+  ungroup() %>%
+  mutate(ppx_stop = exit_adjust) %>%
+  group_by(subject_id) %>%
+  mutate(follow_stop = min(ppx_start, exit_adjust, na.rm = TRUE)) %>%
+  ungroup() %>%
+  ggplot(data = .) +
+  geom_segment(aes(x = enrollment, xend = exit_adjust, y = subject_id, yend = subject_id), colour = "grey", size = 1) +
+  geom_segment(aes(x = pcp_start, xend = pcp_stop, y = subject_id, yend = subject_id), colour = "red", size = 1) +
+  geom_point(aes(x = pcp_start, y = subject_id), colour = "red", size = 2) +
+  geom_segment(aes(x = ppx_start, xend = ppx_stop, y = subject_id, yend = subject_id), colour = "blue", size = 1, size = 2) +
+  labs(x = "Duration of Study Enrollment (years)", y = "Subject ID") +
+  theme_classic() +
+  theme(text = element_text(size = 22), axis.text.y = element_text(size = 10)) -> p
+
+```
+
+```{r print_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p
+
+
+```
+
+
+
+---
+
+## Cohort of Patients at Risk for _Pneumocystis_: Point Prevalence <hr/>
+
+```{r pcp_point_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + geom_vline(aes(xintercept = 0.9), colour = "green", size = 3, alpha = 0.6)
+
+
+```
+
+
+---
+
+## Cohort of Patients at Risk for _Pneumocystis_: Period Prevalence <hr/>
+
+```{r pcp_period_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + annotate("rect", xmin=0.9, xmax=1.2, ymin=0, ymax=Inf, alpha=0.6, fill="green")
+
+
+```
+
+
+
+---
+
 ## Prevalence <hr/>
 
 - Prevalence is **NOT** the same as risk.
@@ -492,6 +576,14 @@ How can an infection have high prevalence if it occurs infrequently?
 - (C) a few children get the infection every year, but the infection persists for the rest of their lives
 
 - (D) the infection results in lifelong protective immunity
+
+
+---
+class: inverse, center, middle
+
+# Measures of Disease Occurrence:
+# Incidence
+
 
 
 ---
@@ -536,7 +628,7 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-## Notes on Cumulative Incidence <hr/>
+## Cumulative Incidence <hr/>
 
 - Cumulative incidence:
 
@@ -556,7 +648,7 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-## Notes on Incidence Density <hr/>
+## Incidence Density <hr/>
 
 - Incidence density:
 
@@ -569,6 +661,75 @@ How can an infection have high prevalence if it occurs infrequently?
     - not a proportion; range depends on the units of person-time (0 to infinity)  
     
     - <mark>accounts for death from other causes!</mark>
+
+
+
+---
+
+## Incidence: Which Denominator? <hr/>
+
+- To understand the difference between cumulative incidence and incidence density, let's return to our imagined study of people living with HIV/AIDS at risk for _Pneumocystis_:  
+
+    - 50 high-risk subjects enrolled at the start of a two-year observation period  
+    
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plots)  
+    
+    - incomplete follow-up (abbreviated grey lines on plot)
+    
+    - at end of study, subjects started on _Pneumocystis_ prophylaxis (blue lines on plot)  
+
+
+
+---
+
+## Cohort of Patients at Risk for _Pneumocystis_ <hr/>
+
+```{r reprint_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p
+
+
+```
+
+
+
+---
+
+## Cohort of Patients at Risk for _Pneumocystis_: Cumulative Incidence <hr/>
+
+```{r pcp_incid_proportion, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.6) +
+  geom_segment(aes(x = enrollment, xend = 2, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.6, linetype = 21)
+
+
+```
+
+
+---
+
+## Cohort of Patients at Risk for _Pneumocystis_: Incidence Density <hr/>
+
+```{r pcp_incid_density, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.6) +
+  geom_segment(aes(x = enrollment, xend = follow_stop, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.6, linetype = 21)
+
+
+```
+
+
+
+---
+
+## Incidence: Which Denominator? <hr/>
+
+- cumulative incidence of _Pneumocystis_ versus incidence density:
+
+    - if the end of the grey line is death / loss to follow-up, how does incidence density compare to annual cumulative incidence?
+
+    - if you don’t count time on prophylaxis or treatment antibiotics as “time at risk”, how does the incidence density compare to the annual cumulative incidence?  
+
 
 
 
@@ -608,90 +769,6 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-## Incidence: Which Denominator? <hr/>
-
-- To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:  
-
-    - 100 high-risk subjects enrolled at the start of a two-year observation period  
-    
-    - 5 cases of PCP (red on plot); each receives 3 weeks of antibiotic treatment  
-    
-    - 2 subjects started on PCP prophylaxis during follow-up (blue on plot)  
-
-
----
-
-## Imaginary Study of _Pneumocystis_   Among Patients with AIDS <hr/>
-
-```{r pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
-
-library(tidyverse)
-
-tibble(subject_id = factor(seq(50)),
-       enrollment = rep(0,50),
-       exit = sample(x = c(rep(2,35),runif(n = 15, min = 1.7, max = 2)), size = 50, replace = FALSE),
-       pcp_start = c(rep(NA,5),1.2,rep(NA,5),0.4,rep(NA,4),1.1,rep(NA,6),0.8,rep(NA,4),1.4,NA,0.3,rep(NA,3),1.0,rep(NA,6),0.1,rep(NA,4),0.9,rep(NA,3)),
-       pcp_stop = pcp_start + 0.0577,
-       ppx_start = c(rep(NA,4),1.5,rep(NA,5),1.6,rep(NA,6),1.4,rep(NA,3),1.7,rep(NA,3),1.4,rep(NA,1),1.3,rep(NA,2),1.55,rep(NA,9),1.2,rep(NA,5),1.5,rep(NA,3))) %>%
-  group_by(subject_id) %>%
-  nest() %>%
-  mutate(exit_adjust = map_dbl(data, ~ ifelse(is.na(.x[["pcp_start"]]) & is.na(.x[["ppx_start"]]), sample(x = seq(1.5,2,0.1), size = 1), .x[["exit"]]))) %>%
-  unnest(cols = c(data)) %>%
-  ungroup() %>%
-  mutate(ppx_stop = exit_adjust) %>%
-  ggplot(data = .) +
-  geom_segment(aes(x = enrollment, xend = exit_adjust, y = subject_id, yend = subject_id), colour = "grey", size = 1) +
-  geom_segment(aes(x = pcp_start, xend = pcp_stop, y = subject_id, yend = subject_id), colour = "red", size = 1) +
-  geom_point(aes(x = pcp_start, y = subject_id), colour = "red", size = 2) +
-  geom_segment(aes(x = ppx_start, xend = ppx_stop, y = subject_id, yend = subject_id), colour = "blue", size = 1, size = 2) +
-  labs(x = "Duration of Study Enrollment (years)", y = "Subject ID") +
-  theme_classic() +
-  theme(text = element_text(size = 22), axis.text.y = element_text(size = 12)) -> p
-
-```
-
-
-```{r pcp_point_prev, ref.label = "pcp_study", echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
-
-p + geom_vline(aes(xintercept = 0.9), colour = "green", size = 3, alpha = 0.6)
-
-```
-
-
-
----
-
-background-image: url(figs/pcp_incidence_study.png)
-background-size: contain
-
-
-
----
-
-## Incidence: Which Denominator? <hr/>
-
-- To understand the difference between cumulative incidence and incidence density, imagine a study of persons with HIV at risk for PCP:
-10 subjects enrolled at the start of a two-year observation period
-
-    - 5 cases of PCP (red on plot); each receives 3 weeks of antibiotic treatment
-    - 2 subjects started on PCP prophylaxis during follow-up (blue on plot)
-
-- What’s the annual cumulative incidence of PCP?
-
-    - if you don’t count time on prophylaxis or treatment antibiotics as “time at risk”, how does the incidence density compare to the annual cumulative incidence?
-    - what if the end of the black line is death / loss to follow-up?
-
-
-
----
-
-background-image: url(figs/pcp_incidence_study.png)
-background-size: contain
-
-
-
----
-
 ## Beware the Phrase “Incidence Rate”! <hr/>
 
 - “Incidence rate” is used to mean two different things:
@@ -720,6 +797,14 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 - (B) cumulative incidence
 
 - (C) incidence density
+
+
+
+---
+class: inverse, center, middle
+
+# Measures of Disease Occurrence:
+# Prevalence vs Incidence
 
 
 
@@ -792,7 +877,7 @@ background-size: cover
 
 class: inverse, center, middle
 
-## Inference from Epidemiologic Measures
+# Inference from Epidemiologic Measures
 
 
 
@@ -1010,7 +1095,7 @@ background-size: contain
 
 class: inverse, center, middle
 
-## Conclusions
+# Conclusions
 
 ---
 
@@ -1021,9 +1106,11 @@ background-size: cover
 
 ## Measures of Disease in Clinical Epidemiology <hr/>
 
+- Distribution of data determines how we describe them: mean and SD vs median and IQR.
+
 - Prevalence is determined by incidence and survival time.
 
-- Distribution of data determines how we describe them: mean and SD vs median and IQR.
+- Incidence density best accounts for time at risk for disease.
 
 - Relative risk (RR) and odds ratio (OR) are measures of a difference between the incidence of the outcome for two or more exposures or treatments.
 
