@@ -251,9 +251,7 @@ $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
 
 ## Characterizing Continuous Data: Normal <hr/>
 
-- What makes standard deviation greater?
-
-```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4.5, fig.width=12, fig.align='center', fig.retina=2}
+```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
 
@@ -314,7 +312,7 @@ What makes standard deviation greater?
 
 ## Characterizing Continuous Data: Skewed or Uniform <hr/>
 
-```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4.5, fig.width=12, fig.align='center', fig.retina=2}
+```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
 
@@ -386,7 +384,7 @@ Which is least affected by outliers?
 
 - Pair a measure of central tendency with a measure of dispersion:
 
-    - mean and SD   
+    - mean and SD (both affected by outliers)  
     
     - median and IQR  
 
@@ -398,9 +396,9 @@ Which is least affected by outliers?
 
 ## Dichotomizing Continuous Data <hr/>
   
-- Remember the diagnosis lecture: no perfect threshold of oxygen saturation with which to diagnose _Pneumocystis_ pneumonia.
+- Remember the diagnosis lecture: threshold of oxygen saturation (or \beta-D glucan) to diagnose _Pneumocystis_ pneumonia means trade-off between sensitivity and specificity.
 
-- Using a threshold to transform continuous data into dichotomous data, means losing information about uncertainty.  
+- Using a threshold to transform continuous data into dichotomous data means <mark>losing information about uncertainty</mark>.  
 
 - This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
   
@@ -580,9 +578,9 @@ How can an infection have high prevalence if it occurs infrequently?
 
 - In a population, individuals are at risk of disease if they: 
 
-    (1) do not have the disease at baseline  
+    - (1) do not have the disease at baseline  
     
-    (2) are capable of developing the disease(e.g., have the organ of interest; have not been successfully immunized against the disease;haven’t developed lifelong immunity)  
+    - (2) are capable of developing the disease(e.g., have the organ of interest; have not been successfully immunized against the disease;haven’t developed lifelong immunity)  
     
 
 - The difference between cumulative incidence and incidence density is that the latter attempts a more precise quantification of population at risk -- it’s harder to evaluate, but more informative if you can.
@@ -592,7 +590,7 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-## Notes on "Person-Time" <hr/>
+## Notes on Person-Time <hr/>
 
 - To improve precision of risk estimate (<ins>incidence density</ins>), we measure:  
 
@@ -623,33 +621,42 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-```{r pcp_prevalence, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4.5, fig.width=12, fig.align='center', fig.retina=2}
+## Imaginary Study of _Pneumocystis_   Among Patients with AIDS <hr/>
+
+```{r pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
 
-tibble(subject_id = factor(seq(100)),
-       enrollment = rep(0,100),
-       exit = sample(x = c(rep(2,70),runif(n = 30, min = 1.7, max = 2)), size = 100, replace = FALSE),
-       pcp_start = c(rep(NA,10),1.2,rep(NA,10),0.4,rep(NA,8),1.1,rep(NA,12),0.8,rep(NA,9),1.4,NA,0.3,rep(NA,8),1.0,rep(NA,18),0.1,rep(NA,11),0.9,rep(NA,4)),
+tibble(subject_id = factor(seq(50)),
+       enrollment = rep(0,50),
+       exit = sample(x = c(rep(2,35),runif(n = 15, min = 1.7, max = 2)), size = 50, replace = FALSE),
+       pcp_start = c(rep(NA,5),1.2,rep(NA,5),0.4,rep(NA,4),1.1,rep(NA,6),0.8,rep(NA,4),1.4,NA,0.3,rep(NA,3),1.0,rep(NA,6),0.1,rep(NA,4),0.9,rep(NA,3)),
        pcp_stop = pcp_start + 0.0577,
-       ppx_start = c(rep(NA,8),1.5,rep(NA,12),1.6,rep(NA,13),1.4,rep(NA,7),1.7,rep(NA,6),1.4,rep(NA,5),1.3,rep(NA,4),1.55,rep(NA,21),1.2,rep(NA,10),0.9,rep(NA,5))) %>%
+       ppx_start = c(rep(NA,4),1.5,rep(NA,5),1.6,rep(NA,6),1.4,rep(NA,3),1.7,rep(NA,3),1.4,rep(NA,1),1.3,rep(NA,2),1.55,rep(NA,9),1.2,rep(NA,5),1.5,rep(NA,3))) %>%
   group_by(subject_id) %>%
   nest() %>%
-  mutate(exit_adjust = map_dbl(data, ~ ifelse(is.na(.x[["pcp_start"]]) & is.na(.x[["ppx_start"]]), sample(x = seq(1.3,2,0.1), size = 1), .x[["exit"]]))) %>%
+  mutate(exit_adjust = map_dbl(data, ~ ifelse(is.na(.x[["pcp_start"]]) & is.na(.x[["ppx_start"]]), sample(x = seq(1.5,2,0.1), size = 1), .x[["exit"]]))) %>%
   unnest(cols = c(data)) %>%
   ungroup() %>%
   mutate(ppx_stop = exit_adjust) %>%
   ggplot(data = .) +
-  geom_segment(aes(x = enrollment, xend = exit_adjust, y = subject_id, yend = subject_id), colour = "black", size = 1) +
+  geom_segment(aes(x = enrollment, xend = exit_adjust, y = subject_id, yend = subject_id), colour = "grey", size = 1) +
   geom_segment(aes(x = pcp_start, xend = pcp_stop, y = subject_id, yend = subject_id), colour = "red", size = 1) +
   geom_point(aes(x = pcp_start, y = subject_id), colour = "red", size = 2) +
   geom_segment(aes(x = ppx_start, xend = ppx_stop, y = subject_id, yend = subject_id), colour = "blue", size = 1, size = 2) +
+  labs(x = "Duration of Study Enrollment (years)", y = "Subject ID") +
   theme_classic() +
-  labs(x = "Duration of Study Enrollment (years)", y = "Subject ID") -> p
-
-p + geom_vline(aes(xintercept = 0.9), colour = "green", linetype = 21)
+  theme(text = element_text(size = 22), axis.text.y = element_text(size = 12)) -> p
 
 ```
+
+
+```{r pcp_point_prev, ref.label = "pcp_study", echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+
+p + geom_vline(aes(xintercept = 0.9), colour = "green", size = 3, alpha = 0.6)
+
+```
+
 
 
 ---

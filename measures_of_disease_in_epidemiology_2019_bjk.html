@@ -255,8 +255,6 @@ class: inverse, center, middle
 
 ## Characterizing Continuous Data: Normal &lt;hr/&gt;
 
-- What makes standard deviation greater?
-
 &lt;img src="measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/continuous_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
 
 .footnote[[*] Data made up.]
@@ -340,7 +338,7 @@ Which is least affected by outliers?
 
 - Pair a measure of central tendency with a measure of dispersion:
 
-    - mean and SD   
+    - mean and SD (both affected by outliers)  
     
     - median and IQR  
 
@@ -352,9 +350,9 @@ Which is least affected by outliers?
 
 ## Dichotomizing Continuous Data &lt;hr/&gt;
   
-- Remember the diagnosis lecture: no perfect threshold of oxygen saturation with which to diagnose _Pneumocystis_ pneumonia.
+- Remember the diagnosis lecture: threshold of oxygen saturation (or \beta-D glucan) to diagnose _Pneumocystis_ pneumonia means trade-off between sensitivity and specificity.
 
-- Using a threshold to transform continuous data into dichotomous data, means losing information about uncertainty.  
+- Using a threshold to transform continuous data into dichotomous data means &lt;mark&gt;losing information about uncertainty&lt;/mark&gt;.  
 
 - This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
   
@@ -534,9 +532,9 @@ How can an infection have high prevalence if it occurs infrequently?
 
 - In a population, individuals are at risk of disease if they: 
 
-    (1) do not have the disease at baseline  
+    - (1) do not have the disease at baseline  
     
-    (2) are capable of developing the disease(e.g., have the organ of interest; have not been successfully immunized against the disease;haven’t developed lifelong immunity)  
+    - (2) are capable of developing the disease(e.g., have the organ of interest; have not been successfully immunized against the disease;haven’t developed lifelong immunity)  
     
 
 - The difference between cumulative incidence and incidence density is that the latter attempts a more precise quantification of population at risk -- it’s harder to evaluate, but more informative if you can.
@@ -546,7 +544,7 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-## Notes on "Person-Time" &lt;hr/&gt;
+## Notes on Person-Time &lt;hr/&gt;
 
 - To improve precision of risk estimate (&lt;ins&gt;incidence density&lt;/ins&gt;), we measure:  
 
@@ -577,7 +575,13 @@ How can an infection have high prevalence if it occurs infrequently?
 
 ---
 
-&lt;img src="measures_of_disease_in_epidemiology_2019_bjk_files/figure-html/pcp_prevalence-1.png" width="864" style="display: block; margin: auto;" /&gt;
+## Imaginary Study of _Pneumocystis_   Among Patients with AIDS &lt;hr/&gt;
+
+
+
+
+
+
 
 
 ---
@@ -734,8 +738,8 @@ class: inverse, center, middle
 
 ---
 
-<div id="htmlwidget-b87f2151a2a728669175" style="width:1080px;height:648px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b87f2151a2a728669175">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Study\nDesign\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-3,0!\"] \n  \"2\" [label = \"Cohort\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,0!\"] \n  \"3\" [label = \"Randomized\nControlled\nTrial\", color = \"black\", fontsize = \"5.5\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,1!\"] \n  \"4\" [label = \"Case-\nControl\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,-1!\"] \n  \"5\" [label = \"Denominator\nKnown\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#00FF00\", pos = \"-1,0.5!\"] \n  \"6\" [label = \"Denominator\nNOT Known\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#1E90FF\", pos = \"-1,-0.5!\"] \n  \"7\" [label = \"Measure\nOutcome\nIncidence\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,0.5!\"] \n  \"8\" [label = \"Measure\nExposure\nOdds\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,-0.5!\"] \n  \"9\" [label = \"Relative\nRisk\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,0.5!\"] \n  \"10\" [label = \"Odds\nRatio\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,-0.5!\"] \n  \"11\" [label = \"AR\nARR\nNNT\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"2,0.5!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"1\"->\"3\" [color = \"black\"] \n\"1\"->\"4\" [color = \"black\"] \n\"2\"->\"5\" [color = \"black\"] \n\"3\"->\"5\" [color = \"black\"] \n\"4\"->\"6\" [color = \"black\"] \n\"5\"->\"7\" [color = \"black\"] \n\"6\"->\"8\" [color = \"black\"] \n\"7\"->\"9\" [color = \"black\"] \n\"8\"->\"10\" [color = \"black\"] \n\"9\"->\"11\" [color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-68c555f25d2404f40b0f" style="width:1080px;height:648px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-68c555f25d2404f40b0f">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Study\nDesign\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-3,0!\"] \n  \"2\" [label = \"Cohort\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,0!\"] \n  \"3\" [label = \"Randomized\nControlled\nTrial\", color = \"black\", fontsize = \"5.5\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,1!\"] \n  \"4\" [label = \"Case-\nControl\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"-2,-1!\"] \n  \"5\" [label = \"Denominator\nKnown\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#00FF00\", pos = \"-1,0.5!\"] \n  \"6\" [label = \"Denominator\nNOT Known\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#1E90FF\", pos = \"-1,-0.5!\"] \n  \"7\" [label = \"Measure\nOutcome\nIncidence\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,0.5!\"] \n  \"8\" [label = \"Measure\nExposure\nOdds\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"0,-0.5!\"] \n  \"9\" [label = \"Relative\nRisk\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,0.5!\"] \n  \"10\" [label = \"Odds\nRatio\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"1,-0.5!\"] \n  \"11\" [label = \"AR\nARR\nNNT\", color = \"black\", fontsize = \"6\", fontcolor = \"black\", fillcolor = \"#E5E5E5\", pos = \"2,0.5!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"1\"->\"3\" [color = \"black\"] \n\"1\"->\"4\" [color = \"black\"] \n\"2\"->\"5\" [color = \"black\"] \n\"3\"->\"5\" [color = \"black\"] \n\"4\"->\"6\" [color = \"black\"] \n\"5\"->\"7\" [color = \"black\"] \n\"6\"->\"8\" [color = \"black\"] \n\"7\"->\"9\" [color = \"black\"] \n\"8\"->\"10\" [color = \"black\"] \n\"9\"->\"11\" [color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 
 
 
