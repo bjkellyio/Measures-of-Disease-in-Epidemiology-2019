@@ -320,7 +320,7 @@ What makes standard deviation greater?
 library(tidyverse)
 set.seed(16)
 
-tibble("Uniform" = runif(n = 1000, min = 0.82, max = 0.94), "Skewed" = rbeta(1000,9,1)) %>%
+tibble("Uniform" = runif(n = 1000, min = 0.80, max = 0.98), "Skewed" = rbeta(1000,9,1)) %>%
   gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
 
 pcp_skew_o2 %>%
@@ -767,7 +767,7 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 
     - population at risk of outcome  
     
-    - actual time at risk (during which outcome could)
+    - actual time at risk (during which outcome could occur)
 
 - **Person-time**:  
 
