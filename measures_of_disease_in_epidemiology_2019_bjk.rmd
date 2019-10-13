@@ -90,6 +90,7 @@ class: inverse, center, middle
 
 
 ---
+exclude: TRUE
 
 background-image: url(gifs/magnum_pi.gif)
 background-size: cover
@@ -427,8 +428,7 @@ Which is least affected by outliers?
 ---
 class: inverse, center, middle
 
-# Measures of Disease Occurrence:
-# Prevalence
+# Measures of Disease Occurrence:<br/>Prevalence
 
 
 
@@ -489,9 +489,9 @@ class: inverse, center, middle
 
 ---
 
-## Cohort of Patients at Risk for _Pneumocystis_ <hr/>
+## Cohort at Risk for _Pneumocystis_ <hr/>
 
-```{r pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+```{r pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
 set.seed(16)
@@ -525,7 +525,7 @@ tibble(subject_id = factor(seq(50)),
 
 ```
 
-```{r print_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+```{r print_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
 p
 
@@ -536,11 +536,11 @@ p
 
 ---
 
-## Cohort of Patients at Risk for _Pneumocystis_: Point Prevalence <hr/>
+## Cohort at Risk for _Pneumocystis_: Point Prevalence <hr/>
 
-```{r pcp_point_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+```{r pcp_point_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
-p + geom_vline(aes(xintercept = 0.9), colour = "green", size = 3, alpha = 0.6)
+p + geom_vline(aes(xintercept = 0.9), colour = "purple", size = 3, alpha = 0.4)
 
 
 ```
@@ -548,11 +548,11 @@ p + geom_vline(aes(xintercept = 0.9), colour = "green", size = 3, alpha = 0.6)
 
 ---
 
-## Cohort of Patients at Risk for _Pneumocystis_: Period Prevalence <hr/>
+## Cohort at Risk for _Pneumocystis_: Period Prevalence <hr/>
 
-```{r pcp_period_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+```{r pcp_period_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
-p + annotate("rect", xmin=0.9, xmax=1.2, ymin=0, ymax=Inf, alpha=0.6, fill="green")
+p + annotate("rect", xmin=0.9, xmax=1.2, ymin=0, ymax=Inf, alpha=0.6, fill="purple")
 
 
 ```
@@ -589,8 +589,7 @@ How can an infection have high prevalence if it occurs infrequently?
 ---
 class: inverse, center, middle
 
-# Measures of Disease Occurrence:
-# Incidence
+# Measures of Disease Occurrence:<br/>Incidence
 
 
 
@@ -628,11 +627,17 @@ class: inverse, center, middle
 
 - Among MSM, _Pneumocystis_ pneumonia is occurring more frequently...
 
-- Incidence: occurrence of new cases over a given period of time:
+- Incidence: occurrence of new cases over a given period of time.
 
-    - **cumulative incidence**: # new cases / # population at risk @ start time interval  
+- **cumulative incidence**:  
+
+$$cumulative\ incidence = \frac{{new\ cases}}{population\ at\ risk\\at\ start\ time\ interval}$$  
+
+- **incidence density**: (more precise)  
+
+$$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$  
     
-    - **incidence density**: # new cases / person-time at risk (more precise)
+
 
 ---
 
@@ -690,9 +695,9 @@ class: inverse, center, middle
 
 ---
 
-## Cohort of Patients at Risk for _Pneumocystis_ <hr/>
+## Cohort at Risk for _Pneumocystis_ <hr/>
 
-```{r reprint_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+```{r reprint_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
 p
 
@@ -703,12 +708,12 @@ p
 
 ---
 
-## Cohort of Patients at Risk for _Pneumocystis_: Cumulative Incidence <hr/>
+## Cohort at Risk for _Pneumocystis_: Cumulative Incidence (at risk at start) <hr/>
 
-```{r pcp_incid_proportion, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+```{r pcp_incid_proportion, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
-p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.6) +
-  geom_segment(aes(x = enrollment, xend = 2, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.6, linetype = 21)
+p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.2) +
+  geom_segment(aes(x = enrollment, xend = 2, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.4, linetype = 1)
 
 
 
@@ -717,13 +722,13 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 
 ---
 
-## Cohort of Patients at Risk for _Pneumocystis_: Incidence Density <hr/>
+## Cohort at Risk for _Pneumocystis_: Incidence Density (person-time at risk) <hr/>
 
-```{r pcp_incid_density, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+```{r pcp_incid_density, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
-p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.6) +
-  geom_segment(aes(x = follow_start1, xend = follow_stop1, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.6, linetype = 21) +
-    geom_segment(aes(x = follow_start2, xend = follow_stop2, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.6, linetype = 21)
+p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.4) +
+  geom_segment(aes(x = follow_start1, xend = follow_stop1, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.4, linetype = 1) +
+    geom_segment(aes(x = follow_start2, xend = follow_stop2, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.4, linetype = 1)
 
 
 ```
@@ -790,6 +795,7 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 
 
 ---
+exclude: TRUE
 
 background-image: url(gifs/frink_shake.gif)
 background-size: cover
@@ -813,8 +819,7 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 ---
 class: inverse, center, middle
 
-# Measures of Disease Occurrence:
-# Prevalence vs Incidence
+# Measures of Disease Occurrence:<br/>Prevalence vs Incidence
 
 
 
@@ -862,6 +867,7 @@ class: inverse, center, middle
 
 
 ---
+exclude: TRUE
 
 background-image: url(gifs/abbi_no.gif)
 background-size: cover
@@ -876,6 +882,7 @@ class: inverse, center, middle
 
 
 ---
+exclude: TRUE
 
 background-image: url(gifs/abbi_no.gif)
 background-size: cover
@@ -894,14 +901,15 @@ class: inverse, center, middle
 
 ## Basics of Study Types <hr/>
 
-- We want to understand the relationship between risk factors (exposures) and disease (outcomes). For example, between CD4 count and PCP in HIV.
+- We want to understand the <mark>relationship between risk factors (exposures) and disease (outcomes)</mark>. For example, between CD4 count and PCP in HIV.
 
 - To calculate incidence need to know how many are in a population:
 
-    - randomized trials: pick the population, randomize, control the treatment, and measure the outcome
-    - cohort studies: pick the population, divide into preselected exposure (treatment or risk factor) groups, and measure the outcome
+    - randomized trials: pick the population, randomize, control the treatment, and measure the outcome  
+    
+    - cohort studies: pick the population, divide into preselected exposure (treatment or risk factor) groups, and measure the outcome  
 
-- But do NOT know this generally in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know how many in population).
+- But do NOT know this generally in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know how many in population at risk).  
 
 
 
@@ -996,14 +1004,17 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 
 ---
 
-## 2x2 Table: Calculation for Cohort/Trial <hr/>
+## 2x2 Table: Calculate Relative Risk for Cohort/Trial <hr/>
 
 .pull-left[
-- Relative Risk (RR)= [A/(A+B) / C/(C+D)]
+- Relative Risk (RR): risk (incidence) exposed / risk (incidence) unexposed:    
 
-- risk difference (RD) = [A/(A+B) – C/(C+D)]
+$$RR = \frac{\frac{A}{(A + B)}}{\frac{C}{(C + D)}}$$  
 
-- Number Needed to Treat (NNT)= 1/RD
+- Risk difference (RD): risk (incidence) exposed - risk (incidence) unexposed:  
+
+$$RD = \frac{A}{(A + B)} - \frac{C}{(C + D)}$$  
+
 ]
 
 .pull-right[
@@ -1033,45 +1044,197 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 
 ---
 
-background-image: url(figs/twobytwo_summary.png)
-background-size: contain
+## _Pneumocystis_ ~ CD4 Cell Count: Relative Risk (RR) <hr/>
+
+.pull-left[
+
+- Imagine a cohort study examining incidence (risk) for _Pneumocystis_ among patients with low vs high (dichotomous) CD4 cell counts:
+
+- Relative Risk (RR):
+
+$$RR = \frac{\frac{10}{(10 + 10)}}{\frac{5}{(5 + 15)}} = \frac{0.5}{0.25} = 2$$  
+
+- Risk difference (RD):
+
+$$RD = \frac{10}{(10 + 10)} - \frac{5}{(5 + 15)} = 0.25$$  
+
+]
+
+.pull-right[
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`Low CD4`,Pneumocystis) %>%
+  mutate(cells = c("5","15","10","10"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+]
+
+
+
+
 
 ---
 
-## Relative Risk (RR) <hr/>
+## 2x2 Table: Calculate NNT for Cohort/Trial <hr/>
 
-- Compares risk between two groups of people:
+.pull-left[
 
-    - if 2 in 10 are cured in the control group and 3 in 10 in the treatment group, the RR is (2/10)/(3/10) = 0.66 (i.e. 0.33 less likely to have the disease after treatment) 
-    - can also be calculated as the inverse: if 3 in 10 are cured in the treatment group and 2 in 10 in the control group, the RR is (3/10)/(2/10) = 1.5 (i.e. 0.5 times more likely to be cured if treated)
+- Risk difference (RD): risk (incidence) exposed - risk (incidence) unexposed:  
+
+$$RD = \frac{A}{(A + B)} - \frac{C}{(C + D)}$$  
+
+- Number needed to treat (NNT): given RD between exposures, how many exposure switches needed to change one outcome:  
+
+$$NNT = \frac{1}{RD} = \frac{1}{\frac{A}{(A + B)} - \frac{C}{(C + D)}}$$  
+
+]
+
+.pull-right[
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(Exposure,Outcome) %>%
+  mutate(cells = c("C","D","A","B"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Outcome, y = Exposure, fill = cells_order)) +
+  geom_text(aes(x = Outcome, y = Exposure, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+]
 
 ---
 
-## Absolute Risk (AR) & Reduction (RD) <hr/>
+## _Pneumocystis_ ~ CD4 Cell Count: Relative Risk (RR) <hr/>
 
-- Absolute risk (AR): risk of developing a given disease over a period of time
+.pull-left[
+
+- Cohort study examining incidence (risk) for _Pneumocystis_ among patients with low vs high (dichotomous) CD4 cell counts:
+
+- Risk difference (RD):
+
+$$RD = \frac{10}{(10 + 10)} - \frac{5}{(5 + 15)} = 0.25$$  
+
+- Number needed to treat (NNT): given RD between exposures, how many exposure switches needed to change one outcome:  
+
+$$NNT = \frac{1}{RD} = \frac{1}{\frac{10}{(10 + 10)} - \frac{5}{(5 + 15)}} = \frac{1}{0.25} = 4$$  
+
+]
+
+.pull-right[
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`Low CD4`,Pneumocystis) %>%
+  mutate(cells = c("5","15","10","10"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+]
+
+
+
+---
+
+## Absolute Risk (AR), Risk Difference (RD) & Number Needed to Treat (NNT) <hr/>
+
+- absolute risk (AR): risk of developing a given disease over a period of time
 
     - this is the incidence!!!
     - if you have a 1 in 10 chance of developing skin cancer in your lifetime, you are said to have a 10% absolute risk
 
-- risk difference (RD): difference in risk between the treatment/ exposure group and the control group
+- risk difference (RD): difference in risk between the treatment/exposure group and the control group
 
     - if 2 in 10 are cured in the control group and 3 in 10 in the treatment group, the RD is 3/10 – 2/10 = 10%
 
+- number needed to treat (NNT): number of patients who need to be treated for one person to benefit from the treatment  (= 1/RD)
+
+    - using RD numbers above, NNT = 1/RD = 1/0.1 = 10 (treat 10 people to prevent one bad outcome)
+
+
 ---
 
-## Number Needed to Treat (NNT) <hr/>
+## 2x2 Table: Calculate Odds Ratio for Case-Control Study <hr/>
 
-- Number needed to treat (NNT): Number of patients who need to be treated for one person to benefit from the treatment  (= 1/RD)
+.pull-left[
 
-    - using RD numbers above, NNT = 1/RD = 1/0.1 = 10
-    - in this example, you need to treat 10 people to prevent one bad outcome
+- Denominators are deceptive in case-control study because determined by investigator
 
-- Return to example of CD4 count and PCP… imagine a pill that can maintain CD4 count above 250… what’s the NNT to prevent one case of PCP?
+- Impossible to measure true risk/incidence. Instead, measure exposure odds in cases & controls.
 
-    - RR = (26 / 50) / (2 / 50) = 13
-    - RD = (26 / 50) - (2 / 50) = 0.48
-    - NNT = 1 / 0.48 = 2.08
+- Odds Ratio (OR): odds exposure in cases / odds exposure in controls:    
+
+$$OR = \frac{\frac{A}{C}}{\frac{C}{D}} = \frac{A*D}{B*C}$$  
+]
+
+
+.pull-right[
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(Exposure,Outcome) %>%
+  mutate(cells = c("C","D","A","B"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Outcome, y = Exposure, fill = cells_order)) +
+  geom_text(aes(x = Outcome, y = Exposure, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+]
+
+
+---
+
+
+
 
 ---
 
@@ -1107,6 +1270,7 @@ class: inverse, center, middle
 # Conclusions
 
 ---
+exclude: TRUE
 
 background-image: url(gifs/ilana_yes.gif)
 background-size: cover
