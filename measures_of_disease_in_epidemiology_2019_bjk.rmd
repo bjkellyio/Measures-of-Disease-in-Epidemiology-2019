@@ -841,7 +841,7 @@ background-size: contain
     - prevalence declined, but incidence remained constant at 1.5% per year
     - what happened?
 
-.footnote[[*] Wawer M et al CROI 2005; Roehr B BMJ 2005]
+.footnote[[*] Wawer M et al _CROI_ 2005; Roehr B _BMJ_ 2005]
 
 
 
@@ -949,7 +949,7 @@ c_graph %>% render_graph()
 ## 2x2 Table <hr/>
 
 .pull-left[
-- Dichotomous exposures and outcomes.
+- <mark>Dichotomous</mark> exposures and outcomes.
 
 - Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
 
