@@ -3,7 +3,7 @@ title: "Measures of Disease in Clinical Epidemiology<br/>"
 subtitle: "<hr/>"
 author: "Brendan J. Kelly"
 institute: "Infectious Diseases & Epidemiology<br/><br/>![](penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg){width=160px}" 
-date: "updated: `r Sys.Date()`"
+date: "updated: `r format(Sys.Date(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: ["bjk_xaringan.css",default-fonts]
@@ -233,7 +233,7 @@ class: inverse, center, middle
 
 ---
 
-# Cohort at Risk for _Pneumocystis_ <hr/>
+## Cohort at Risk for _Pneumocystis_ <hr/>
 
 ```{r pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2}
 
@@ -280,7 +280,7 @@ p
 
 ---
 
-# Cohort at Risk for _Pneumocystis_: Point Prevalence <hr/>
+## Cohort at Risk for _Pneumocystis_: Point Prevalence <hr/>
 
 ```{r pcp_point_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
@@ -293,7 +293,7 @@ p + annotate("rect", xmin=0.9, xmax=0.91, ymin=0, ymax=Inf, alpha=0.6, fill="pur
 
 ---
 
-# Cohort at Risk for _Pneumocystis_: Period Prevalence <hr/>
+## Cohort at Risk for _Pneumocystis_: Period Prevalence <hr/>
 
 ```{r pcp_period_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
@@ -440,7 +440,7 @@ $$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$
 
 ---
 
-# Cohort at Risk for _Pneumocystis_ <hr/>
+## Cohort at Risk for _Pneumocystis_ <hr/>
 
 ```{r reprint_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
 
