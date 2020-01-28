@@ -108,3 +108,7 @@ th, td { padding: 5px; }
     left: 0 !important;
   }
 }
+/* font-size options */
+.large { font-size: 110% }
+.small { font-size: 90% }
+
