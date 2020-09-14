@@ -19,7 +19,7 @@ class: center, middle, inverse, title-slide
 ## <hr/>
 ### Brendan J. Kelly
 ### Infectious Diseases &amp; Epidemiology<br/><br/><img src="penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg" width="160" />
-### updated: 28 January 2020
+### updated: 14 September 2020
 
 ---
 
@@ -28,7 +28,7 @@ class: center, middle, inverse, title-slide
 
 # Learning Objectives &lt;hr/&gt;
 .large[
-- Measures of disease occurrence: use population data in the description of health and disease.
+- Measures of disease occurrence: use population data to describe health and disease.
 
 - Key concepts -- explain the meaning of:
 
@@ -37,7 +37,7 @@ class: center, middle, inverse, title-slide
     - relative risk (RR)
     - odds ratio (OR)
 
-- Implementation: calculate prevalence, incidence, RR, and OR from study data (2x2 tables!).
+- Implementation: prevalence, incidence, RR, and OR from study data (2x2 tables!).
 
 - Back to the beginning:  
 
@@ -49,7 +49,7 @@ class: center, middle, inverse, title-slide
 ---
 
 # Why Do I Care? ... &lt;hr/&gt;
-
+.large[
 - Why use these tools (prevalence, incidence, RR, OR)?
 
      - inform differential diagnoses &amp; counsel patients (&lt;ins&gt;your job&lt;/ins&gt;)  
@@ -57,19 +57,19 @@ class: center, middle, inverse, title-slide
      - design public health interventions &amp; direct new diagnostics/therapies (society!)   
      
      - understand distributions and determinants of diseases (science!)  
-
+]
 
 ---
 
 # ... What Do I Need to Know for the Test? &lt;hr/&gt;
-
+.large[
 - How to use these tools:
 
      - precise definitions 
      (e.g., RR vs OR, cumulative incidence vs incidence density)  
      
      - a bit of arithmetic  
-
+]
 
 ---
 class: inverse, center, middle
@@ -92,9 +92,9 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 ---
 
 # A case from 1981... &lt;hr/&gt;  
-
+.large[
 - 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
-
+]
 
 ---
 
@@ -126,7 +126,7 @@ _All the above observations suggest the possibility of a &lt;mark&gt;cellular-im
 ---
 
 # A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
-
+.large[
 - 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
 
 - What do you want to know and why?  
@@ -138,12 +138,12 @@ _All the above observations suggest the possibility of a &lt;mark&gt;cellular-im
     - radiology  
 
 - What is his diagnosis? Does he have _Pneumocystis_ pneumonia?
-
+]
 
 ---
 
 # A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
-
+.large[
 - Differential diagnosis must be grounded in understanding:
 
     - distributions of disease: we'll learn about **prevalence** &amp; **incidence**  
@@ -152,15 +152,17 @@ _All the above observations suggest the possibility of a &lt;mark&gt;cellular-im
   
 - In 1981, _Pneumocystis_ was known to be a low &lt;ins&gt;prevalence&lt;/ins&gt; disease.
 
-- New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;. (In ID, the differential is always evolving).  
-  
+- New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;.  
+
+- (In ID, the differential is always evolving).  
+]
 
 
 
 ---
 
 # A case from 1981... _Pneumocystis_ pneumonia? &lt;hr/&gt;
-
+.large[
 - Does our patient have _Pneumocystis_ pneumonia?
 
 - How is the distribution of _Pneumocystis_ pneumonia changing?
@@ -170,7 +172,7 @@ _All the above observations suggest the possibility of a &lt;mark&gt;cellular-im
 &lt;br/&gt;
   
 &lt;p style="text-align: center;"&gt; &lt;mark&gt;Note: questions depend on &lt;strong&gt;dichotomous&lt;/strong&gt; definition of disease (yes/no &lt;em&gt;Pneumocystis&lt;/em&gt;)&lt;/mark&gt; &lt;/p&gt;
-  
+]  
 
 
 ---
@@ -183,7 +185,7 @@ class: inverse, center, middle
 ---
 
 # Prevalence &lt;hr/&gt;
-
+.large[
 - How common is _Pneumocystis_ pneumonia?
 
 - Prevalence: 
@@ -199,13 +201,13 @@ class: inverse, center, middle
     - numerator includes all people who have the disease, both new and ongoing cases  
     
     - represents a &lt;ins&gt;cross-sectional&lt;/ins&gt; “snapshot” of the population
-
+]
 
 
 ---
 
 # Prevalence of _Pneumocystis_ pneumonia &lt;hr/&gt;
-
+.large[
 - In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP:
 
     - period prevalence published in 1974&lt;sup&gt;*&lt;/sup&gt;: 579 cases (194 confirmed) over 3 years
@@ -217,13 +219,13 @@ class: inverse, center, middle
 - From 1967-1974, even the __period prevalence__ was very small.
 
 .footnote[[*] Walzer PD et al _Annals Int Med_ 1974]
-
+]
 
 
 ---
 
 # Point Prevalence versus Period Prevalence &lt;hr/&gt;
-
+.large[
 - To understand the difference between point and period prevalence, let's imagine a cohort of people living with HIV/AIDS at risk for _Pneumocystis_:  
 
     - 50 high-risk subjects enrolled at the start of a two-year observation period  
@@ -233,7 +235,7 @@ class: inverse, center, middle
     - incomplete follow-up (abbreviated grey lines on plot)
     
     - towards end of study, some subjects started on _Pneumocystis_ prophylaxis (blue lines on plot)  
-
+]
 
 ---
 
@@ -242,6 +244,30 @@ class: inverse, center, middle
 
 
 &lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/print_pcp_study-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ &lt;hr/&gt;
+
+&lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/print_pcp_study_label_case-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ &lt;hr/&gt;
+
+&lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/print_pcp_study_label_followup-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ &lt;hr/&gt;
+
+&lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/print_pcp_study_label_prophylaxis-1.png" width="864" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -263,19 +289,19 @@ class: inverse, center, middle
 ---
 
 # Prevalence &lt;hr/&gt;
-
+.large[
 - Prevalence is **NOT** the same as risk.
 
 - Prevalence numerator includes all people who have the disease, both new and ongoing cases, so represents a cross-sectional “snapshot” of the population. 
 
 - Prevalence does **NOT** estimate the risk of developing the disease because &lt;mark&gt;prevalence does **NOT** fully account for time &lt;/mark&gt; (are the measured cases old cases or new cases?).
-
+]
 
 
 ---
 
 # Reflection Question &lt;hr/&gt;
-
+.large[
 How can an infection have high prevalence if it occurs infrequently?
 
 - (A) the infection is rapidly fatal
@@ -285,7 +311,7 @@ How can an infection have high prevalence if it occurs infrequently?
 - (C) a few children get the infection every year, but the infection persists for the rest of their lives
 
 - (D) the infection results in lifelong protective immunity
-
+]
 
 ---
 class: inverse, center, middle
@@ -325,7 +351,7 @@ class: inverse, center, middle
 ---
 
 # Incidence &lt;hr/&gt;
-
+.large[
 - Among MSM, _Pneumocystis_ pneumonia is occurring more frequently...
 
 - Incidence: occurrence of new cases over a given period of time.
@@ -338,12 +364,12 @@ class: inverse, center, middle
 
 `$$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$`  
     
-
+]
 
 ---
 
 # Cumulative Incidence &lt;hr/&gt;
-
+.large[
 - Cumulative incidence:
 
     - must specify population consisting of at-risk individuals  
@@ -358,12 +384,12 @@ class: inverse, center, middle
     
     - like prevalence, is a proportion and therefore has no units (but only makes sense if you specify the time period of observation, e.g., % per year)  
     
-    
+]    
 
 ---
 
 # Incidence Density &lt;hr/&gt;
-
+.large[
 - Incidence density:
 
     - in a specified population consisting of at risk individuals over a specified period of observation, more precisely quantifies the person-time at risk  
@@ -376,12 +402,12 @@ class: inverse, center, middle
     
     - &lt;mark&gt;accounts for death from other causes!&lt;/mark&gt;
 
-
+]
 
 ---
 
 # Incidence: Which Denominator? &lt;hr/&gt;
-
+.large[
 - To understand the difference between cumulative incidence and incidence density, let's return to our imagined study of people living with HIV/AIDS at risk for _Pneumocystis_:  
 
     - 50 high-risk subjects enrolled at the start of a two-year observation period  
@@ -391,7 +417,7 @@ class: inverse, center, middle
     - incomplete follow-up (abbreviated grey lines on plot)
     
     - towards end of study, some subjects started on _Pneumocystis_ prophylaxis (blue lines on plot)  
-
+]
 
 
 ---
@@ -399,6 +425,30 @@ class: inverse, center, middle
 ## Cohort at Risk for _Pneumocystis_ &lt;hr/&gt;
 
 &lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/reprint_pcp_study-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ &lt;hr/&gt;
+
+&lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/print_pcp_study_label_case2-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ &lt;hr/&gt;
+
+&lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/print_pcp_study_label_followup2-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ &lt;hr/&gt;
+
+&lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/print_pcp_study_label_prophylaxis2-1.png" width="864" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -420,20 +470,20 @@ class: inverse, center, middle
 ---
 
 # Incidence: Which Denominator? &lt;hr/&gt;
-
+.large[
 - cumulative incidence of _Pneumocystis_ versus incidence density:
 
     - if the end of the grey line is death / loss to follow-up, how does incidence density compare to annual cumulative incidence?
 
     - if you don’t count time on prophylaxis or treatment antibiotics as “time at risk”, how does the incidence density compare to the annual cumulative incidence?  
 
-
+]
 
 
 ---
 
 # Notes on Population at Risk &lt;hr/&gt;
-
+.large[
 - In a population, individuals are at risk of disease if they: 
 
     - (1) do not have the disease at baseline  
@@ -443,13 +493,13 @@ class: inverse, center, middle
 
 - The difference between cumulative incidence and incidence density is that the latter attempts a more precise quantification of population at risk -- it’s harder to evaluate, but more informative if you can.
 
-
+]
 
 
 ---
 
 # Notes on Person-Time &lt;hr/&gt;
-
+.large[
 - To improve precision of risk estimate (&lt;ins&gt;incidence density&lt;/ins&gt;), we measure:  
 
     - population at risk of outcome  
@@ -461,19 +511,19 @@ class: inverse, center, middle
     - denominator for incidence density  
     
     - the product of population at risk and time at risk (e.g., patient-months)
-
+]
 
 
 ---
 
 # Beware the Phrase “Incidence Rate”! &lt;hr/&gt;
-
+.large[
 - “Incidence rate” is used to mean two different things:
 
     - number new cases / number population at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
     
     - number new cases / person-time at risk (i.e., incidence density, the precise rate)
-
+]
 
 
 ---
@@ -487,7 +537,7 @@ background-size: cover
 ---
 
 # Reflection Question &lt;hr/&gt;
-
+.large[
 Your patient with HIV is considering starting prophylactic antibiotics for PCP. You have PCP prevalence, cumulative incidence, and incidence density data available. Which data provide the most precise information on the patient’s risk of PCP off of prophylaxis?
 
 - (A) prevalence
@@ -495,7 +545,7 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 - (B) cumulative incidence
 
 - (C) incidence density
-
+]
 
 
 ---
@@ -508,9 +558,9 @@ class: inverse, center, middle
 ---
 
 # Prevalence vs Incidence &lt;hr/&gt;
-
+.large[
 - Can you tell prevalence from incidence?
-
+]
 
 ---
 
@@ -522,7 +572,7 @@ background-size: contain
 ---
 
 # Prevalence vs Incidence &lt;hr/&gt;
-
+.large[
 - Can you tell prevalence from incidence?
 
 - pancreatic cancer versus leukemia:
@@ -538,7 +588,7 @@ background-size: contain
     - what happened?
 
 .footnote[[*] Wawer M et al _CROI_ 2005; Roehr B _BMJ_ 2005]
-
+]
 
 
 ---
@@ -582,7 +632,7 @@ class: inverse, center, middle
 ---
 
 # Basics of Study Types &lt;hr/&gt;
-
+.large[
 - We want to understand the &lt;mark&gt;relationship between risk factors (exposures) and disease (outcomes)&lt;/mark&gt;. For example, between CD4 count and PCP in HIV.
 
 - To calculate incidence need to know how many are in a population:
@@ -592,6 +642,7 @@ class: inverse, center, middle
     - cohort studies: pick the population, divide into preselected exposure (treatment or risk factor) groups, and measure the outcome  
 
 - But do NOT know this generally in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know how many in population at risk).  
+]
 
 
 
@@ -716,7 +767,7 @@ class: inverse, center, middle
 ---
 
 ## Absolute Risk (AR), Risk Difference (RD) &amp; Number Needed to Treat (NNT) &lt;hr/&gt;
-
+.large[
 - **absolute risk (AR)**: risk of developing a given disease over a period of time
 
     - this is the incidence!!!
@@ -729,6 +780,7 @@ class: inverse, center, middle
 - **number needed to treat (NNT)**: number of patients who need to be treated for one person to benefit from the treatment  (= 1/RD)
 
     - using RD numbers above, NNT = 1/RD = 1/0.1 = 10 (treat 10 people to cure one additional person)
+]
 
 
 ---
@@ -817,7 +869,7 @@ class: inverse, center, middle
 ---
 
 # Data Types &lt;hr/&gt;
-
+.large[
 - Vital signs and physical exam:
 
     - temperature (degrees) - continuous
@@ -832,13 +884,13 @@ class: inverse, center, middle
 - Radiology:
 
     - ground glass - dichotomous
-
+]
 
 
 ---
 
 # Data Types &lt;hr/&gt;
-
+.large[
 - __Dichotomous__: history of diabetes, history of breast cancer; survival, pneumonia, MI
 
 - __Continuous__: age, height, weight, blood pressure; probability of treatment result
@@ -846,13 +898,13 @@ class: inverse, center, middle
 - __Nominal__: race, ethnicity, state of residence
 
 - __Ordinal__: age category, weight category; patient satisfaction
-  
+]  
   
   
 ---
 
 # Characterizing Continuous Data: Normal &lt;hr/&gt;
-
+.large[
 - "Normally distributed" data are well characterized by their mean and standard deviation.
 
     - **mean ( `\(\mu\)`)**:
@@ -861,10 +913,9 @@ class: inverse, center, middle
     - **standard deviation (SD or `\(\sigma\)`)**:
 `$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$`
   
-&lt;br/&gt;
-  
-&lt;p style="text-align: center;"&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/p&gt;
 
+&lt;p style="text-align: center;"&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/p&gt;
+]
 
 
 ---
@@ -880,7 +931,7 @@ class: inverse, center, middle
 ---
 
 # Reflection Question &lt;hr/&gt;
-
+.large[
 What makes standard deviation greater?
 
 - (A) More subjects?
@@ -890,13 +941,13 @@ What makes standard deviation greater?
 - (C) Higher maximum value?
 
 - (D) Greater difference between extreme and mean values? 
-
+]
 
 
 ---
 
 # Characterizing Continuous Data: Skewed or Uniform &lt;hr/&gt;
-
+.large[
 - “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
 
     - **skewed** data: distrubtion not symmetric around a central value  
@@ -906,7 +957,7 @@ What makes standard deviation greater?
 - For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
   
 - For normal data, mean and median have the same value.  
-
+]
 
 
 ---
@@ -923,7 +974,7 @@ What makes standard deviation greater?
 ---
 
 # Characterizing Continuous Data &lt;hr/&gt;
-
+.large[
 - Median and mode depend on ranking the values:
 
     - median is the “middle value” when data are ordered / ranked 
@@ -936,12 +987,13 @@ What makes standard deviation greater?
     - the third quartile is the "middle" value of the second half of the ordered set
     - IQR is the range of values between first and third quartiles  
 
+]
 
 
 ---
 
 # Reflection Question &lt;hr/&gt;
-
+.large[
 Which is least affected by outliers?
 
 - (A) Mean?
@@ -949,13 +1001,13 @@ Which is least affected by outliers?
 - (B) Median?
 
 - (C) Mode?
-
+]
 
 
 ---
 
 # How to Characterize Continuous Data &lt;hr/&gt;
-
+.large[
 - Pair a measure of central tendency with a measure of dispersion:
 
     - mean and SD (both affected by outliers)  
@@ -963,24 +1015,25 @@ Which is least affected by outliers?
     - median and IQR  
 
 - In doing so, account for &lt;ins&gt;uncertainty&lt;/ins&gt; in measures.  
-
+]
 
 
 ---
 
 # Dichotomizing Continuous Data &lt;hr/&gt;
-  
+.large[
 - Remember the diagnosis lecture: threshold of oxygen saturation (or \beta-D glucan) to diagnose _Pneumocystis_ pneumonia means trade-off between sensitivity and specificity.
 
 - Using a threshold to transform continuous data into dichotomous data means &lt;mark&gt;losing information about uncertainty&lt;/mark&gt;.  
 
 - This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
+]  
   
   
 ---
 
 # Dichotomania &lt;hr/&gt;
-
+.large[
 - As we discuss prevalence, incidence, RR, and OR, we will focus on &lt;ins&gt;dichotomous&lt;/ins&gt; exposures and outcomes.
 
 - Remember -- with dichotomous data:
@@ -992,6 +1045,7 @@ Which is least affected by outliers?
 - But we're doing it anyway &amp;#x1F600; ... why?
 
 - Medicine focuses on dichotomous diagnostic and treatment decisions.
+]
 
 
 ---
@@ -1009,7 +1063,7 @@ background-size: cover
 ---
 
 # Measures of Disease in Clinical Epidemiology &lt;hr/&gt;
-
+.large[
 - Distribution of data determines how we describe them: mean and SD vs median and IQR.
 
 - Prevalence is determined by incidence and survival time.
@@ -1021,6 +1075,7 @@ background-size: cover
 - OR approximates RR when outcome is rare.
 
 - NNT can be a clinically useful number.
+]
 
 
 ---
@@ -1080,6 +1135,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -1097,17 +1178,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
