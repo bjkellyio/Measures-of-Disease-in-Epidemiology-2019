@@ -997,11 +997,6 @@ c_graph %>% render_graph()
 
 - Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
 
-- Caution!!!
-
-    - need to know whether study is <ins>RCT/cohort vs case-control</ins>
-    - can always calculate a <ins>relative risk (RR)</ins> from 2x2 table but only appropriate for <ins>RCT/cohort</ins>
-    - can always calculate an <ins>odds ratio (OR)</ins> from 2x2 table but only appropriate for <ins>case-control study</ins><br/>(can do better with RR if RCT/cohort)
 ]
 
 .pull-right[
@@ -1015,6 +1010,85 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
   ggplot(data = .) +
   geom_tile(aes(x = Outcome, y = Exposure, fill = cells_order)) +
   geom_text(aes(x = Outcome, y = Exposure, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+]
+
+
+
+---
+
+## 2x2 Table 
+
+.pull-left[
+- <mark>Dichotomous</mark> exposures and outcomes.
+
+- Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
+
+]
+
+.pull-right[
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`Low CD4`,Pneumocystis) %>%
+  mutate(cells = c("5","15","10","10"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  scale_x_discrete(position = 'top') +
+  ggsci::scale_fill_nejm() +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 28),
+        axis.text.x.top = element_text(size = 28),
+        axis.title = element_text(size = 28),
+        panel.grid.major = element_blank(),
+        legend.position = 'none') +
+  coord_equal()
+
+```
+]
+
+
+
+---
+
+## 2x2 Table 
+
+.pull-left[
+- <mark>Dichotomous</mark> exposures and outcomes.
+
+- Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
+
+- Caution!!!
+
+    - need to know whether study is <ins>RCT/cohort vs case-control</ins>
+    - can always calculate a <ins>relative risk (RR)</ins> from 2x2 table but only appropriate for <ins>RCT/cohort</ins>
+    - can always calculate an <ins>odds ratio (OR)</ins> from 2x2 table but only appropriate for <ins>case-control study</ins><br/>(can do better with RR if RCT/cohort)
+]
+
+.pull-right[
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
+library(tidyverse)
+
+tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`Low CD4`,Pneumocystis) %>%
+  mutate(cells = c("5","15","10","10"),
+         cells_order = factor(x = c(3,4,1,2))) %>%
+  ggplot(data = .) +
+  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
   scale_x_discrete(position = 'top') +
   ggsci::scale_fill_nejm() +
   theme_minimal() +
@@ -1716,8 +1790,7 @@ background-size: cover
 .footnote[Wickramasekaran et al _Mycoses_ 2017]
 
 ---
-
-class: inverse, center, middle
+class: inverse, center, middle, hide-count
 
 
 
