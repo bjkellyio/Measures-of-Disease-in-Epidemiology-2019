@@ -784,7 +784,7 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 ## Incidence: Which Denominator? 
 
 .pad-left[
-- cumulative incidence of _Pneumocystis_ versus incidence density:
+- Cumulative incidence of _Pneumocystis_ versus incidence density:
 
     - if the end of the grey line is death / loss to follow-up, how does incidence density compare to annual cumulative incidence?
 
@@ -965,7 +965,7 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
-<div class="extension-tile gridset-d animated flipInX"><div>What<br>Determines<br>Risk?</div></div>
+<div class="extension-tile gridset-d animated flipInX"><div>What<br>determines<br>risk?</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 <div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
@@ -1185,7 +1185,7 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-e animated flipInY"><div>2x2 Tables<br>are HARD!</div></div>
+<div class="extension-tile gridset-e animated flipInY"><div>2x2 tables<br>are HARD!</div></div>
 <div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
@@ -1528,7 +1528,7 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-f animated flipInX"><div>Are All Data<br>Dichotomous?</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>Not all data are<br>dichotomous!</div></div>
 </div>
 
 
@@ -1585,7 +1585,7 @@ class: inverse, center, middle
 - Laboratory values:
 
     - white blood cell count (cells / uL) - continuous
-    - *if it weren't 1981... CD4 cell count (cells / uL) and HIV viral load (copies / mL) - continuous*
+    - CD4 cell count (cells / uL) and HIV viral load (copies / mL) - continuous
 
 - Radiology:
 
@@ -1620,10 +1620,10 @@ class: inverse, center, middle
 - "Normally distributed" data are well characterized by their mean and standard deviation.
 
     - **mean ( $\mu$)**:
-$$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
-
-    - **standard deviation (SD or $\sigma$)**:
-$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
+    $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
+  
+    - **standard deviation (SD or $\sigma$)**: 
+    $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
   
 
 <p style="text-align: center;"> (you do <strong>NOT</strong> need to memorize these formulas) </p>
@@ -1871,7 +1871,7 @@ background-size: cover
 ## Measures of Disease in Clinical Epidemiology 
 
 .pad-left[
-- Distribution of data determines how we describe them: mean and SD vs median and IQR.
+- Distribution of data determines how we describe them: mean + SD vs median + IQR.
 
 - Prevalence is determined by incidence and survival time.
 
