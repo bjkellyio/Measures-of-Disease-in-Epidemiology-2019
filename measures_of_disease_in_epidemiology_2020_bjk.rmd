@@ -33,6 +33,7 @@ xaringanExtra::use_animate_css()
 
 ## Learning Objectives
 
+.pad-left[
 - Measures of disease occurrence: use population data to describe health and disease.
 
 - Key concepts -- explain the meaning of:
@@ -49,12 +50,15 @@ xaringanExtra::use_animate_css()
     - how do we measure? 
     - data types and data distributions  
 
+]
+
 
 
 ---
 
 ## Why Do I Care? ... 
 
+.pad-left[
 - Why use these tools (prevalence, incidence, RR, OR)?
 
      - inform differential diagnoses & counsel patients (<ins>your job</ins>)  
@@ -63,17 +67,23 @@ xaringanExtra::use_animate_css()
      
      - understand distributions and determinants of diseases (science!)  
 
+]
+
+
 
 ---
 
 ## ... What Do I Need to Know for the Test? 
 
+.pad-left[
 - How to use these tools:
 
      - precise definitions 
      (e.g., RR vs OR, cumulative incidence vs incidence density)  
      
      - a bit of arithmetic  
+
+]
 
 
 
@@ -185,7 +195,10 @@ Image credit: [GIPHY](https://gph.is/1AUItZt)
 
 ## Case from 1981...   
 
+.pad-left[
 - 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+]
 
 
 
@@ -222,6 +235,7 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 ## Case from 1981... _Pneumocystis_ pneumonia? 
 
+.pad-left[
 - 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
 
 - What do you want to know and why?  
@@ -234,11 +248,15 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 - What is his diagnosis? Does he have _Pneumocystis_ pneumonia (PCP)?
 
+]
+
+
 
 ---
 
 ## Case from 1981... _Pneumocystis_ pneumonia? 
 
+.pad-left[
 - Differential diagnosis must be grounded in understanding:
 
     - distributions of disease: we'll learn about **prevalence** & **incidence**  
@@ -251,6 +269,8 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 - (In ID, the differential is always evolving).  
 
+]
+
 
 
 
@@ -258,6 +278,7 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 ## Case from 1981... _Pneumocystis_ pneumonia? 
 
+.pad-left[
 - Does our patient have _Pneumocystis_ pneumonia (PCP)?
 
 - How is the distribution of _Pneumocystis_ pneumonia changing?
@@ -268,6 +289,8 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
   
 <p style="text-align: center;"> <mark>Note: questions depend on <strong>dichotomous</strong> definition of disease (yes/no <em>Pneumocystis</em>)</mark> </p>
   
+]
+
 
 
 ---
@@ -310,6 +333,7 @@ class: inverse, center, middle
 
 ## Prevalence 
 
+.pad-left[
 - How common is _Pneumocystis_ pneumonia (PCP)?
 
 - Prevalence: 
@@ -326,12 +350,15 @@ class: inverse, center, middle
     
     - represents a <ins>cross-sectional</ins> “snapshot” of the population
 
+]
+
 
 
 ---
 
 ## Prevalence of _Pneumocystis_ pneumonia 
 
+.pad-left[
 - In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP:
 
     - period prevalence published in 1974<sup>*</sup>: 579 cases (194 confirmed) over 3 years
@@ -344,22 +371,26 @@ class: inverse, center, middle
 
 .footnote[[*] Walzer PD et al _Annals Int Med_ 1974]
 
+]
+
 
 
 ---
 
 ## Point Prevalence versus Period Prevalence 
 
+.pad-left[
 - To understand the difference between point and period prevalence, let's imagine a cohort of people living with HIV/AIDS at risk for _Pneumocystis_:  
 
     - 50 high-risk subjects enrolled at the start of a two-year observation period  
     
-    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plot)  
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red on plot)  
     
-    - incomplete follow-up (abbreviated grey lines on plot)
+    - incomplete follow-up (grey on plot)
     
-    - towards end of study, some subjects started on _Pneumocystis_ prophylaxis (blue lines on plot)  
+    - some subjects started on _Pneumocystis_ prophylaxis (blue on plot)  
 
+]
 
 
 
@@ -482,11 +513,15 @@ p + annotate("rect", xmin=0.9, xmax=1.2, ymin=0, ymax=Inf, alpha=0.6, fill="purp
 
 ## Prevalence 
 
+.pad-left[
 - Prevalence is **NOT** the same as risk.
 
 - Prevalence numerator includes all people who have the disease, both new and ongoing cases, so represents a cross-sectional “snapshot” of the population. 
 
 - Prevalence does **NOT** estimate the risk of developing the disease because <mark>prevalence does **NOT** fully account for time </mark> (are the measured cases old cases or new cases?).
+
+]
+
 
 
 
@@ -494,6 +529,7 @@ p + annotate("rect", xmin=0.9, xmax=1.2, ymin=0, ymax=Inf, alpha=0.6, fill="purp
 
 ## Reflection Question 
 
+.pad-left[
 How can an infection have high prevalence if it occurs infrequently?
 
 - (A) the infection is rapidly fatal
@@ -503,6 +539,8 @@ How can an infection have high prevalence if it occurs infrequently?
 - (C) a few children get the infection every year, but the infection persists for the rest of their lives
 
 - (D) the infection results in lifelong protective immunity
+
+]
 
 
 
@@ -574,6 +612,7 @@ class: inverse, center, middle
 
 ## Incidence 
 
+.pad-left[
 - Among MSM, _Pneumocystis_ pneumonia (PCP) is occurring more frequently...
 
 - Incidence: occurrence of new cases over a given period of time.
@@ -586,12 +625,15 @@ $$cumulative\ incidence = \frac{{new\ cases}}{population\ at\ risk\\at\ start\ t
 
 $$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$  
     
+]
+
 
 
 ---
 
 ## Cumulative Incidence 
 
+.pad-left[
 - Cumulative incidence:
 
     - must specify population consisting of at-risk individuals  
@@ -606,6 +648,8 @@ $$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$
     
     - like prevalence, is a proportion and therefore has no units (but only makes sense if you specify the time period of observation, e.g., % per year)  
     
+]
+
 
     
 
@@ -613,6 +657,7 @@ $$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$
 
 ## Incidence Density 
 
+.pad-left[
 - Incidence density:
 
     - in a specified population consisting of at risk individuals over a specified period of observation, more precisely quantifies the person-time at risk  
@@ -625,6 +670,7 @@ $$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$
     
     - <mark>accounts for death from other causes!</mark>
 
+]
 
 
 
@@ -632,15 +678,18 @@ $$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$
 
 ## Incidence: Which Denominator? 
 
+.pad-left[
 - To understand the difference between cumulative incidence and incidence density, let's return to our imagined study of people living with HIV/AIDS at risk for _Pneumocystis_:  
 
     - 50 high-risk subjects enrolled at the start of a two-year observation period  
     
-    - cases of PCP each receive 3 weeks of antibiotic treatment (red dots and lines on plot)  
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red on plot)  
     
-    - incomplete follow-up (abbreviated grey lines on plot)
+    - incomplete follow-up (grey on plot)
     
-    - towards end of study, some subjects started on _Pneumocystis_ prophylaxis (blue lines on plot)  
+    - some subjects started on _Pneumocystis_ prophylaxis (blue on plot)  
+
+]
 
 
 
@@ -713,6 +762,8 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 ```
 
 
+
+
 ---
 
 ## Cohort at Risk: Incidence Density (person-time at risk) 
@@ -732,6 +783,7 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 
 ## Incidence: Which Denominator? 
 
+.pad-left[
 - cumulative incidence of _Pneumocystis_ versus incidence density:
 
     - if the end of the grey line is death / loss to follow-up, how does incidence density compare to annual cumulative incidence?
@@ -739,12 +791,15 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
     - if you don’t count time on prophylaxis or treatment antibiotics as “time at risk”, how does the incidence density compare to the annual cumulative incidence?  
 
 
+]
+
 
 
 ---
 
 ## Notes on Population at Risk 
 
+.pad-left[
 - In a population, individuals are at risk of disease if they: 
 
     - (1) do not have the disease at baseline  
@@ -754,6 +809,7 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 
 - The difference between cumulative incidence and incidence density is that the latter attempts a more precise quantification of population at risk -- it’s harder to evaluate, but more informative if you can.
 
+]
 
 
 
@@ -761,6 +817,7 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 
 ## Notes on Person-Time 
 
+.pad-left[
 - To improve precision of risk estimate (<ins>incidence density</ins>), we measure:  
 
     - population at risk of outcome  
@@ -773,17 +830,22 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
     
     - the product of population at risk and time at risk (e.g., patient-months)
 
+]
+
 
 
 ---
 
 ## Beware the Phrase “Incidence Rate”! 
 
+.pad-left[
 - “Incidence rate” is used to mean two different things:
 
     - number new cases / number population at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
     
     - number new cases / person-time at risk (i.e., incidence density, the precise rate)
+
+]
 
 
 
@@ -799,6 +861,7 @@ background-size: cover
 
 ## Reflection Question 
 
+.pad-left[
 Your patient with HIV is considering starting prophylactic antibiotics for PCP. You have PCP prevalence, cumulative incidence, and incidence density data available. Which data provide the most precise information on the patient’s risk of PCP off of prophylaxis?
 
 - (A) prevalence
@@ -806,6 +869,8 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 - (B) cumulative incidence
 
 - (C) incidence density
+
+]
 
 
 
@@ -821,8 +886,11 @@ class: inverse, center, middle
 
 ## Prevalence vs Incidence 
 
+.pad-left[
 - Can you tell prevalence from incidence?
 
+
+]
 
 
 
@@ -837,6 +905,7 @@ background-size: contain
 
 ## Prevalence vs Incidence 
 
+.pad-left[
 - Can you tell prevalence from incidence?
 
 - pancreatic cancer versus leukemia:
@@ -852,6 +921,8 @@ background-size: contain
     - what happened?
 
 .footnote[[*] Wawer M et al _CROI_ 2005; Roehr B _BMJ_ 2005]
+
+]
 
 
 
@@ -927,6 +998,7 @@ class: inverse, center, middle
 
 ## Basics of Study Types 
 
+.pad-left[
 - We want to understand the <mark>relationship between risk factors (exposures) and disease (outcomes)</mark>. For example, between CD4 count and PCP in HIV.
 
 - To calculate incidence need to know how many are in a population:
@@ -935,8 +1007,9 @@ class: inverse, center, middle
     
     - cohort studies: pick the population, divide into preselected exposure (treatment or risk factor) groups, and measure the outcome  
 
-- But do NOT know this generally in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know how many in population at risk).  
+- But do NOT know this in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know size of population at risk).  
 
+]
 
 
 
@@ -1306,18 +1379,21 @@ tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = f
 
 ## AR vs RD vs NNT 
 
-- **absolute risk (AR)**: risk of developing a given disease over a period of time
+.pad-left[
+- **absolute risk (AR)**: risk of developing disease over a period of time (<mark>incidence!</mark>)
 
-    - this is the incidence!!!
-    - if you have a 1 in 10 chance of developing skin cancer in your lifetime, you are said to have a 10% absolute risk
+    - if 1 in 10 chance of developing skin cancer in your lifetime, AR = 10%
 
-- **risk difference (RD)**: difference in risk between the treatment/exposure group and the control group
+- **risk difference (RD)**: difference in risk between treatment/exposure and control
 
-    - if 3 in 10 are cured in the treatment group and 2 in 10 in the control group, the RD is 3/10 – 2/10 = 10%
+    - 3 in 10 cured with treatment vs 2 in 10 with control, RD = 3/10 – 2/10 = 10%
 
-- **number needed to treat (NNT)**: number of patients who need to be treated for one person to benefit from the treatment  (= 1/RD)
+- **number needed to treat (NNT)**: number treated for one person to benefit 
 
-    - using RD numbers above, NNT = 1/RD = 1/0.1 = 10 (treat 10 people to cure one additional person)
+    - NNT = 1/RD
+    - from RD numbers above, NNT = 1/RD = 1/0.1 = 10 (treat 10 people to cure 1 more)
+
+]
 
 
 
@@ -1499,6 +1575,7 @@ class: inverse, center, middle
 
 ## Data Types 
 
+.pad-left[
 - Vital signs and physical exam:
 
     - temperature (degrees) - continuous
@@ -1514,12 +1591,15 @@ class: inverse, center, middle
 
     - ground glass - dichotomous
 
+]
+
 
 
 ---
 
 ## Data Types 
 
+.pad-left[
 - __Dichotomous__: history of diabetes, history of breast cancer; survival, pneumonia, MI
 
 - __Continuous__: age, height, weight, blood pressure; probability of treatment result
@@ -1528,12 +1608,15 @@ class: inverse, center, middle
 
 - __Ordinal__: age category, weight category; patient satisfaction
   
+]
+
   
   
 ---
 
 ## Characterizing Continuous Data: Normal 
 
+.pad-left[
 - "Normally distributed" data are well characterized by their mean and standard deviation.
 
     - **mean ( $\mu$)**:
@@ -1544,6 +1627,8 @@ $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
   
 
 <p style="text-align: center;"> (you do <strong>NOT</strong> need to memorize these formulas) </p>
+
+]
 
 
 
@@ -1605,6 +1690,7 @@ What makes standard deviation greater?
 
 ## Characterizing Continuous Data: Skewed or Uniform 
 
+.pad-left[
 - “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
 
     - **skewed** data: distrubtion not symmetric around a central value  
@@ -1615,6 +1701,7 @@ What makes standard deviation greater?
   
 - For normal data, mean and median have the same value.  
 
+]
 
 
 
@@ -1661,6 +1748,7 @@ pcp_skew_o2 %>%
 
 ## Characterizing Continuous Data 
 
+.pad-left[
 - Median and mode depend on ranking the values:
 
     - median is the “middle value” when data are ordered / ranked 
@@ -1673,6 +1761,7 @@ pcp_skew_o2 %>%
     - the third quartile is the "middle" value of the second half of the ordered set
     - IQR is the range of values between first and third quartiles  
 
+]
 
 
 
@@ -1680,6 +1769,7 @@ pcp_skew_o2 %>%
 
 ## Reflection Question 
 
+.pad-left[
 Which is least affected by outliers?
 
 - (A) Mean?
@@ -1688,12 +1778,15 @@ Which is least affected by outliers?
 
 - (C) Mode?
 
+]
+
 
 
 ---
 
 ## How to Characterize Continuous Data 
 
+.pad-left[
 - Pair a measure of central tendency with a measure of dispersion:
 
     - mean and SD (both affected by outliers)  
@@ -1702,12 +1795,15 @@ Which is least affected by outliers?
 
 - In doing so, account for <ins>uncertainty</ins> in measures.  
 
+]
+
 
 
 ---
 
 ## Dichotomizing Continuous Data 
 
+.pad-left[
 - Remember the diagnosis lecture: threshold of oxygen saturation (or \beta-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
 
 - Using a threshold to transform continuous data into dichotomous data means <mark>losing information about uncertainty</mark>.  
@@ -1715,12 +1811,15 @@ Which is least affected by outliers?
 - This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
 
 
+]
+
   
   
 ---
 
 ## Dichotomania 
 
+.pad-left[
 - As we discussed prevalence, incidence, RR, and OR, we focused on <ins>dichotomous</ins> exposures and outcomes.
 
 - Remember -- with dichotomous data:
@@ -1732,6 +1831,8 @@ Which is least affected by outliers?
 - But we're doing it anyway &#x1F600; ... why?
 
 - Medicine focuses on dichotomous diagnostic and treatment decisions.
+
+]
 
 
 
@@ -1769,6 +1870,7 @@ background-size: cover
 
 ## Measures of Disease in Clinical Epidemiology 
 
+.pad-left[
 - Distribution of data determines how we describe them: mean and SD vs median and IQR.
 
 - Prevalence is determined by incidence and survival time.
@@ -1780,6 +1882,8 @@ background-size: cover
 - OR approximates RR when outcome is rare.
 
 - NNT can be a clinically useful number.
+
+]
 
 
 
