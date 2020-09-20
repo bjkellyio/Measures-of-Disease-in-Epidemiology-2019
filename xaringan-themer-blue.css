@@ -157,10 +157,12 @@ a, a > code {
 .pull-left {
   float: left;
   width: 47%;
+  font-size: 1.1rem;
 }
 .pull-right {
   float: right;
   width: 47%;
+  font-size: 1.1rem;
 }
 .pull-right ~ * {
   clear: both;

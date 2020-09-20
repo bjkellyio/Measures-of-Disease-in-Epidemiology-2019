@@ -1066,9 +1066,11 @@ c_graph %>% render_graph()
 ## 2x2 Table 
 
 .pull-left[
-- <mark>Dichotomous</mark> exposures and outcomes.
+- Dichotomous exposures and outcomes.
 
-- Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
+- Examine relationships between exposures and outcomes.  
+  
+- <ins>Goal</ins>: inference about larger world.  
 
 ]
 
@@ -1103,9 +1105,11 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 ## 2x2 Table 
 
 .pull-left[
-- <mark>Dichotomous</mark> exposures and outcomes.
+- Dichotomous exposures and outcomes.
 
-- Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
+- Examine relationships between exposures and outcomes.  
+  
+- <ins>Goal</ins>: inference about larger world.  
 
 ]
 
@@ -1140,16 +1144,20 @@ tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = f
 ## 2x2 Table 
 
 .pull-left[
-- <mark>Dichotomous</mark> exposures and outcomes.
+- Dichotomous exposures and outcomes.
 
-- Examine relationships between exposures and outcomes. <ins>Goal</ins>: inference about larger world.
+- Examine relationships between exposures and outcomes.  
+  
+- <ins>Goal</ins>: inference about larger world.
 
-- Caution!!!
+- <mark>Is study RCT/cohort or case-control?</mark>  
+  
+- Can always calculate a <ins>relative risk (RR)</ins> from 2x2 table but only appropriate for <ins>RCT/cohort</ins>  
+  
+- Can always calculate an <ins>odds ratio (OR)</ins> from 2x2 table but only appropriate for <ins>case-control study</ins><br/>(can do better with RR if RCT/cohort)  
 
-    - need to know whether study is <ins>RCT/cohort vs case-control</ins>
-    - can always calculate a <ins>relative risk (RR)</ins> from 2x2 table but only appropriate for <ins>RCT/cohort</ins>
-    - can always calculate an <ins>odds ratio (OR)</ins> from 2x2 table but only appropriate for <ins>case-control study</ins><br/>(can do better with RR if RCT/cohort)
 ]
+
 
 .pull-right[
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
@@ -1528,6 +1536,20 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>2x2 tables<br>focus on<br>dichotomous<br>data...</div></div>
+</div>
+
+
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 <div class="extension-tile gridset-f animated flipInX"><div>Not all data are<br>dichotomous!</div></div>
 </div>
 
@@ -1617,7 +1639,7 @@ class: inverse, center, middle
 ## Characterizing Continuous Data: Normal 
 
 .pad-left[
-- "Normally distributed" data are well characterized by their mean and standard deviation.
+- "Normally distributed": data well characterized by mean and standard deviation.
 
     - **mean ( $\mu$)**:
     $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
@@ -1888,8 +1910,10 @@ background-size: cover
 
 
 ---
+background-image: url(figs/Wickramasekaran_Mycoses_2017.jpg)
+background-size: 750px
+background-position: 50% 50%
 
-![an image](figs/Wickramasekaran_Mycoses_2017.jpg)
 
 .footnote[Wickramasekaran et al _Mycoses_ 2017]
 
