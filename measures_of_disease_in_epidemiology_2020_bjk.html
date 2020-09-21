@@ -79,6 +79,16 @@ class: center, middle, inverse, title-slide
 ## ... What Do I Need to Know for the Test? 
 
 .pad-left[
+.grey-text[
+- Why use these tools (prevalence, incidence, RR, OR)?
+
+     - inform differential diagnoses &amp; counsel patients (&lt;ins&gt;your job&lt;/ins&gt;)  
+     
+     - design public health interventions &amp; direct new diagnostics/therapies (society!)   
+     
+     - understand distributions and determinants of diseases (science!)  
+     
+]
 - How to use these tools:
 
      - precise definitions 
@@ -270,7 +280,9 @@ All the above observations suggest the possibility of a &lt;mark&gt;cellular-imm
 
 - New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;.  
 
-- (In ID, the differential is always evolving).  
+&lt;br/&gt;
+
+.center[&lt;mark&gt;(In ID, the differential is always evolving).&lt;/mark&gt;]  
 
 ]
 
@@ -290,7 +302,7 @@ All the above observations suggest the possibility of a &lt;mark&gt;cellular-imm
   
 &lt;br/&gt;
   
-&lt;p style="text-align: center;"&gt; &lt;mark&gt;Note: questions depend on &lt;strong&gt;dichotomous&lt;/strong&gt; definition of disease (yes/no &lt;em&gt;Pneumocystis&lt;/em&gt;)&lt;/mark&gt; &lt;/p&gt;
+.center[&lt;mark&gt;Note: questions depend on &lt;strong&gt;dichotomous&lt;/strong&gt; definition of disease (yes/no &lt;em&gt;Pneumocystis&lt;/em&gt;)&lt;/mark&gt;]
   
 ]
 
@@ -556,7 +568,7 @@ class: inverse, center, middle
 
 - **cumulative incidence**:  
 
-`$$cumulative\ incidence = \frac{{new\ cases}}{population\ at\ risk\\at\ start\ time\ interval}$$`  
+`$$cumulative\ incidence = \frac{{new\ cases}}{persons\ at\ risk\\at\ start\ time\ interval}$$`  
 
 - **incidence density**: (more precise)  
 
@@ -741,7 +753,7 @@ class: inverse, center, middle
 .pad-left[
 - “Incidence rate” is used to mean two different things:
 
-    - number new cases / number population at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
+    - number new cases / number persons at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
     
     - number new cases / person-time at risk (i.e., incidence density, the precise rate)
 
@@ -783,41 +795,26 @@ class: inverse, center, middle
 
 
 ---
-
-## Prevalence vs Incidence 
-
-.pad-left[
-- Can you tell prevalence from incidence?
-
-
-]
-
-
-
----
-
 background-image: url(figs/bathtub_labelled.svg)
-background-size: contain
+background-size: 520px
+background-position: 50% 70%
 
+## Can You Tell Prevalence from Incidence?
 
 
 ---
 
-## Prevalence vs Incidence 
+## Can You Tell Prevalence from Incidence?
 
 .pad-left[
-- Can you tell prevalence from incidence?
-
-- pancreatic cancer versus leukemia:
-
-    - new cases per year: pancreatic 24,120; leukemia 23,370
-    - deaths per year: pancreatic 19,850; leukemia 10,240
-    - which is more prevalent?
-
 - HIV in Rakai, Uganda 1994-2003*:
 
     - intensive “ABC” intervention (Abstinence, Be faithful, Condoms)
-    - prevalence declined, but incidence remained constant at 1.5% per year
+    
+    - prevalence declined!
+    
+    - incidence remained constant at 1.5% per year
+    
     - what happened?
 
 .footnote[[*] Wawer M et al _CROI_ 2005; Roehr B _BMJ_ 2005]
@@ -1034,11 +1031,11 @@ class: full-screen hide-count
 
 ---
 
-## PCP ~ CD4 Cell Count: Relative Risk (RR) 
+## PCP ~ AIDS: Relative Risk (RR) 
 
 .pull-left[
 
-- Imagine a cohort study examining incidence (risk) for _Pneumocystis_ among patients with low vs high (dichotomous) CD4 cell counts:
+- Imagine a cohort study examining incidence (risk) for _Pneumocystis_ among patients with or without an Acquired Immunodeficiency Syndrome (AIDS):
 
 - Relative Risk (RR):
 
@@ -1080,11 +1077,11 @@ class: full-screen hide-count
 
 ---
 
-## PCP ~ CD4 Cell Count: Number Needed to Treat 
+## PCP ~ AIDS: Number Needed to Treat 
 
 .pull-left[
 
-- Cohort study examining incidence (risk) for _Pneumocystis_ among patients with low vs high (dichotomous) CD4 cell counts:
+- Cohort study examining incidence (risk) for _Pneumocystis_ among patients with or without AIDS:
 
 - Risk difference (RD):
 
@@ -1151,7 +1148,7 @@ class: full-screen hide-count
 
 .pull-left[
 
-- Imagine a different study: 100 _Pneumocystis_ cases and 100 controls; measure whether 'low CD4' (exposure) differs between groups chosen by investigator.
+- Imagine a different study: 100 _Pneumocystis_ cases and 100 controls; measure whether 'AIDS' (exposure) differs between groups chosen by investigator.
 
 - Odds Ratio (OR): odds exposure in cases / odds exposure in controls:    
 
@@ -1295,19 +1292,12 @@ class: inverse, center, middle
   
 ---
 
-## Characterizing Continuous Data: Normal 
+## Describing Continuous Data
 
 .pad-left[
-- "Normally distributed": data well characterized by mean and standard deviation.
+- "Normally distributed" or "parametric" data: data well characterized by mean and standard deviation.
 
-    - **mean ( `\(\mu\)`)**:
-    `$$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$`
-  
-    - **standard deviation (SD or `\(\sigma\)`)**: 
-    `$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$`
-  
-
-&lt;p style="text-align: center;"&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/p&gt;
+- "Non-parametric" data: data NOT well characterized by mean and standard deviation.
 
 ]
 
@@ -1315,55 +1305,16 @@ class: inverse, center, middle
 
 ---
 
-## Characterizing Continuous Data: Normal 
+## "Parametric" Continuous Data 
 
 &lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/continuous_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
 
 .footnote[[*] Data made up.]
 
 
-
 ---
 
-## Reflection Question 
-
-.pad-left[
-What makes standard deviation greater?
-
-- (A) More subjects?
-
-- (B) Higher mean value?
-
-- (C) Higher maximum value?
-
-- (D) Greater difference between extreme and mean values? 
-
-]
-
-
-
----
-
-## Characterizing Continuous Data: Skewed or Uniform 
-
-.pad-left[
-- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
-
-    - **skewed** data: distrubtion not symmetric around a central value  
-    
-    - **uniform** data: distributed with equal probability of each value across whole range of values  
-
-- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
-  
-- For normal data, mean and median have the same value.  
-
-]
-
-
-
----
-
-## Characterizing Continuous Data: Skewed or Uniform 
+## "Non-Parametric" Continuous Data 
 
 &lt;img src="measures_of_disease_in_epidemiology_2020_bjk_files/figure-html/skewed_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
 
@@ -1374,20 +1325,36 @@ What makes standard deviation greater?
 
 ---
 
-## Characterizing Continuous Data 
+## Describing Continuous Data
 
 .pad-left[
-- Median and mode depend on ranking the values:
 
-    - median is the “middle value” when data are ordered / ranked 
-    - mode is most frequently occurring value  
+- "Normally distributed": data well characterized by **mean** and **standard deviation**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
+
+    - **skewed** data: distrubtion not symmetric around a central value  
     
+    - **uniform** data: distributed with equal probability of each value across whole range of values  
 
-- Interquartile range (IQR) also depends on ranking the values:
+- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+  
+]
 
-    - the first quartile is the "middle" value of the first half of the ordered set
-    - the third quartile is the "middle" value of the second half of the ordered set
-    - IQR is the range of values between first and third quartiles  
+
+
+---
+
+## Characterize Continuous Data: Central Tendency 
+
+.pad-left[
+
+- **Mean ( `\(\mu\)`)**:
+    `$$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$`
+
+- **Median**: middle value, when values ordered / ranked
+
+- **Mode**: most frequently occurring value
 
 ]
 
@@ -1395,16 +1362,22 @@ What makes standard deviation greater?
 
 ---
 
-## Reflection Question 
+## Characterize Continuous Data: Variation/Spread 
 
 .pad-left[
-Which is least affected by outliers?
 
-- (A) Mean?
+- **Standard deviation (SD or `\(\sigma\)`)**: 
+    `$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$`
 
-- (B) Median?
+- **Interquartile range (IQR)** depends on ranking the values:
 
-- (C) Mode?
+    - the first quartile is the "middle" value of the first half of the ordered set  
+    
+    - the third quartile is the "middle" value of the second half of the ordered set  
+    
+    - IQR is the range of values between first and third quartiles  
+  
+&lt;p style="text-align: center;"&gt;&lt;mark&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/mark&gt;&lt;/p&gt;
 
 ]
 
@@ -1422,6 +1395,25 @@ Which is least affected by outliers?
     - median and IQR  
 
 - In doing so, account for &lt;ins&gt;uncertainty&lt;/ins&gt; in measures.  
+
+]
+
+
+
+---
+
+## Reflection Question 
+
+.pad-left[
+What makes standard deviation greater?
+
+- (A) More subjects?
+
+- (B) Higher mean value?
+
+- (C) Higher maximum value?
+
+- (D) Greater difference between extreme and mean values? 
 
 ]
 
@@ -1517,7 +1509,7 @@ background-size: cover
 
 ---
 background-image: url(figs/Wickramasekaran_Mycoses_2017.jpg)
-background-size: 750px
+background-size: 900px
 background-position: 50% 50%
 
 

@@ -76,6 +76,16 @@ xaringanExtra::use_animate_css()
 ## ... What Do I Need to Know for the Test? 
 
 .pad-left[
+.grey-text[
+- Why use these tools (prevalence, incidence, RR, OR)?
+
+     - inform differential diagnoses & counsel patients (<ins>your job</ins>)  
+     
+     - design public health interventions & direct new diagnostics/therapies (society!)   
+     
+     - understand distributions and determinants of diseases (science!)  
+     
+]
 - How to use these tools:
 
      - precise definitions 
@@ -267,7 +277,9 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 - New data would show an increasing <ins>incidence</ins>.  
 
-- (In ID, the differential is always evolving).  
+<br/>
+
+.center[<mark>(In ID, the differential is always evolving).</mark>]  
 
 ]
 
@@ -287,7 +299,7 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
   
 <br/>
   
-<p style="text-align: center;"> <mark>Note: questions depend on <strong>dichotomous</strong> definition of disease (yes/no <em>Pneumocystis</em>)</mark> </p>
+.center[<mark>Note: questions depend on <strong>dichotomous</strong> definition of disease (yes/no <em>Pneumocystis</em>)</mark>]
   
 ]
 
@@ -619,7 +631,7 @@ class: inverse, center, middle
 
 - **cumulative incidence**:  
 
-$$cumulative\ incidence = \frac{{new\ cases}}{population\ at\ risk\\at\ start\ time\ interval}$$  
+$$cumulative\ incidence = \frac{{new\ cases}}{persons\ at\ risk\\at\ start\ time\ interval}$$  
 
 - **incidence density**: (more precise)  
 
@@ -841,7 +853,7 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 .pad-left[
 - “Incidence rate” is used to mean two different things:
 
-    - number new cases / number population at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
+    - number new cases / number persons at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
     
     - number new cases / person-time at risk (i.e., incidence density, the precise rate)
 
@@ -883,41 +895,26 @@ class: inverse, center, middle
 
 
 ---
-
-## Prevalence vs Incidence 
-
-.pad-left[
-- Can you tell prevalence from incidence?
-
-
-]
-
-
-
----
-
 background-image: url(figs/bathtub_labelled.svg)
-background-size: contain
+background-size: 520px
+background-position: 50% 70%
 
+## Can You Tell Prevalence from Incidence?
 
 
 ---
 
-## Prevalence vs Incidence 
+## Can You Tell Prevalence from Incidence?
 
 .pad-left[
-- Can you tell prevalence from incidence?
-
-- pancreatic cancer versus leukemia:
-
-    - new cases per year: pancreatic 24,120; leukemia 23,370
-    - deaths per year: pancreatic 19,850; leukemia 10,240
-    - which is more prevalent?
-
 - HIV in Rakai, Uganda 1994-2003*:
 
     - intensive “ABC” intervention (Abstinence, Be faithful, Condoms)
-    - prevalence declined, but incidence remained constant at 1.5% per year
+    
+    - prevalence declined!
+    
+    - incidence remained constant at 1.5% per year
+    
     - what happened?
 
 .footnote[[*] Wawer M et al _CROI_ 2005; Roehr B _BMJ_ 2005]
@@ -1117,13 +1114,13 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
 library(tidyverse)
 
-tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
-  complete(`Low CD4`,Pneumocystis) %>%
+tibble(`AIDS` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`AIDS`,Pneumocystis) %>%
   mutate(cells = c("5","15","10","10"),
          cells_order = factor(x = c(3,4,1,2))) %>%
   ggplot(data = .) +
-  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
-  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  geom_tile(aes(x = Pneumocystis, y = `AIDS`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `AIDS`, label = cells), size = 16) +
   scale_x_discrete(position = 'top') +
   ggsci::scale_fill_nejm() +
   theme_minimal() +
@@ -1163,13 +1160,13 @@ tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = f
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
 library(tidyverse)
 
-tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
-  complete(`Low CD4`,Pneumocystis) %>%
+tibble(`AIDS` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`AIDS`,Pneumocystis) %>%
   mutate(cells = c("5","15","10","10"),
          cells_order = factor(x = c(3,4,1,2))) %>%
   ggplot(data = .) +
-  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
-  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  geom_tile(aes(x = Pneumocystis, y = `AIDS`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `AIDS`, label = cells), size = 16) +
   scale_x_discrete(position = 'top') +
   ggsci::scale_fill_nejm() +
   theme_minimal() +
@@ -1255,11 +1252,11 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 
 ---
 
-## PCP ~ CD4 Cell Count: Relative Risk (RR) 
+## PCP ~ AIDS: Relative Risk (RR) 
 
 .pull-left[
 
-- Imagine a cohort study examining incidence (risk) for _Pneumocystis_ among patients with low vs high (dichotomous) CD4 cell counts:
+- Imagine a cohort study examining incidence (risk) for _Pneumocystis_ among patients with or without an Acquired Immunodeficiency Syndrome (AIDS):
 
 - Relative Risk (RR):
 
@@ -1275,13 +1272,13 @@ $$RD = \frac{10}{(10 + 10)} - \frac{5}{(5 + 15)} = 0.25$$
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
 library(tidyverse)
 
-tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
-  complete(`Low CD4`,Pneumocystis) %>%
+tibble(`AIDS` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`AIDS`,Pneumocystis) %>%
   mutate(cells = c("5","15","10","10"),
          cells_order = factor(x = c(3,4,1,2))) %>%
   ggplot(data = .) +
-  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
-  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  geom_tile(aes(x = Pneumocystis, y = `AIDS`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `AIDS`, label = cells), size = 16) +
   scale_x_discrete(position = 'top') +
   ggsci::scale_fill_nejm() +
   theme_minimal() +
@@ -1341,11 +1338,11 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 
 ---
 
-## PCP ~ CD4 Cell Count: Number Needed to Treat 
+## PCP ~ AIDS: Number Needed to Treat 
 
 .pull-left[
 
-- Cohort study examining incidence (risk) for _Pneumocystis_ among patients with low vs high (dichotomous) CD4 cell counts:
+- Cohort study examining incidence (risk) for _Pneumocystis_ among patients with or without AIDS:
 
 - Risk difference (RD):
 
@@ -1361,13 +1358,13 @@ $$NNT = \frac{1}{RD} = \frac{1}{\frac{10}{(10 + 10)} - \frac{5}{(5 + 15)}} = \fr
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
 library(tidyverse)
 
-tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
-  complete(`Low CD4`,Pneumocystis) %>%
+tibble(`AIDS` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`AIDS`,Pneumocystis) %>%
   mutate(cells = c("5","15","10","10"),
          cells_order = factor(x = c(3,4,1,2))) %>%
   ggplot(data = .) +
-  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
-  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  geom_tile(aes(x = Pneumocystis, y = `AIDS`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `AIDS`, label = cells), size = 16) +
   scale_x_discrete(position = 'top') +
   ggsci::scale_fill_nejm() +
   theme_minimal() +
@@ -1452,7 +1449,7 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 
 .pull-left[
 
-- Imagine a different study: 100 _Pneumocystis_ cases and 100 controls; measure whether 'low CD4' (exposure) differs between groups chosen by investigator.
+- Imagine a different study: 100 _Pneumocystis_ cases and 100 controls; measure whether 'AIDS' (exposure) differs between groups chosen by investigator.
 
 - Odds Ratio (OR): odds exposure in cases / odds exposure in controls:    
 
@@ -1464,13 +1461,13 @@ $$OR = \frac{\frac{90}{10}}{\frac{50}{50}} = \frac{90*50}{50*10} = 9$$
 ```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='center', fig.width=5, fig.height=5, fig.retina=2}
 library(tidyverse)
 
-tibble(`Low CD4` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
-  complete(`Low CD4`,Pneumocystis) %>%
+tibble(`AIDS` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = factor(x = c("+","-"), levels = c("+","-"))) %>%
+  complete(`AIDS`,Pneumocystis) %>%
   mutate(cells = c("10","50","90","50"),
          cells_order = factor(x = c(3,4,1,2))) %>%
   ggplot(data = .) +
-  geom_tile(aes(x = Pneumocystis, y = `Low CD4`, fill = cells_order)) +
-  geom_text(aes(x = Pneumocystis, y = `Low CD4`, label = cells), size = 16) +
+  geom_tile(aes(x = Pneumocystis, y = `AIDS`, fill = cells_order)) +
+  geom_text(aes(x = Pneumocystis, y = `AIDS`, label = cells), size = 16) +
   scale_x_discrete(position = 'top') +
   ggsci::scale_fill_nejm() +
   theme_minimal() +
@@ -1636,19 +1633,12 @@ class: inverse, center, middle
   
 ---
 
-## Characterizing Continuous Data: Normal 
+## Describing Continuous Data
 
 .pad-left[
-- "Normally distributed": data well characterized by mean and standard deviation.
+- "Normally distributed" or "parametric" data: data well characterized by mean and standard deviation.
 
-    - **mean ( $\mu$)**:
-    $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
-  
-    - **standard deviation (SD or $\sigma$)**: 
-    $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
-  
-
-<p style="text-align: center;"> (you do <strong>NOT</strong> need to memorize these formulas) </p>
+- "Non-parametric" data: data NOT well characterized by mean and standard deviation.
 
 ]
 
@@ -1656,7 +1646,7 @@ class: inverse, center, middle
 
 ---
 
-## Characterizing Continuous Data: Normal 
+## "Parametric" Continuous Data 
 
 ```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
@@ -1688,48 +1678,9 @@ pcp_o2 %>%
 .footnote[[*] Data made up.]
 
 
-
 ---
 
-## Reflection Question 
-
-.pad-left[
-What makes standard deviation greater?
-
-- (A) More subjects?
-
-- (B) Higher mean value?
-
-- (C) Higher maximum value?
-
-- (D) Greater difference between extreme and mean values? 
-
-]
-
-
-
----
-
-## Characterizing Continuous Data: Skewed or Uniform 
-
-.pad-left[
-- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
-
-    - **skewed** data: distrubtion not symmetric around a central value  
-    
-    - **uniform** data: distributed with equal probability of each value across whole range of values  
-
-- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
-  
-- For normal data, mean and median have the same value.  
-
-]
-
-
-
----
-
-## Characterizing Continuous Data: Skewed or Uniform 
+## "Non-Parametric" Continuous Data 
 
 ```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
@@ -1768,20 +1719,36 @@ pcp_skew_o2 %>%
 
 ---
 
-## Characterizing Continuous Data 
+## Describing Continuous Data
 
 .pad-left[
-- Median and mode depend on ranking the values:
 
-    - median is the “middle value” when data are ordered / ranked 
-    - mode is most frequently occurring value  
+- "Normally distributed": data well characterized by **mean** and **standard deviation**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
+
+    - **skewed** data: distrubtion not symmetric around a central value  
     
+    - **uniform** data: distributed with equal probability of each value across whole range of values  
 
-- Interquartile range (IQR) also depends on ranking the values:
+- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+  
+]
 
-    - the first quartile is the "middle" value of the first half of the ordered set
-    - the third quartile is the "middle" value of the second half of the ordered set
-    - IQR is the range of values between first and third quartiles  
+
+
+---
+
+## Characterize Continuous Data: Central Tendency 
+
+.pad-left[
+
+- **Mean ( $\mu$)**:
+    $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
+
+- **Median**: middle value, when values ordered / ranked
+
+- **Mode**: most frequently occurring value
 
 ]
 
@@ -1789,16 +1756,22 @@ pcp_skew_o2 %>%
 
 ---
 
-## Reflection Question 
+## Characterize Continuous Data: Variation/Spread 
 
 .pad-left[
-Which is least affected by outliers?
 
-- (A) Mean?
+- **Standard deviation (SD or $\sigma$)**: 
+    $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
 
-- (B) Median?
+- **Interquartile range (IQR)** depends on ranking the values:
 
-- (C) Mode?
+    - the first quartile is the "middle" value of the first half of the ordered set  
+    
+    - the third quartile is the "middle" value of the second half of the ordered set  
+    
+    - IQR is the range of values between first and third quartiles  
+  
+<p style="text-align: center;"><mark> (you do <strong>NOT</strong> need to memorize these formulas) </mark></p>
 
 ]
 
@@ -1816,6 +1789,25 @@ Which is least affected by outliers?
     - median and IQR  
 
 - In doing so, account for <ins>uncertainty</ins> in measures.  
+
+]
+
+
+
+---
+
+## Reflection Question 
+
+.pad-left[
+What makes standard deviation greater?
+
+- (A) More subjects?
+
+- (B) Higher mean value?
+
+- (C) Higher maximum value?
+
+- (D) Greater difference between extreme and mean values? 
 
 ]
 
@@ -1911,7 +1903,7 @@ background-size: cover
 
 ---
 background-image: url(figs/Wickramasekaran_Mycoses_2017.jpg)
-background-size: 750px
+background-size: 900px
 background-position: 50% 50%
 
 
