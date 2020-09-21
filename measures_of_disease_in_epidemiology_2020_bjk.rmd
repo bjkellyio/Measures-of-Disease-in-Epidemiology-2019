@@ -183,25 +183,6 @@ class: full-screen hide-count
 
 
 ---
-exclude: true
-class: inverse, center, middle
-
-## Case from 1981...
-
-
----
-exclude: TRUE
-
-background-image: url(gifs/magnum_pi.gif)
-background-size: cover
-
-
-???
-
-Image credit: [GIPHY](https://gph.is/1AUItZt)
-
-
----
 
 ## Case from 1981...   
 
@@ -330,14 +311,6 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 <div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## Measures of Disease Occurrence:<br/>Prevalence
 
 
 
@@ -581,14 +554,6 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 <div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## Measures of Disease Occurrence:<br/>Incidence
 
 
 
@@ -862,14 +827,6 @@ p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0
 
 
 ---
-exclude: TRUE
-
-background-image: url(gifs/frink_shake.gif)
-background-size: cover
-
-
-
----
 
 ## Reflection Question 
 
@@ -883,14 +840,6 @@ Your patient with HIV is considering starting prophylactic antibiotics for PCP. 
 - (C) incidence density
 
 ]
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## Measures of Disease Occurrence:<br/>Prevalence vs Incidence
 
 
 
@@ -924,38 +873,6 @@ background-position: 50% 70%
 
 
 ---
-exclude: true
-class: inverse, center, middle
-
-## We're not done yet...
-
-
-
----
-exclude: TRUE
-
-background-image: url(gifs/abbi_no.gif)
-background-size: cover
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## ... and coming now are the formulas you really need to know...
-
-
-
----
-exclude: TRUE
-
-background-image: url(gifs/abbi_no.gif)
-background-size: cover
-
-
-
----
 class: full-screen hide-count
 
 <div class="grid-3-2">
@@ -980,14 +897,6 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 <div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## Inference from Epidemiologic Measures
 
 
 
@@ -1567,30 +1476,6 @@ class: full-screen hide-count
 
 
 ---
-exclude: true
-class: inverse, center, middle
-
-## Back to the beginning...
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## ... how did we get dichotomous exposures and outcomes?
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## Data Types & Data Distributions
-
-
-
----
 
 ## Data Types 
 
@@ -1861,22 +1746,6 @@ class: full-screen hide-count
 <div class="extension-tile gridset-e animated flipInY"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 <div class="extension-tile gridset-f animated flipInX"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
-
-
-
----
-exclude: true
-class: inverse, center, middle
-
-## Conclusions
-
-
-
----
-exclude: TRUE
-
-background-image: url(gifs/ilana_yes.gif)
-background-size: cover
 
 
 
