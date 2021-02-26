@@ -3,7 +3,7 @@ title: "Measures of Disease in Clinical Epidemiology<br/>"
 subtitle: "<hr/>"
 author: "Brendan J. Kelly, MD, MS"
 institute: "Infectious Diseases & Epidemiology<br/><br/>![](penn_logos/Penn-Shield-Logotype-White-over-Blue-RGB-Expanded.svg){width=160px}" 
-date: "updated: `r format(Sys.Date(), '%d %B %Y')`"
+date: "updated: 21 September 2020" #`r format(Sys.Date(), '%d %B %Y')`
 output:
   xaringan::moon_reader:
     #css: ["bjk_xaringan.css",default-fonts]
@@ -28,6 +28,7 @@ xaringanExtra::use_tile_view()
 xaringanExtra::use_webcam()
 xaringanExtra::use_tachyons()
 xaringanExtra::use_animate_css()
+xaringanExtra::use_share_again()
 ```
 
 
