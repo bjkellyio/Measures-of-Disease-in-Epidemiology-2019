@@ -1,0 +1,13 @@
+#' load libraries and set seed
+library(tidyverse)
+library(xaringan)
+library(xaringanExtra)
+library(pagedown)
+
+set.seed(16)
+
+
+
+#' print slides to PDF
+pagedown::chrome_print(input = "measures_of_disease_in_epidemiology_2021_bjk.html",
+                       output = "~/Downloads/measures_of_disease_in_epidemiology_2021_bjk.pdf")

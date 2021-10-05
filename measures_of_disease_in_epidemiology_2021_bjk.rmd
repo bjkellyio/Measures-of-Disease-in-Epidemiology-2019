@@ -1808,6 +1808,11 @@ class: center, middle, hide-count
 background-image: url(img/Pneumocystis_jirovecii_AO_AL_wikipedia_crop.png)
 background-size: cover
 
+.title-subtext[Questions?]
+
+.footnote-right[
+<span style='color:white'>image: Federica Viazzi "Microscopy image of <i>P. jirovecii</i>" (Wikipedia)</span>
+]
 
 
 
