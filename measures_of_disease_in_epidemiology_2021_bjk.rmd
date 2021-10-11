@@ -53,6 +53,10 @@ updated: `r format(Sys.Date(), '%d %B %Y')`
 ]
 ]
 
+.footnote-right[
+<span style='color:white'>image: Federica Viazzi "Microscopy image of <i>P. jirovecii</i>" [(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)</span>
+]
+
 
 ---
 
@@ -1811,7 +1815,7 @@ background-size: cover
 .title-subtext[Questions?]
 
 .footnote-right[
-<span style='color:white'>image: Federica Viazzi "Microscopy image of <i>P. jirovecii</i>" (Wikipedia)</span>
+<span style='color:white'>image: Federica Viazzi "Microscopy image of <i>P. jirovecii</i>" [(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)</span>
 ]
 
 
