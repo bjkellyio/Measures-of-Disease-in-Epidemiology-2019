@@ -253,6 +253,21 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 ---
 
+## Stigma and Discrimination  
+
+.pad-left[
+- vulnerable groups and infection risk  
+
+- HIV, COVID-19  
+
+- how we name infectious diseases  
+  
+
+]
+
+
+---
+
 ## Case from 1981... _Pneumocystis_ pneumonia? 
 
 .pad-left[
@@ -1535,11 +1550,11 @@ class: full-screen hide-count
 .pad-left[
 - __Dichotomous__: history of diabetes, history of breast cancer; survival, pneumonia, MI
 
-- __Continuous__: age, height, weight, blood pressure; probability of treatment result
+- __Continuous__: age, height, weight, blood pressure
 
-- __Nominal__: race, ethnicity, state of residence
+- __Nominal__: state of residence, zip code, diet (vegan, vegetarian, pescatarian)
 
-- __Ordinal__: age category, weight category; patient satisfaction
+- __Ordinal__: age category, weight category; patient satisfaction score
   
 ]
 
