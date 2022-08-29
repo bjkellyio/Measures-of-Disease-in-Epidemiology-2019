@@ -1,0 +1,1222 @@
+---
+title: "Measures of Disease in Clinical Epidemiology<br/>"
+author: "Brendan J. Kelly, MD, MS"
+output: html
+---
+
+exclude: true
+
+```{r setup, include=FALSE}
+#options(htmltools.dir.version = FALSE)
+#xaringan::summon_remark()
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+#xaringanExtra::use_tile_view()
+#xaringanExtra::use_webcam()
+#xaringanExtra::use_tachyons()
+#xaringanExtra::use_animate_css()
+#xaringanExtra::use_share_again()
+#xaringanExtra::use_scribble(pen_color = "#56106E")
+```
+
+---
+class: top left hide-count
+background-image: url(img/Pneumocystis_jirovecii_AO_AL_wikipedia_crop.png)
+background-size: cover
+
+.move-top20[
+.title-text[<span style="font-size:0.8em">Measures of Disease in Clinical Epidemiology</span>]  
+]  
+  
+.callout-url-leftcorner[
+.title-nametext[
+Brendan J. Kelly, MD, MS  
+Infectious Diseases & Epidemiology  
+University of Pennsylvania  
+updated: `r format(Sys.Date(), '%d %B %Y')`  
+]
+]
+
+.footnote-right[
+<span style='color:white'>image: Federica Viazzi "Microscopy image of <i>P. jirovecii</i>" [(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)</span>
+]
+---
+
+## Learning Objectives
+
+.pad-left\[ - Measures of disease occurrence: use population data to
+describe health and disease.\]
+
+------------------------------------------------------------------------
+
+## Why Do I Care? ...
+
+.pad-left\[ - Why use these tools (prevalence, incidence, RR, OR)?\]
+
+------------------------------------------------------------------------
+
+## ... What Do I Need to Know for the Test?
+
+.pad-left\[ .grey-text\[ - Why use these tools (prevalence, incidence,
+RR, OR)?\] - How to use these tools:\]
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-a animated flipInY"><div>Case from 1981</div></div>
+</div>
+---
+
+layout: false class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-a}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-b .animated .flipInX}
+<div>
+
+Prevalence
+
+</div>
+:::
+:::
+
+---
+layout: false
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-a"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-b"><div>Prevalence</div></div>
+<div class="extension-tile gridset-c animated bounceInDown"><div>Incidence</div></div>
+</div>
+---
+
+layout: false class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-a}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-b}
+<div>
+
+Prevalence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-c}
+<div>
+
+Incidence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-d .animated .fadeInRight}
+<div>
+
+Inference from<br>Exposures &<br>Outcomes
+
+</div>
+:::
+:::
+
+---
+layout: false
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-a"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-b"><div>Prevalence</div></div>
+<div class="extension-tile gridset-c"><div>Incidence</div></div>
+<div class="extension-tile gridset-d"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-e animated bounceInUp"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+</div>
+---
+
+class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-a}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-b}
+<div>
+
+Prevalence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-c}
+<div>
+
+Incidence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-d}
+<div>
+
+Inference from<br>Exposures &<br>Outcomes
+
+</div>
+:::
+
+::: {.extension-tile .gridset-e}
+<div>
+
+Relative Risk<br>&<br>Odds Ratios
+
+</div>
+:::
+
+::: {.extension-tile .gridset-f .animated .slideInLeft}
+<div>
+
+Data Types<br>&<br>Distributions
+
+</div>
+:::
+:::
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-a animated flipInY"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+</div>
+---
+
+## Case from 1981...
+
+.pad-left\[ - 36-year-old man presents with a 4-month history of fever,
+dyspnea, and cough.\]
+
+---
+background-image: url(figs/hiv_timeline_mmwr_1981.png)
+background-size: contain
+
+
+???
+
+Image credit: [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline)
+---
+
+background-image: url(figs/cover_mmwr_1981.jpg) background-size: 750px
+background-position: 50% 50%
+
+## MMWR June 5, 1981
+
+---
+## MMWR June 5, 1981 
+
+.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5.f4[
+All the above observations suggest the possibility of a <mark>cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis</mark>. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of _P. carinii_ infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia.
+.tr[
+— Gottlieb MS et al <ins>MMWR</ins> 1981
+]]
+---
+
+## Stigma and Discrimination
+
+.pad-left\[\]
+
+------------------------------------------------------------------------
+
+## Causal Variables & Proxy Variables
+
+.pad-left\[\]
+
+------------------------------------------------------------------------
+
+## Case from 1981... *Pneumocystis* pneumonia?
+
+.pad-left\[ - 36-year-old man presents with a 4-month history of fever,
+dyspnea, and cough.\]
+
+------------------------------------------------------------------------
+
+## Case from 1981... *Pneumocystis* pneumonia?
+
+.pad-left\[ - Differential diagnosis must be grounded in
+understanding:\]
+
+------------------------------------------------------------------------
+
+## Case from 1981... *Pneumocystis* pneumonia?
+
+.pad-left\[ - Does our patient have *Pneumocystis* pneumonia (PCP)?\]
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-b animated flipInX"><div>Measuring<br>Disease<br>Occurrence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+</div>
+---
+
+class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-grey}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-b .animated .flipInX}
+<div>
+
+Prevalence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Incidence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Inference from<br>Exposures &<br>Outcomes
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Relative Risk<br>&<br>Odds Ratios
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Data Types<br>&<br>Distributions
+
+</div>
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Prevalence
+
+.pad-left\[ - How common is *Pneumocystis* pneumonia (PCP)?\]
+
+------------------------------------------------------------------------
+
+## Prevalence of *Pneumocystis* pneumonia
+
+.pad-left\[ - In 1967, CDC became the sole supplier of pentamidine in
+the United States and began collecting data on cases of PCP:\]
+
+------------------------------------------------------------------------
+
+## Point Prevalence versus Period Prevalence
+
+.pad-left\[ - To understand the difference between point and period
+prevalence, let's imagine a cohort of people living with HIV/AIDS at
+risk for *Pneumocystis*: \]
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+set.seed(16)
+
+tibble(subject_id = factor(seq(50)),
+       enrollment = rep(0,50),
+       exit = sample(x = c(rep(2,35),runif(n = 15, min = 1.7, max = 2)), size = 50, replace = FALSE),
+       pcp_start = c(rep(NA,5),1.2,rep(NA,5),0.4,rep(NA,4),1.1,rep(NA,6),0.8,rep(NA,4),1.4,NA,0.3,rep(NA,3),1.0,rep(NA,6),0.1,rep(NA,4),0.9,rep(NA,3)),
+       pcp_stop = pcp_start + 0.0577,
+       ppx_start = c(rep(NA,4),1.5,rep(NA,5),1.6,rep(NA,6),1.4,rep(NA,3),1.7,rep(NA,3),1.4,rep(NA,1),1.3,rep(NA,2),1.55,rep(NA,9),1.2,rep(NA,5),1.5,rep(NA,3))) %>%
+  group_by(subject_id) %>%
+  nest() %>%
+  mutate(exit_adjust = map_dbl(data, ~ ifelse(is.na(.x[["pcp_start"]]) & is.na(.x[["ppx_start"]]), sample(x = seq(1.5,2,0.1), size = 1), .x[["exit"]]))) %>%
+  unnest(cols = c(data)) %>%
+  ungroup() %>%
+  mutate(ppx_stop = exit_adjust) %>%
+  group_by(subject_id) %>%
+  mutate(follow_start1 = enrollment,
+         follow_stop1 = min(pcp_start, ppx_start, exit_adjust, na.rm = TRUE),
+         follow_start2 = pcp_stop,
+         follow_stop2 = min(ppx_start, exit_adjust, na.rm = TRUE)) %>%
+  ungroup() %>%
+  ggplot(data = .) +
+  geom_segment(aes(x = enrollment, xend = exit_adjust, y = subject_id, yend = subject_id), colour = "grey", size = 1) +
+  geom_segment(aes(x = pcp_start, xend = pcp_stop, y = subject_id, yend = subject_id), colour = "red", size = 1) +
+  geom_point(aes(x = pcp_start, y = subject_id), colour = "red", size = 2) +
+  geom_segment(aes(x = ppx_start, xend = ppx_stop, y = subject_id, yend = subject_id), colour = "blue", size = 1, size = 2) +
+  labs(x = "Duration of Study Enrollment (years)", y = "Subject ID") +
+  theme_classic() +
+  theme(text = element_text(size = 22), axis.text.y = element_text(size = 10)) -> p
+
+```
+
+```{r print_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r print_pcp_study_label_case, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p +
+  annotate(geom = "text", x = 0.1, y = 42, label = "Case &\nTreatment")
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r print_pcp_study_label_followup, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p +
+  annotate(geom = "text", x = 1.9, y = 3, label = "End of Follow-up")
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r print_pcp_study_label_prophylaxis, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p +
+  annotate(geom = "text", x = 1.9, y = 22, label = "Prophylactic\nAntibiotic")
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk: Point Prevalence
+
+```{r pcp_point_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + annotate("rect", xmin=0.9, xmax=0.91, ymin=0, ymax=Inf, alpha=0.6, fill="purple")
+  #+ geom_vline(aes(xintercept = 0.9), colour = "purple", size = 3, alpha = 0.4)
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk: Period Prevalence
+
+```{r pcp_period_prev, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + annotate("rect", xmin=0.9, xmax=1.2, ymin=0, ymax=Inf, alpha=0.6, fill="purple")
+
+
+```
+
+------------------------------------------------------------------------
+
+## Prevalence
+
+.pad-left\[ - Prevalence is **NOT** the same as risk.\]
+
+------------------------------------------------------------------------
+
+## Reflection Question
+
+.pad-left\[ How can an infection have high prevalence if it occurs
+infrequently?\]
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-c animated flipInY"><div>Measuring<br>Disease<br>Occurrence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+</div>
+---
+
+class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-grey}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Prevalence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-c .animated .flipInY}
+<div>
+
+Incidence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Inference from<br>Exposures &<br>Outcomes
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Relative Risk<br>&<br>Odds Ratios
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Data Types<br>&<br>Distributions
+
+</div>
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Case from 1981... *Pneumocystis* pneumonia?
+
+.pull-left\[ ![](figs/nejm_combined.png)\]
+
+.pull-right\[\]
+
+.footnote\[\[1,2\] Masur H et al *NEJM* 1981; Gottlieb MS et al *NEJM*
+1981\]
+
+------------------------------------------------------------------------
+
+## Incidence
+
+.pad-left\[ - Among MSM, *Pneumocystis* pneumonia (PCP) is occurring
+more frequently...\]
+
+------------------------------------------------------------------------
+
+## Cumulative Incidence
+
+.pad-left\[ - Cumulative incidence:\]
+
+------------------------------------------------------------------------
+
+## Incidence Density
+
+.pad-left\[ - Incidence density:\]
+
+------------------------------------------------------------------------
+
+## Incidence: Which Denominator?
+
+.pad-left\[ - To understand the difference between cumulative incidence
+and incidence density, let's return to our imagined study of people
+living with HIV/AIDS at risk for *Pneumocystis*: \]
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r reprint_pcp_study, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r print_pcp_study_label_case2, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p +
+  annotate(geom = "text", x = 0.1, y = 42, label = "Case &\nTreatment")
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r print_pcp_study_label_followup2, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p +
+  annotate(geom = "text", x = 1.9, y = 3, label = "End of Follow-up")
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk for *Pneumocystis*
+
+```{r print_pcp_study_label_prophylaxis2, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p +
+  annotate(geom = "text", x = 1.9, y = 22, label = "Prophylactic\nAntibiotic")
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk: Cumulative Incidence (at risk at start)
+
+```{r pcp_incid_proportion, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.4) +
+  geom_segment(aes(x = enrollment, xend = 2, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.4, linetype = 1)
+
+
+
+```
+
+------------------------------------------------------------------------
+
+## Cohort at Risk: Incidence Density (person-time at risk)
+
+```{r pcp_incid_density, echo=FALSE, warning=FALSE, message=FALSE, fig.height=7, fig.width=12, fig.align='center', fig.retina=2, dependson= "pcp_study"}
+
+p + geom_point(aes(x = 0, y = subject_id), colour = "green", size = 3, alpha = 0.4) +
+  geom_segment(aes(x = follow_start1, xend = follow_stop1, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.4, linetype = 1) +
+    geom_segment(aes(x = follow_start2, xend = follow_stop2, y = subject_id, yend = subject_id), colour = "green", size = 2, alpha = 0.4, linetype = 1)
+
+
+```
+
+------------------------------------------------------------------------
+
+## Incidence: Which Denominator?
+
+.pad-left\[ - Cumulative incidence of *Pneumocystis* versus incidence
+density:\]
+
+------------------------------------------------------------------------
+
+## Notes on Population at Risk
+
+.pad-left\[ - In a population, individuals are at risk of disease if
+they: \]
+
+------------------------------------------------------------------------
+
+## Notes on Person-Time
+
+.pad-left\[ - To improve precision of risk estimate (<ins>incidence
+density</ins>), we measure: \]
+
+------------------------------------------------------------------------
+
+## Beware the Phrase "Incidence Rate"!
+
+.pad-left\[ - "Incidence rate" is used to mean two different things:\]
+
+------------------------------------------------------------------------
+
+## Reflection Question
+
+.pad-left\[ Your patient with HIV is considering starting prophylactic
+antibiotics for PCP. You have PCP prevalence, cumulative incidence, and
+incidence density data available. Which data provide the most precise
+information on the patient's risk of PCP off of prophylaxis?\]
+
+---
+background-image: url(figs/bathtub_labelled.svg)
+background-size: 520px
+background-position: 50% 70%
+
+## Can You Tell Prevalence from Incidence?
+---
+
+## Can You Tell Prevalence from Incidence?
+
+.pad-left\[ - HIV in Rakai, Uganda 1994-2003\*:\]
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-d animated flipInX"><div>What<br>determines<br>risk?</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+</div>
+---
+
+class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-grey}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Prevalence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Incidence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-d .animated .flipInX}
+<div>
+
+Inference from<br>Exposures &<br>Outcomes
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Relative Risk<br>&<br>Odds Ratios
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Data Types<br>&<br>Distributions
+
+</div>
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Basics of Study Types
+
+.pad-left\[ - We want to understand the <mark>relationship between risk
+factors (exposures) and disease (outcomes)</mark>. For example, between
+CD4 count and PCP in HIV.\]
+
+------------------------------------------------------------------------
+
+```{r eval=TRUE, warning=FALSE, message=FALSE, echo=FALSE, fig.align='left', fig.width=15, fig.height=9, fig.retina=2}
+library(DiagrammeR)
+
+c_graph <-
+  create_graph() %>%
+  add_node(label = 'Study\nDesign', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Cohort', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Randomized\nControlled\nTrial', node_aes = node_aes(fontsize = 5.5, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Case-\nControl', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Denominator\nKnown', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'green', fontcolor = 'black')) %>%
+  add_node(label = 'Denominator\nNOT Known', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'dodgerblue', fontcolor = 'black')) %>%
+  add_node(label = 'Measure\nOutcome\nIncidence', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Measure\nExposure\nOdds', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Relative\nRisk', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'Odds\nRatio', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_node(label = 'AR\nRD\nNNT', node_aes = node_aes(fontsize = 6, color = 'black', fillcolor = 'grey90', fontcolor = 'black')) %>%
+  add_edge(from = 'Study\nDesign',to = 'Cohort', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Study\nDesign',to = 'Randomized\nControlled\nTrial', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Study\nDesign',to = 'Case-\nControl', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Cohort', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Randomized\nControlled\nTrial', to = 'Denominator\nKnown', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Case-\nControl', to = 'Denominator\nNOT Known', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Denominator\nKnown', to = 'Measure\nOutcome\nIncidence', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Denominator\nNOT Known', to = 'Measure\nExposure\nOdds', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Measure\nOutcome\nIncidence', to = 'Relative\nRisk', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Measure\nExposure\nOdds', to = 'Odds\nRatio', edge_aes = edge_aes(color = 'black')) %>%
+  add_edge(from = 'Relative\nRisk', to = 'AR\nRD\nNNT', edge_aes = edge_aes(color = 'black')) %>%
+  set_node_position(node = 1, x = -3, y = 0) %>%
+  set_node_position(node = 2, x = -2, y = 0) %>%
+  set_node_position(node = 3, x = -2, y = 1) %>%
+  set_node_position(node = 4, x = -2, y = -1) %>%
+  set_node_position(node = 5, x = -1, y = 0.5) %>%
+  set_node_position(node = 6, x = -1, y = -0.5) %>%
+  set_node_position(node = 7, x = 0, y = 0.5) %>%
+  set_node_position(node = 8, x = 0, y = -0.5) %>%
+  set_node_position(node = 9, x = 1, y = 0.5) %>%
+  set_node_position(node = 10, x = 1, y = -0.5) %>%
+  set_node_position(node = 11, x = 2, y = 0.5)
+
+c_graph %>% render_graph()
+
+
+```
+
+------------------------------------------------------------------------
+
+## 2x2 Table
+
+.pull-left\[ - Dichotomous exposures and outcomes.\]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## 2x2 Table
+
+.pull-left\[ - Dichotomous exposures and outcomes.\]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## 2x2 Table
+
+.pull-left\[ - Dichotomous exposures and outcomes.\]
+
+.pull-right\[\]
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-e animated flipInY"><div>2x2 tables<br>are HARD!</div></div>
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+</div>
+---
+
+class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-grey}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Prevalence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Incidence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Inference from<br>Exposures &<br>Outcomes
+
+</div>
+:::
+
+::: {.extension-tile .gridset-e .animated .flipInY}
+<div>
+
+Relative Risk<br>&<br>Odds Ratios
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Data Types<br>&<br>Distributions
+
+</div>
+:::
+:::
+
+------------------------------------------------------------------------
+
+## 2x2 Table: Calculate Relative Risk for Cohort/Trial
+
+.pull-left\[ - Relative Risk (RR): risk (incidence) exposed / risk
+(incidence) unexposed: \]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## PCP \~ AIDS: Relative Risk (RR)
+
+.pull-left\[\]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## 2x2 Table: Calculate NNT for Cohort/Trial
+
+.pull-left\[\]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## PCP \~ AIDS: Number Needed to Treat
+
+.pull-left\[\]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## AR vs RD vs NNT
+
+.pad-left\[ - **absolute risk (AR)**: risk of developing disease over a
+period of time (<mark>incidence!</mark>)\]
+
+------------------------------------------------------------------------
+
+## 2x2 Table: Calculate Odds Ratio for Case-Control Study
+
+.pull-left\[\]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## PCP Cases vs Controls: Odds Ratio (OR)
+
+.pull-left\[\]
+
+.pull-right\[\]
+
+------------------------------------------------------------------------
+
+## Utility of Odds Ratio (OR) & Case-Control Study Design
+
+.pull-left\[\]
+
+.pull-right\[\]
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>2x2 tables<br>focus on<br>dichotomous<br>data...</div></div>
+</div>
+---
+
+class: full-screen hide-count
+
+::: grid-3-2
+::: {.extension-tile .gridset-grey}
+<div>
+
+Case from 1981
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Prevalence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Incidence
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Inference from<br>Exposures &<br>Outcomes
+
+</div>
+:::
+
+::: {.extension-tile .gridset-grey}
+<div>
+
+Relative Risk<br>&<br>Odds Ratios
+
+</div>
+:::
+
+::: {.extension-tile .gridset-f .animated .flipInX}
+<div>
+
+Not all data are<br>dichotomous!
+
+</div>
+:::
+:::
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>Data Types<br>&<br>Distributions</div></div>
+</div>
+---
+
+## Data Types
+
+.pad-left\[ - Vital signs and physical exam:\]
+
+------------------------------------------------------------------------
+
+## Data Types
+
+.pad-left\[ - **Dichotomous**: history of diabetes, history of breast
+cancer; survival, pneumonia, MI\]
+
+------------------------------------------------------------------------
+
+## Describing Continuous Data
+
+.pad-left\[ - "Normally distributed" or "parametric" data: data well
+characterized by mean and standard deviation.\]
+
+------------------------------------------------------------------------
+
+## "Parametric" Continuous Data
+
+```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+set.seed(16)
+
+
+tibble(`Mean = 90%, SD = 1%` = rnorm(n = 1000, mean = 0.9, sd = 0.01), `Mean = 90%, SD = 3%` = rnorm(n = 1000, mean = 0.9, sd = 0.03)) %>%
+  gather(key = sd_type, value = `O2 Saturation`) -> pcp_o2
+
+tibble(`O2 Saturation` = with(pcp_o2, seq(min(`O2 Saturation`), max(`O2 Saturation`), length = 100))) %>%
+  mutate(`Mean = 90%, SD = 1%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.01),
+         `Mean = 90%, SD = 3%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.03)) %>%
+  gather(key = sd_type, value = norm_density, -`O2 Saturation`) -> pcp_norm
+
+pcp_o2 %>%
+  ggplot(data = .) + 
+  geom_histogram(aes(x = `O2 Saturation`, y = ..density.., fill = sd_type), colour = "black") +
+  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
+  geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
+  facet_wrap(facets = ~ sd_type, ncol = 2) +
+  scale_x_continuous(limits = c(0.8,1)) +
+  theme_classic() +
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22)) +
+  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
+
+```
+
+.footnote\[\[\*\] Data made up.\]
+
+------------------------------------------------------------------------
+
+## "Non-Parametric" Continuous Data
+
+```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+set.seed(16)
+
+tibble("Uniform" = runif(n = 1000, min = 0.80, max = 0.98), "Skewed" = rbeta(1000,9,1)) %>%
+  gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
+
+pcp_skew_o2 %>%
+  group_by(dis_type) %>%
+  summarise(median = median(o2_sat, na.rm = TRUE),
+            mean = mean(o2_sat, na.rm = TRUE)) %>%
+  ungroup() -> pcp_dist
+
+pcp_skew_o2 %>%
+  ggplot(data = .) + 
+  geom_histogram(aes(x = o2_sat, fill = dis_type), colour = "black") +
+  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
+  #geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
+  geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue", size = 2) +
+  geom_vline(data = pcp_dist, aes(xintercept = mean), colour = "black", size = 2) +
+  facet_wrap(facets = ~ dis_type, ncol = 2) +
+  scale_x_continuous(limits = c(0.8,1)) +
+  theme_classic() +
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22), plot.subtitle = element_text(size = 22)) +
+  labs(title = "1000 Subjects with Pneumocystis*", subtitle = "(Blue Line = Median & Black Line = Mean)", x = "Oxygen Saturation (%)", y = "Count")
+
+
+```
+
+.footnote\[\[\*\] Data made up.\]
+
+------------------------------------------------------------------------
+
+## Describing Continuous Data
+
+.pad-left\[\]
+
+------------------------------------------------------------------------
+
+## Characterize Continuous Data: Central Tendency
+
+.pad-left\[\]
+
+------------------------------------------------------------------------
+
+## Characterize Continuous Data: Variation/Spread
+
+.pad-left\[\]
+
+------------------------------------------------------------------------
+
+## How to Characterize Continuous Data
+
+.pad-left\[ - Pair a measure of central tendency with a measure of
+dispersion:\]
+
+------------------------------------------------------------------------
+
+## Reflection Question
+
+.pad-left\[ What makes standard deviation greater?\]
+
+------------------------------------------------------------------------
+
+## Dichotomizing Continuous Data
+
+.pad-left\[ - Remember the diagnosis lecture: threshold of oxygen
+saturation (or $\beta$-D glucan) to diagnose *Pneumocystis* pneumonia
+(PCP) means trade-off between sensitivity and specificity.\]
+
+------------------------------------------------------------------------
+
+## Dichotomania
+
+.pad-left\[ - As we discussed prevalence, incidence, RR, and OR, we
+focused on <ins>dichotomous</ins> exposures and outcomes.\]
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-a animated flipInY"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-b animated flipInX"><div>Prevalence</div></div>
+<div class="extension-tile gridset-c animated flipInY"><div>Incidence</div></div>
+<div class="extension-tile gridset-d animated flipInX"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-e animated flipInY"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>Data Types<br>&<br>Distributions</div></div>
+</div>
+---
+
+## Measures of Disease in Clinical Epidemiology
+
+.pad-left\[ - Distribution of data determines how we describe them:
+mean + SD vs median + IQR.\]
+
+---
+background-image: url(figs/Wickramasekaran_Mycoses_2017.jpg)
+background-size: 900px
+background-position: 50% 50%
+
+
+.footnote[Wickramasekaran et al _Mycoses_ 2017]
+---
+
+class: center, middle, hide-count background-image:
+url(img/Pneumocystis_jirovecii_AO_AL_wikipedia_crop.png)
+background-size: cover
+
+.title-subtext\[Questions?\]
+
+.footnote-right\[ [image: Federica Viazzi "Microscopy image of <i>P.
+jirovecii</i>"
+[(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)]{style="color:white"}\]
