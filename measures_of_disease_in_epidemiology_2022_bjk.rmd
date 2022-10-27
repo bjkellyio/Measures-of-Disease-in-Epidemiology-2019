@@ -47,7 +47,7 @@ background-size: cover
 .callout-url-leftcorner[
 .title-nametext[
 Brendan J. Kelly, MD, MS  
-Infectious Diseases & Epidemiology  
+Infectious Diseases, Epidemiology & Microbiology  
 University of Pennsylvania  
 updated: `r format(Sys.Date(), '%d %B %Y')`  
 ]
@@ -56,6 +56,19 @@ updated: `r format(Sys.Date(), '%d %B %Y')`
 .footnote-right[
 <span style='color:white'>image: Federica Viazzi "Microscopy image of <i>P. jirovecii</i>" [(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)</span>
 ]
+
+
+---
+
+## Disclosures  
+
+.pad-left[
+- No relevant disclosures.  
+
+- No conflicts of interest.  
+
+]
+
 
 
 ---
@@ -233,6 +246,7 @@ Image credit: [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aid
 
 
 ---
+exclude: true
 background-image: url(figs/cover_mmwr_1981.jpg)
 background-size: 750px
 background-position: 50% 50%
@@ -253,17 +267,21 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 ---
 
-## Stigma and Discrimination  
+## Stigmatization and Discrimination  
 
 .pad-left[
 
-- vulnerable groups and infection risk  
+- socially vulnerable groups often at higher infection risk  
 
-- HIV, COVID-19  
+    - HIV, COVID-19  
 
-- how we name infectious diseases  
+    - how we name infectious diseases has exacerbated stigma  
+    
+- demagogues call upon prejudice to gain political power  
   
--   
+    - homophobia in the 1980s  
+    
+    - anti-Asian racism in the 2020s  
 
 
 ]
@@ -283,15 +301,16 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
     - direct racism
 
-- How social vulnerability can impact health:
+- Some ways social vulnerability and racism impact health:
 
     - high-risk work
 
-    - social networks
+    - access to care  
 
-    - access to care
+    - social networks  
 
 ]
+
 
 ---
 
@@ -931,9 +950,9 @@ background-position: 50% 70%
 
     - intensive “ABC” intervention (Abstinence, Be faithful, Condoms)
     
-    - prevalence declined!
+    - prevalence declined...  
     
-    - incidence remained constant at 1.5% per year
+    - incidence remained constant at 1.5% per year!
     
     - what happened?
 
