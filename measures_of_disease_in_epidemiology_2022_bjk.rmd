@@ -595,6 +595,8 @@ p + annotate("rect", xmin=0.9, xmax=1.2, ymin=0, ymax=Inf, alpha=0.6, fill="purp
 
 - Prevalence does **NOT** estimate the risk of developing the disease because <mark>prevalence does **NOT** fully account for time </mark> (are the measured cases old cases or new cases?).
 
+- Prevalence can provide a useful snapshot of the burden of disease.  
+
 ]
 
 
@@ -680,7 +682,7 @@ class: full-screen hide-count
 ## Incidence 
 
 .pad-left[
-- Among MSM, _Pneumocystis_ pneumonia (PCP) is occurring more frequently...
+- _Pneumocystis_ pneumonia (PCP) is occurring more frequently...
 
 - Incidence: occurrence of new cases over a given period of time.
 
@@ -1793,7 +1795,7 @@ What makes standard deviation greater?
 ## Dichotomizing Continuous Data 
 
 .pad-left[
-- Remember the diagnosis lecture: threshold of oxygen saturation (or $\beta$-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
+- See the diagnosis lecture: threshold of oxygen saturation (or $\beta$-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
 
 - Using a threshold to transform continuous data into dichotomous data means <mark>losing information about uncertainty</mark>.  
 
