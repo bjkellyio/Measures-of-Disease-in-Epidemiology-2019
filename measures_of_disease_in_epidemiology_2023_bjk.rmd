@@ -1795,11 +1795,13 @@ What makes standard deviation greater?
 
 - But we're doing it anyway &#x1F600; ... why?
 
-- Medicine focuses on dichotomous diagnostic and treatment decisions.
+- Medicine focuses on dichotomous diagnostic and treatment decisions.  
+  
+.footnote[[Altman & Royston _BMJ_ 2006](https://www.bmj.com/content/332/7549/1080.1.full)]  
 
-]
-
-
+]  
+  
+  
 
 ---
 class: full-screen hide-count
