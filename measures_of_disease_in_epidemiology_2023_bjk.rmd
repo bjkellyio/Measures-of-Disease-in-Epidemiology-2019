@@ -63,7 +63,6 @@ updated: `r format(Sys.Date(), '%d %B %Y')`
 ## Disclosures  
 
 .pad-left[
-- No relevant disclosures.  
 
 - No conflicts of interest.  
 
@@ -80,17 +79,13 @@ updated: `r format(Sys.Date(), '%d %B %Y')`
 
 - Key concepts -- explain the meaning of:
 
+    - data types and terminology
     - prevalence
     - incidence (<ins>warning</ins>: multiple types)
     - relative risk (RR)
     - odds ratio (OR)
 
 - Implementation: prevalence, incidence, RR, and OR from study data (2x2 tables!).
-
-- Back to the beginning:  
-
-    - how do we measure? 
-    - data types and data distributions  
 
 ]
 
@@ -143,7 +138,7 @@ updated: `r format(Sys.Date(), '%d %B %Y')`
 class: full-screen hide-count
 
 <div class="grid-3-2">
-<div class="extension-tile gridset-a animated flipInY"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-a animated flipInY"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
 
@@ -152,8 +147,8 @@ layout: false
 class: full-screen hide-count
 
 <div class="grid-3-2">
-<div class="extension-tile gridset-a"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b animated flipInX"><div>Prevalence</div></div>
+<div class="extension-tile gridset-a"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-b animated flipInX"><div>Case from 1981</div></div>
 </div>
 
 
@@ -162,22 +157,9 @@ layout: false
 class: full-screen hide-count
 
 <div class="grid-3-2">
-<div class="extension-tile gridset-a"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b"><div>Prevalence</div></div>
-<div class="extension-tile gridset-c animated bounceInDown"><div>Incidence</div></div>
-</div>
-
-
-
----
-layout: false
-class: full-screen hide-count
-
-<div class="grid-3-2">
-<div class="extension-tile gridset-a"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b"><div>Prevalence</div></div>
-<div class="extension-tile gridset-c"><div>Incidence</div></div>
-<div class="extension-tile gridset-d animated fadeInRight"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-a"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-b"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-c animated bounceInDown"><div>Prevalence</div></div>
 </div>
 
 
@@ -187,11 +169,24 @@ layout: false
 class: full-screen hide-count
 
 <div class="grid-3-2">
-<div class="extension-tile gridset-a"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b"><div>Prevalence</div></div>
-<div class="extension-tile gridset-c"><div>Incidence</div></div>
-<div class="extension-tile gridset-d"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-e animated bounceInUp"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+<div class="extension-tile gridset-a"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-b"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-c"><div>Prevalence</div></div>
+<div class="extension-tile gridset-d animated fadeInRight"><div>Incidence</div></div>
+</div>
+
+
+
+---
+layout: false
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-a"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-b"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-c"><div>Prevalence</div></div>
+<div class="extension-tile gridset-d"><div>Incidence</div></div>
+<div class="extension-tile gridset-e animated bounceInUp"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 </div>
 
 
@@ -200,12 +195,12 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 <div class="grid-3-2">
-<div class="extension-tile gridset-a"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b"><div>Prevalence</div></div>
-<div class="extension-tile gridset-c"><div>Incidence</div></div>
-<div class="extension-tile gridset-d"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-e"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-f animated slideInLeft"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-a"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-b"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-c"><div>Prevalence</div></div>
+<div class="extension-tile gridset-d"><div>Incidence</div></div>
+<div class="extension-tile gridset-e"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-f animated slideInLeft"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 </div>
 
 
@@ -214,12 +209,239 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 <div class="grid-3-2">
-<div class="extension-tile gridset-a animated flipInY"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-a animated flipInY"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+</div>
+
+
+
+---
+
+## Data Types 
+
+.pad-left[
+- __Dichotomous__: binary 0 / 1, true / false
+
+    - the focus of most methods in this course (e.g., pneumonia, MI)
+    
+- __Continuous__: real values, infinite scale
+
+    - discussed in diagnostics lecture (e.g., age, height)  
+- __Nominal__: discrete data  
+
+    - categories without intrinsic order (e.g., state)  
+    
+- __Ordinal__: discrete data  
+
+    - categories with intrinsic order (e.g., age category)
+    
+]
+
+
+---
+
+## How to Characterize Continuous Data 
+
+.pad-left[
+- Pair a measure of central tendency with a measure of dispersion:
+
+    - mean and SD (both affected by outliers)  
+    
+    - median and IQR  
+
+- In doing so, account for <ins>uncertainty</ins> in measures.  
+
+]
+
+
+---
+
+## Characterize Continuous Data: Central Tendency 
+
+.pad-left[
+
+- **Mean ( $\mu$)**:
+    $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
+
+- **Median**: middle value, when values ordered / ranked
+
+- **Mode**: most frequently occurring value
+
+]
+
+
+
+---
+
+## Characterize Continuous Data: Variation/Spread 
+
+.pad-left[
+
+- **Standard deviation (SD or $\sigma$)**: 
+    $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
+
+- **Interquartile range (IQR)** depends on ranking the values:
+
+    - the first quartile is the "middle" value of the first half of the ordered set  
+    
+    - the third quartile is the "middle" value of the second half of the ordered set  
+    
+    - IQR is the range of values between first and third quartiles  
+  
+<p style="text-align: center;"><mark> (you do <strong>NOT</strong> need to memorize these formulas) </mark></p>
+
+]
+
+
+
+
+---
+
+## Describing Continuous Data
+
+.pad-left[
+
+- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
+
+    - **skewed** data: distribution not symmetric around a central value  
+    
+    - **uniform** data: distributed with equal probability of each value  
+
+- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+
+- You can always calculate mean and SD from continuous data. But these parameters might not represent the data well.  
+  
+]
+
+
+
+
+---
+
+## "Parametric" Continuous Data 
+
+```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+set.seed(16)
+
+
+tibble(`Mean = 90%, SD = 1%` = rnorm(n = 1000, mean = 0.9, sd = 0.01), `Mean = 90%, SD = 3%` = rnorm(n = 1000, mean = 0.9, sd = 0.03)) %>%
+  gather(key = sd_type, value = `O2 Saturation`) -> pcp_o2
+
+tibble(`O2 Saturation` = with(pcp_o2, seq(min(`O2 Saturation`), max(`O2 Saturation`), length = 100))) %>%
+  mutate(`Mean = 90%, SD = 1%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.01),
+         `Mean = 90%, SD = 3%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.03)) %>%
+  gather(key = sd_type, value = norm_density, -`O2 Saturation`) -> pcp_norm
+
+pcp_o2 %>%
+  ggplot(data = .) + 
+  geom_histogram(aes(x = `O2 Saturation`, y = ..density.., fill = sd_type), colour = "black") +
+  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
+  geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
+  facet_wrap(facets = ~ sd_type, ncol = 2) +
+  scale_x_continuous(limits = c(0.8,1)) +
+  theme_classic() +
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22)) +
+  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
+
+```
+
+.footnote[[*] Data made up.]
+
+
+---
+
+## "Non-Parametric" Continuous Data 
+
+```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+set.seed(16)
+
+tibble("Uniform" = runif(n = 1000, min = 0.80, max = 0.98), "Skewed" = rbeta(1000,9,1)) %>%
+  gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
+
+pcp_skew_o2 %>%
+  group_by(dis_type) %>%
+  summarise(median = median(o2_sat, na.rm = TRUE),
+            mean = mean(o2_sat, na.rm = TRUE)) %>%
+  ungroup() -> pcp_dist
+
+pcp_skew_o2 %>%
+  ggplot(data = .) + 
+  geom_histogram(aes(x = o2_sat, fill = dis_type), colour = "black") +
+  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
+  #geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
+  geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue", size = 2) +
+  geom_vline(data = pcp_dist, aes(xintercept = mean), colour = "black", size = 2) +
+  facet_wrap(facets = ~ dis_type, ncol = 2) +
+  scale_x_continuous(limits = c(0.8,1)) +
+  theme_classic() +
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22), plot.subtitle = element_text(size = 22)) +
+  labs(title = "1000 Subjects with Pneumocystis*", subtitle = "(Blue Line = Median & Black Line = Mean)", x = "Oxygen Saturation (%)", y = "Count")
+
+
+```
+
+.footnote[[*] Data made up.]
+
+
+---
+
+## Dichotomizing Continuous Data 
+
+.pad-left[
+- See the diagnosis lecture: threshold of oxygen saturation (or $\beta$-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
+
+- Using a threshold to transform continuous data into dichotomous data means <mark>losing information about uncertainty</mark>.  
+
+- This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
+
+
+]
+
+  
+  
+---
+
+## Dichotomania 
+
+.pad-left[
+- As we discussed prevalence, incidence, RR, and OR, we focused on <ins>dichotomous</ins> exposures and outcomes.
+
+- Remember -- with dichotomous data:
+
+    - information about uncertainty is lost  
+    
+    - misclassification is a risk  
+
+- But we're doing it anyway &#x1F600; ... why?
+
+- Medicine focuses on dichotomous diagnostic and treatment decisions.  
+  
+.footnote[[Altman & Royston _BMJ_ 2006](https://www.bmj.com/content/332/7549/1080.1.full)]  
+
+]  
+  
+  
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
 <div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-b animated flipInX"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 </div>
 
 
@@ -349,10 +571,6 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 - In 1981, _Pneumocystis_ was known to be a low <ins>prevalence</ins> disease.
 
 - New data would show an increasing <ins>incidence</ins>.  
-
-<br/>
-
-.center[<mark>(In ID, the differential is always evolving).</mark>]  
 
 ]
 
@@ -1526,282 +1744,6 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 ]
 
 
-
----
-class: full-screen hide-count
-
-<div class="grid-3-2">
-<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
-<div class="extension-tile gridset-grey"><div>Incidence</div></div>
-<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-f animated flipInX"><div>2x2 tables<br>focus on<br>dichotomous<br>data...</div></div>
-</div>
-
-
-
----
-class: full-screen hide-count
-
-<div class="grid-3-2">
-<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
-<div class="extension-tile gridset-grey"><div>Incidence</div></div>
-<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-f animated flipInX"><div>Not all data are<br>dichotomous!</div></div>
-</div>
-
-
-
----
-class: full-screen hide-count
-
-<div class="grid-3-2">
-<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
-<div class="extension-tile gridset-grey"><div>Incidence</div></div>
-<div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-f animated flipInX"><div>Data Types<br>&<br>Distributions</div></div>
-</div>
-
-
-
----
-
-## Data Types 
-
-.pad-left[
-- __Dichotomous__: binary 0 / 1, true / false
-
-    - the focus of most methods in this course (e.g., pneumonia, MI)
-    
-- __Continuous__: real values, infinite scale
-
-    - discussed in diagnostics lecture (e.g., age, height)  
-- __Nominal__: discrete data  
-
-    - categories without intrinsic order (e.g., state)  
-    
-- __Ordinal__: discrete data  
-
-    - categories with intrinsic order (e.g., age category)
-    
-]
-
-
----
-
-## How to Characterize Continuous Data 
-
-.pad-left[
-- Pair a measure of central tendency with a measure of dispersion:
-
-    - mean and SD (both affected by outliers)  
-    
-    - median and IQR  
-
-- In doing so, account for <ins>uncertainty</ins> in measures.  
-
-]
-
-
----
-
-## Characterize Continuous Data: Central Tendency 
-
-.pad-left[
-
-- **Mean ( $\mu$)**:
-    $$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$
-
-- **Median**: middle value, when values ordered / ranked
-
-- **Mode**: most frequently occurring value
-
-]
-
-
-
----
-
-## Characterize Continuous Data: Variation/Spread 
-
-.pad-left[
-
-- **Standard deviation (SD or $\sigma$)**: 
-    $$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$
-
-- **Interquartile range (IQR)** depends on ranking the values:
-
-    - the first quartile is the "middle" value of the first half of the ordered set  
-    
-    - the third quartile is the "middle" value of the second half of the ordered set  
-    
-    - IQR is the range of values between first and third quartiles  
-  
-<p style="text-align: center;"><mark> (you do <strong>NOT</strong> need to memorize these formulas) </mark></p>
-
-]
-
-
-
-
----
-
-## Describing Continuous Data
-
-.pad-left[
-
-- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
-
-- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
-
-    - **skewed** data: distribution not symmetric around a central value  
-    
-    - **uniform** data: distributed with equal probability of each value  
-
-- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
-
-- Just as you can always calculate RR from a 2x2 table, but sometimes you shouldn't, you can always calculate mean and SD from continuous data. The question is whether you should.  
-  
-]
-
-
-
-
----
-
-## "Parametric" Continuous Data 
-
-```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
-
-library(tidyverse)
-set.seed(16)
-
-
-tibble(`Mean = 90%, SD = 1%` = rnorm(n = 1000, mean = 0.9, sd = 0.01), `Mean = 90%, SD = 3%` = rnorm(n = 1000, mean = 0.9, sd = 0.03)) %>%
-  gather(key = sd_type, value = `O2 Saturation`) -> pcp_o2
-
-tibble(`O2 Saturation` = with(pcp_o2, seq(min(`O2 Saturation`), max(`O2 Saturation`), length = 100))) %>%
-  mutate(`Mean = 90%, SD = 1%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.01),
-         `Mean = 90%, SD = 3%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.03)) %>%
-  gather(key = sd_type, value = norm_density, -`O2 Saturation`) -> pcp_norm
-
-pcp_o2 %>%
-  ggplot(data = .) + 
-  geom_histogram(aes(x = `O2 Saturation`, y = ..density.., fill = sd_type), colour = "black") +
-  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
-  geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
-  facet_wrap(facets = ~ sd_type, ncol = 2) +
-  scale_x_continuous(limits = c(0.8,1)) +
-  theme_classic() +
-  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22)) +
-  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
-
-```
-
-.footnote[[*] Data made up.]
-
-
----
-
-## "Non-Parametric" Continuous Data 
-
-```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
-
-library(tidyverse)
-set.seed(16)
-
-tibble("Uniform" = runif(n = 1000, min = 0.80, max = 0.98), "Skewed" = rbeta(1000,9,1)) %>%
-  gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
-
-pcp_skew_o2 %>%
-  group_by(dis_type) %>%
-  summarise(median = median(o2_sat, na.rm = TRUE),
-            mean = mean(o2_sat, na.rm = TRUE)) %>%
-  ungroup() -> pcp_dist
-
-pcp_skew_o2 %>%
-  ggplot(data = .) + 
-  geom_histogram(aes(x = o2_sat, fill = dis_type), colour = "black") +
-  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
-  #geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
-  geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue", size = 2) +
-  geom_vline(data = pcp_dist, aes(xintercept = mean), colour = "black", size = 2) +
-  facet_wrap(facets = ~ dis_type, ncol = 2) +
-  scale_x_continuous(limits = c(0.8,1)) +
-  theme_classic() +
-  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22), plot.subtitle = element_text(size = 22)) +
-  labs(title = "1000 Subjects with Pneumocystis*", subtitle = "(Blue Line = Median & Black Line = Mean)", x = "Oxygen Saturation (%)", y = "Count")
-
-
-```
-
-.footnote[[*] Data made up.]
-
-
-
-
----
-
-## Reflection Question 
-
-.pad-left[
-What makes standard deviation greater?
-
-- (A) More subjects?
-
-- (B) Higher mean value?
-
-- (C) Higher maximum value?
-
-- (D) Greater difference between extreme and mean values? 
-
-]
-
-
-
----
-
-## Dichotomizing Continuous Data 
-
-.pad-left[
-- See the diagnosis lecture: threshold of oxygen saturation (or $\beta$-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
-
-- Using a threshold to transform continuous data into dichotomous data means <mark>losing information about uncertainty</mark>.  
-
-- This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
-
-
-]
-
-  
-  
----
-
-## Dichotomania 
-
-.pad-left[
-- As we discussed prevalence, incidence, RR, and OR, we focused on <ins>dichotomous</ins> exposures and outcomes.
-
-- Remember -- with dichotomous data:
-
-    - information about uncertainty is lost  
-    
-    - misclassification is a risk  
-
-- But we're doing it anyway &#x1F600; ... why?
-
-- Medicine focuses on dichotomous diagnostic and treatment decisions.  
-  
-.footnote[[Altman & Royston _BMJ_ 2006](https://www.bmj.com/content/332/7549/1080.1.full)]  
-
-]  
-  
-  
 
 ---
 class: full-screen hide-count

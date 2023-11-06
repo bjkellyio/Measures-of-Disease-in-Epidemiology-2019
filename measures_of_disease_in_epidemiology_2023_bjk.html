@@ -46,7 +46,7 @@ background-size: cover
 Brendan J. Kelly, MD, MS  
 Infectious Diseases, Epidemiology &amp; Microbiology  
 University of Pennsylvania  
-updated: 05 November 2023  
+updated: 06 November 2023  
 ]
 ]
 
@@ -60,7 +60,6 @@ updated: 05 November 2023
 ## Disclosures  
 
 .pad-left[
-- No relevant disclosures.  
 
 - No conflicts of interest.  
 
@@ -77,17 +76,13 @@ updated: 05 November 2023
 
 - Key concepts -- explain the meaning of:
 
+    - data types and terminology
     - prevalence
     - incidence (&lt;ins&gt;warning&lt;/ins&gt;: multiple types)
     - relative risk (RR)
     - odds ratio (OR)
 
 - Implementation: prevalence, incidence, RR, and OR from study data (2x2 tables!).
-
-- Back to the beginning:  
-
-    - how do we measure? 
-    - data types and data distributions  
 
 ]
 
@@ -140,7 +135,7 @@ updated: 05 November 2023
 class: full-screen hide-count
 
 &lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-a animated flipInY"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-a animated flipInY"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -149,8 +144,8 @@ layout: false
 class: full-screen hide-count
 
 &lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-b animated flipInX"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b animated flipInX"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -159,22 +154,9 @@ layout: false
 class: full-screen hide-count
 
 &lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-c animated bounceInDown"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-
-
----
-layout: false
-class: full-screen hide-count
-
-&lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-d animated fadeInRight"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c animated bounceInDown"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -184,11 +166,24 @@ layout: false
 class: full-screen hide-count
 
 &lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-d"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-e animated bounceInUp"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d animated fadeInRight"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+layout: false
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-e animated bounceInUp"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -197,12 +192,12 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 &lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-d"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-e"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-f animated slideInLeft"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-e"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-f animated slideInLeft"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -211,12 +206,186 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 &lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-a animated flipInY"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-a animated flipInY"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
 &lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
 &lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
 &lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
 &lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Data Types 
+
+.pad-left[
+- __Dichotomous__: binary 0 / 1, true / false
+
+    - the focus of most methods in this course (e.g., pneumonia, MI)
+    
+- __Continuous__: real values, infinite scale
+
+    - discussed in diagnostics lecture (e.g., age, height)  
+- __Nominal__: discrete data  
+
+    - categories without intrinsic order (e.g., state)  
+    
+- __Ordinal__: discrete data  
+
+    - categories with intrinsic order (e.g., age category)
+    
+]
+
+
+---
+
+## How to Characterize Continuous Data 
+
+.pad-left[
+- Pair a measure of central tendency with a measure of dispersion:
+
+    - mean and SD (both affected by outliers)  
+    
+    - median and IQR  
+
+- In doing so, account for &lt;ins&gt;uncertainty&lt;/ins&gt; in measures.  
+
+]
+
+
+---
+
+## Characterize Continuous Data: Central Tendency 
+
+.pad-left[
+
+- **Mean ( `\(\mu\)`)**:
+    `$$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$`
+
+- **Median**: middle value, when values ordered / ranked
+
+- **Mode**: most frequently occurring value
+
+]
+
+
+
+---
+
+## Characterize Continuous Data: Variation/Spread 
+
+.pad-left[
+
+- **Standard deviation (SD or `\(\sigma\)`)**: 
+    `$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$`
+
+- **Interquartile range (IQR)** depends on ranking the values:
+
+    - the first quartile is the "middle" value of the first half of the ordered set  
+    
+    - the third quartile is the "middle" value of the second half of the ordered set  
+    
+    - IQR is the range of values between first and third quartiles  
+  
+&lt;p style="text-align: center;"&gt;&lt;mark&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/mark&gt;&lt;/p&gt;
+
+]
+
+
+
+
+---
+
+## Describing Continuous Data
+
+.pad-left[
+
+- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
+
+    - **skewed** data: distribution not symmetric around a central value  
+    
+    - **uniform** data: distributed with equal probability of each value  
+
+- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+
+- You can always calculate mean and SD from continuous data. But these parameters might not represent the data well.  
+  
+]
+
+
+
+
+---
+
+## "Parametric" Continuous Data 
+
+&lt;img src="measures_of_disease_in_epidemiology_2023_bjk_files/figure-html/continuous_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+.footnote[[*] Data made up.]
+
+
+---
+
+## "Non-Parametric" Continuous Data 
+
+&lt;img src="measures_of_disease_in_epidemiology_2023_bjk_files/figure-html/skewed_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+.footnote[[*] Data made up.]
+
+
+---
+
+## Dichotomizing Continuous Data 
+
+.pad-left[
+- See the diagnosis lecture: threshold of oxygen saturation (or `\(\beta\)`-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
+
+- Using a threshold to transform continuous data into dichotomous data means &lt;mark&gt;losing information about uncertainty&lt;/mark&gt;.  
+
+- This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
+
+
+]
+
+  
+  
+---
+
+## Dichotomania 
+
+.pad-left[
+- As we discussed prevalence, incidence, RR, and OR, we focused on &lt;ins&gt;dichotomous&lt;/ins&gt; exposures and outcomes.
+
+- Remember -- with dichotomous data:
+
+    - information about uncertainty is lost  
+    
+    - misclassification is a risk  
+
+- But we're doing it anyway &amp;#x1F600; ... why?
+
+- Medicine focuses on dichotomous diagnostic and treatment decisions.  
+  
+.footnote[[Altman &amp; Royston _BMJ_ 2006](https://www.bmj.com/content/332/7549/1080.1.full)]  
+
+]  
+  
+  
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
 &lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b animated flipInX"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 
@@ -346,10 +515,6 @@ All the above observations suggest the possibility of a &lt;mark&gt;cellular-imm
 - In 1981, _Pneumocystis_ was known to be a low &lt;ins&gt;prevalence&lt;/ins&gt; disease.
 
 - New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;.  
-
-&lt;br/&gt;
-
-.center[&lt;mark&gt;(In ID, the differential is always evolving).&lt;/mark&gt;]  
 
 ]
 
@@ -1179,229 +1344,6 @@ class: full-screen hide-count
 ]
 
 
-
----
-class: full-screen hide-count
-
-&lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-f animated flipInX"&gt;&lt;div&gt;2x2 tables&lt;br&gt;focus on&lt;br&gt;dichotomous&lt;br&gt;data...&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-
-
----
-class: full-screen hide-count
-
-&lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-f animated flipInX"&gt;&lt;div&gt;Not all data are&lt;br&gt;dichotomous!&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-
-
----
-class: full-screen hide-count
-
-&lt;div class="grid-3-2"&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
-&lt;div class="extension-tile gridset-f animated flipInX"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-
-
----
-
-## Data Types 
-
-.pad-left[
-- __Dichotomous__: binary 0 / 1, true / false
-
-    - the focus of most methods in this course (e.g., pneumonia, MI)
-    
-- __Continuous__: real values, infinite scale
-
-    - discussed in diagnostics lecture (e.g., age, height)  
-- __Nominal__: discrete data  
-
-    - categories without intrinsic order (e.g., state)  
-    
-- __Ordinal__: discrete data  
-
-    - categories with intrinsic order (e.g., age category)
-    
-]
-
-
----
-
-## How to Characterize Continuous Data 
-
-.pad-left[
-- Pair a measure of central tendency with a measure of dispersion:
-
-    - mean and SD (both affected by outliers)  
-    
-    - median and IQR  
-
-- In doing so, account for &lt;ins&gt;uncertainty&lt;/ins&gt; in measures.  
-
-]
-
-
----
-
-## Characterize Continuous Data: Central Tendency 
-
-.pad-left[
-
-- **Mean ( `\(\mu\)`)**:
-    `$$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$`
-
-- **Median**: middle value, when values ordered / ranked
-
-- **Mode**: most frequently occurring value
-
-]
-
-
-
----
-
-## Characterize Continuous Data: Variation/Spread 
-
-.pad-left[
-
-- **Standard deviation (SD or `\(\sigma\)`)**: 
-    `$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$`
-
-- **Interquartile range (IQR)** depends on ranking the values:
-
-    - the first quartile is the "middle" value of the first half of the ordered set  
-    
-    - the third quartile is the "middle" value of the second half of the ordered set  
-    
-    - IQR is the range of values between first and third quartiles  
-  
-&lt;p style="text-align: center;"&gt;&lt;mark&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/mark&gt;&lt;/p&gt;
-
-]
-
-
-
-
----
-
-## Describing Continuous Data
-
-.pad-left[
-
-- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
-
-- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
-
-    - **skewed** data: distribution not symmetric around a central value  
-    
-    - **uniform** data: distributed with equal probability of each value  
-
-- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
-
-- Just as you can always calculate RR from a 2x2 table, but sometimes you shouldn't, you can always calculate mean and SD from continuous data. The question is whether you should.  
-  
-]
-
-
-
-
----
-
-## "Parametric" Continuous Data 
-
-&lt;img src="measures_of_disease_in_epidemiology_2023_bjk_files/figure-html/continuous_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
-
-.footnote[[*] Data made up.]
-
-
----
-
-## "Non-Parametric" Continuous Data 
-
-&lt;img src="measures_of_disease_in_epidemiology_2023_bjk_files/figure-html/skewed_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
-
-.footnote[[*] Data made up.]
-
-
-
-
----
-
-## Reflection Question 
-
-.pad-left[
-What makes standard deviation greater?
-
-- (A) More subjects?
-
-- (B) Higher mean value?
-
-- (C) Higher maximum value?
-
-- (D) Greater difference between extreme and mean values? 
-
-]
-
-
-
----
-
-## Dichotomizing Continuous Data 
-
-.pad-left[
-- See the diagnosis lecture: threshold of oxygen saturation (or `\(\beta\)`-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
-
-- Using a threshold to transform continuous data into dichotomous data means &lt;mark&gt;losing information about uncertainty&lt;/mark&gt;.  
-
-- This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
-
-
-]
-
-  
-  
----
-
-## Dichotomania 
-
-.pad-left[
-- As we discussed prevalence, incidence, RR, and OR, we focused on &lt;ins&gt;dichotomous&lt;/ins&gt; exposures and outcomes.
-
-- Remember -- with dichotomous data:
-
-    - information about uncertainty is lost  
-    
-    - misclassification is a risk  
-
-- But we're doing it anyway &amp;#x1F600; ... why?
-
-- Medicine focuses on dichotomous diagnostic and treatment decisions.  
-  
-.footnote[[Altman &amp; Royston _BMJ_ 2006](https://www.bmj.com/content/332/7549/1080.1.full)]  
-
-]  
-  
-  
 
 ---
 class: full-screen hide-count
