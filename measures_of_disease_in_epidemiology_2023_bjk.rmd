@@ -329,31 +329,22 @@ class: full-screen hide-count
 ```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
+library(NHANES)
+library(ggtext)
 set.seed(16)
 
-
-tibble(`Mean = 90%, SD = 1%` = rnorm(n = 1000, mean = 0.9, sd = 0.01), `Mean = 90%, SD = 3%` = rnorm(n = 1000, mean = 0.9, sd = 0.03)) %>%
-  gather(key = sd_type, value = `O2 Saturation`) -> pcp_o2
-
-tibble(`O2 Saturation` = with(pcp_o2, seq(min(`O2 Saturation`), max(`O2 Saturation`), length = 100))) %>%
-  mutate(`Mean = 90%, SD = 1%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.01),
-         `Mean = 90%, SD = 3%` = dnorm(`O2 Saturation`, mean = 0.9, sd = 0.03)) %>%
-  gather(key = sd_type, value = norm_density, -`O2 Saturation`) -> pcp_norm
-
-pcp_o2 %>%
-  ggplot(data = .) + 
-  geom_histogram(aes(x = `O2 Saturation`, y = ..density.., fill = sd_type), colour = "black") +
-  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
-  geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
-  facet_wrap(facets = ~ sd_type, ncol = 2) +
-  scale_x_continuous(limits = c(0.8,1)) +
+NHANES |> 
+  as_tibble() |> 
+  ggplot(data = _) + 
+  geom_histogram(aes(x = BMI, fill = Gender), colour = "black") +
   theme_classic() +
   theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22)) +
-  labs(title = "1000 Subjects with Pneumocystis*", x = "Oxygen Saturation (%)", y = "Count")
+  labs(title = "Parametric Data", subtitle = "CDC National Health and Nutrition Examination Survey (NHANES)", x = "BMI (kg/m2)", y = "Subject Count") +
+  facet_wrap(facets = ~ Gender)
 
 ```
 
-.footnote[[*] Data made up.]
+.footnote[[*] https://www.cdc.gov/nchs/nhanes/index.htm]
 
 
 ---
