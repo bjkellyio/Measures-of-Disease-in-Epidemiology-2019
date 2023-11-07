@@ -449,13 +449,15 @@ class: full-screen hide-count
 
 
 ---
-background-image: url(figs/hiv_timeline_mmwr_1981.png)
-background-size: contain
 
+## HIV Pandemic: MMWR June 5, 1981 
 
-???
+.center[
 
-Image credit: [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline)
+![CDC [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline)](figs/hiv_timeline_mmwr_1981.png)
+
+]
+
 
 
 ---
@@ -464,12 +466,13 @@ background-image: url(figs/cover_mmwr_1981.jpg)
 background-size: 750px
 background-position: 50% 50%
 
-## HIV Beginnings: MMWR June 5, 1981
+## HIV Pandemic: MMWR June 5, 1981
 
 
 
 ---
-## HIV Beginnings: MMWR June 5, 1981 
+
+## HIV Pandemic: MMWR June 5, 1981 
 
 .bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5.f4[
 All the above observations suggest the possibility of a <mark>cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis</mark>. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of _P. carinii_ infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia.
@@ -480,51 +483,55 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 
 ---
 
-## HIV Beginnings: Stigma & Discrimination  
+## HIV Pandemic: Stigma & Discrimination  
 
-.pad-left[
+.pull-left[
 
 - Socially vulnerable groups often at higher infection risk:  
 
     - HIV, COVID-19  
 
     - how we name infectious diseases has exacerbated stigma  
+
+    - _bad epidemiology exacerbates stigma_  
     
-- Demagogues call upon prejudice to gain political power:  
+- Prejudice is used to gain political power:  
   
     - homophobia in the 1980s  
     
     - anti-Asian racism in the 2020s  
 
+]
+
+.pull-right[
+
+![Radiolab: https://radiolab.org/podcast/ashes-lawn.](img/radiolab_ashes_on_the_lawn_tall.png)
 
 ]
 
 
 ---
 
-## HIV Beginnings: Stigma & Discrimination  
+## COVID-19 Pandemic: Stigma & Discrimination  
 
-.pad-left[
+.pull-left[
 
-- As we proceed in course, think about causal and proxy variables.  
+- As we proceed in course, think about causal versus proxy variables. For example:  
 
-- Race is not a proxy for biology.
+    - Race is not a proxy for biology.  
 
-- Race exerts large effects on health:  
+    - Race exerts large effects on health: structural racism & direct / interpersonal racism  
 
-    - structural racism  
+- High-risk work, access to care, and social networks are some ways social determinants and racism impact health.  
+  
+]
 
-    - direct / interpersonal racism  
+.pull-right[
 
-- Some ways social determinants and racism impact health:  
-
-    - high-risk work  
-
-    - access to care  
-
-    - social networks  
+![Radiolab: https://radiolab.org/podcast/ashes-lawn.](img/radiolab_ashes_on_the_lawn_tall.png)
 
 ]
+
 
 
 ---
@@ -534,18 +541,11 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 .pad-left[
 - 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
 
-- What do you want to know and why?  
-
-    - history
-    - vital signs
-    - physical exam
-    - laboratory test values
-    - radiology  
-
 - What is his diagnosis? Does he have _Pneumocystis_ pneumonia (PCP)?
 
+- As you collect data (history, vital signs, physical exam, laboratory test values, radiology results), you are making inferences about the diagnosis based on __associations__ between your findings and disease states.  
+  
 ]
-
 
 
 ---
@@ -558,14 +558,14 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
     - distributions of disease: we'll learn about **prevalence** & **incidence**  
     
     - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes  
-  
+
+- PCP is a fungal pneumonia caused by _Pneumocystis jirovecii_ (formerly _Pneumocystis carinii_), which causes dyspnea, hypoxemia, and nonproductive cough, and eventually cystic lung changes.  
+
 - In 1981, _Pneumocystis_ was known to be a low <ins>prevalence</ins> disease.
 
 - New data would show an increasing <ins>incidence</ins>.  
 
 ]
-
-
 
 
 ---
@@ -591,12 +591,12 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b animated flipInX"><div>Measuring<br>Disease<br>Occurrence</div></div>
+<div class="extension-tile gridset-c animated flipInY"><div>Measuring<br>Disease<br>Occurrence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
 
@@ -605,12 +605,12 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b animated flipInX"><div>Prevalence</div></div>
+<div class="extension-tile gridset-c animated flipInY"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
 
@@ -836,12 +836,12 @@ How can an infection have high prevalence if it occurs infrequently?
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
-<div class="extension-tile gridset-c animated flipInY"><div>Measuring<br>Disease<br>Occurrence</div></div>
+<div class="extension-tile gridset-d animated flipInX"><div>Measuring<br>Disease<br>Occurrence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
 
@@ -850,12 +850,12 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
-<div class="extension-tile gridset-c animated flipInY"><div>Incidence</div></div>
+<div class="extension-tile gridset-d animated flipInX"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
 
@@ -1179,12 +1179,12 @@ background-position: 50% 70%
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
-<div class="extension-tile gridset-d animated flipInX"><div>Aggregate vs<br>Conditional Risk</div></div>
+<div class="extension-tile gridset-e animated flipInY"><div>Aggregate vs<br>Conditional Risk</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
 
@@ -1193,12 +1193,12 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
-<div class="extension-tile gridset-d animated flipInX"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-e animated flipInY"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 </div>
 
 
