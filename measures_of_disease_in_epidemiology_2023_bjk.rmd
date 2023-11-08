@@ -41,7 +41,7 @@ background-image: url(img/Pneumocystis_jirovecii_AO_AL_wikipedia_crop.png)
 background-size: cover
 
 .move-top20[
-.title-text[<span style="font-size:0.8em">Measures of Disease in Clinical Epidemiology</span>]  
+.title-text[<span style="font-size:0.8em;">Measures of Disease in<br>Clinical Epidemiology</span>]  
 ]  
   
 .callout-url-leftcorner[
@@ -326,7 +326,7 @@ class: full-screen hide-count
 
 ## "Parametric" Continuous Data 
 
-```{r continuous_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+```{r parametric_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
 library(NHANES)
@@ -335,53 +335,75 @@ set.seed(16)
 
 NHANES |> 
   as_tibble() |> 
+  filter(Age >= 18) |> 
+  mutate(Gender = paste0("Gender: ", Gender)) |> 
   ggplot(data = _) + 
-  geom_histogram(aes(x = BMI, fill = Gender), colour = "black") +
+  geom_histogram(aes(x = Height, fill = Gender), colour = "black") +
+  scale_fill_viridis_d(option = "turbo", begin = 0.15, end = 0.95) +
   theme_classic() +
-  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22)) +
-  labs(title = "Parametric Data", subtitle = "CDC National Health and Nutrition Examination Survey (NHANES)", x = "BMI (kg/m2)", y = "Subject Count") +
-  facet_wrap(facets = ~ Gender)
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = ggtext::element_markdown(size = 22), axis.title.x = ggtext::element_markdown(size = 22)) +
+  labs(title = "Height (cm) from a Population Survey of US Citizens", subtitle = "7,481 subjects with age >= 18 years", x = "Height (cm)", y = "Subject Count") +
+  facet_wrap(facets = ~ Gender, scales = "free_x")
 
 ```
 
-.footnote[[*] https://www.cdc.gov/nchs/nhanes/index.htm]
+.footnote[[CDC National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm)]
 
 
 ---
 
-## "Non-Parametric" Continuous Data 
+## "Non-Parametric" Continuous Data: Skewed 
 
 ```{r skewed_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
 
 library(tidyverse)
+library(NHANES)
+library(ggtext)
 set.seed(16)
 
-tibble("Uniform" = runif(n = 1000, min = 0.80, max = 0.98), "Skewed" = rbeta(1000,9,1)) %>%
-  gather(key = dis_type, value = o2_sat) -> pcp_skew_o2
-
-pcp_skew_o2 %>%
-  group_by(dis_type) %>%
-  summarise(median = median(o2_sat, na.rm = TRUE),
-            mean = mean(o2_sat, na.rm = TRUE)) %>%
-  ungroup() -> pcp_dist
-
-pcp_skew_o2 %>%
-  ggplot(data = .) + 
-  geom_histogram(aes(x = o2_sat, fill = dis_type), colour = "black") +
-  #geom_density(aes(x = `O2 Saturation`), colour = "black", fill = NA, kernel = 'gaussian', weight = 2) +
-  #geom_line(data = pcp_norm, aes(x = `O2 Saturation`, y = norm_density), colour = "black", size = 2) +
-  geom_vline(data = pcp_dist, aes(xintercept = median), colour = "blue", size = 2) +
-  geom_vline(data = pcp_dist, aes(xintercept = mean), colour = "black", size = 2) +
-  facet_wrap(facets = ~ dis_type, ncol = 2) +
-  scale_x_continuous(limits = c(0.8,1)) +
+NHANES |> 
+  as_tibble() |> 
+  filter(Age >= 18) |> 
+  mutate(Gender = paste0("Gender: ", Gender)) |> 
+  ggplot(data = _) + 
+  geom_histogram(aes(x = BMI, fill = Gender), colour = "black") +
+  scale_fill_viridis_d(option = "turbo", begin = 0.15, end = 0.95) +
   theme_classic() +
-  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = element_text(size = 22), plot.subtitle = element_text(size = 22)) +
-  labs(title = "1000 Subjects with Pneumocystis*", subtitle = "(Blue Line = Median & Black Line = Mean)", x = "Oxygen Saturation (%)", y = "Count")
-
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = ggtext::element_markdown(size = 22), axis.title.x = ggtext::element_markdown(size = 22)) +
+  labs(title = "BMI (kg/m^2^) from a Population Survey of US Citizens", subtitle = "7,481 subjects with age >= 18 years", x = "BMI (kg/m^2^)", y = "Subject Count") +
+  facet_wrap(facets = ~ Gender, scales = "free_x")
 
 ```
 
-.footnote[[*] Data made up.]
+.footnote[[CDC NHANES](https://www.cdc.gov/nchs/nhanes/index.htm)]
+
+
+---
+
+## "Non-Parametric" Continuous Data: Uniform 
+
+```{r uniform_data, echo=FALSE, warning=FALSE, message=FALSE, fig.height=6, fig.width=12, fig.align='center', fig.retina=2}
+
+library(tidyverse)
+library(NHANES)
+library(ggtext)
+set.seed(16)
+
+NHANES |> 
+  as_tibble() |> 
+  #filter(Age >= 18) |> 
+  mutate(Gender = paste0("Gender: ", Gender)) |> 
+  ggplot(data = _) + 
+  geom_histogram(aes(x = Age, fill = Gender), colour = "black") +
+  scale_fill_viridis_d(option = "turbo", begin = 0.15, end = 0.95) +
+  theme_classic() +
+  theme(legend.position = 'none', line = element_line(colour = "black"), text = element_text(size = 22), plot.title = ggtext::element_markdown(size = 22), axis.title.x = ggtext::element_markdown(size = 22)) +
+  labs(title = "Age (years) from a Population Survey of US Citizens", subtitle = " ", x = "Age (years)", y = "Subject Count") +
+  facet_wrap(facets = ~ Gender, scales = "free_x")
+
+```
+
+.footnote[[CDC NHANES](https://www.cdc.gov/nchs/nhanes/index.htm)]
 
 
 ---
@@ -453,9 +475,9 @@ class: full-screen hide-count
 ## HIV Pandemic: MMWR June 5, 1981 
 
 .center[
-
+<span style="box-shadow: 5px 5px 5px gray;">
 ![CDC [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline)](figs/hiv_timeline_mmwr_1981.png)
-
+</span>
 ]
 
 
@@ -474,7 +496,7 @@ background-position: 50% 50%
 
 ## HIV Pandemic: MMWR June 5, 1981 
 
-.bg-washed-blue.b--dark-blue.ba.bw2.br3.shadow-5.ph4.mt5.f4[
+.bg-washed-gray.b--dark-gray.ba.bw2.br3.shadow-5.ph4.mt5.f4[
 All the above observations suggest the possibility of a <mark>cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis</mark>. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of _P. carinii_ infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia.
 .tr[
 — Gottlieb MS et al <ins>MMWR</ins> 1981
@@ -504,9 +526,9 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 ]
 
 .pull-right[
-
+<span style="box-shadow: 5px 5px 5px gray;">
 ![Radiolab: https://radiolab.org/podcast/ashes-lawn.](img/radiolab_ashes_on_the_lawn_tall.png)
-
+</span>
 ]
 
 
