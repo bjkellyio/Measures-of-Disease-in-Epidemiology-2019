@@ -354,7 +354,7 @@ NHANES |>
 
 ```
 
-.footnote[[CDC NHANES](https://www.cdc.gov/nchs/nhanes/index.htm)]
+.footnote[[CDC National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm)]
 
 
 ---
@@ -382,7 +382,7 @@ NHANES |>
 
 ```
 
-.footnote[[CDC NHANES](https://www.cdc.gov/nchs/nhanes/index.htm)]
+.footnote[[CDC National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm)]
 
 
 ---
@@ -549,10 +549,10 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 ]
 
 .pull-right[
-
-![Radiolab: https://radiolab.org/podcast/ashes-lawn.](img/radiolab_ashes_on_the_lawn_tall.png)
-
+  <img src="img/covid_disparities_discrimination.png" alt="Radiolab" style="box-shadow: 3px 3px 3px gray;">
 ]
+
+.footnote[Bilal U et al _Lancet Reg Health Am_ 2022; Chastain DB et al _NEJM_ 2020; Lee JH _NEJM_ 2021]
 
 
 
@@ -1219,20 +1219,6 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
-<div class="extension-tile gridset-e animated flipInY"><div>Aggregate vs<br>Conditional Risk</div></div>
-<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-</div>
-
-
-
----
-class: full-screen hide-count
-
-<div class="grid-3-2">
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
-<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
-<div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-e animated flipInY"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 </div>
@@ -1439,7 +1425,7 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-f animated flipInX"><div>2x2 tables<br>are hard!</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>Aggregate vs<br>Conditional Risk</div></div>
 </div>
 
 
