@@ -230,7 +230,8 @@ class: full-screen hide-count
     
 - __Continuous__: real values, infinite scale
 
-    - discussed in diagnostics lecture (e.g., age, height)  
+    - discussed in diagnostics lecture (e.g., age, height) 
+     
 - __Nominal__: discrete data  
 
     - categories without intrinsic order (e.g., state)  
@@ -273,6 +274,7 @@ class: full-screen hide-count
 
 ]
 
+<p style="text-align: center;"><mark> (you do <strong>NOT</strong> need to memorize these formulas) </mark></p>
 
 
 ---
@@ -295,30 +297,6 @@ class: full-screen hide-count
 <p style="text-align: center;"><mark> (you do <strong>NOT</strong> need to memorize these formulas) </mark></p>
 
 ]
-
-
-
-
----
-
-## Describing Continuous Data
-
-.pad-left[
-
-- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
-
-- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
-
-    - **skewed** data: distribution not symmetric around a central value  
-    
-    - **uniform** data: distributed with equal probability of each value  
-
-- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
-
-- You can always calculate mean and SD from continuous data. But these parameters might not represent the data well.  
-  
-]
-
 
 
 
@@ -348,6 +326,7 @@ NHANES |>
 ```
 
 .footnote[[CDC National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm)]
+
 
 
 ---
@@ -408,14 +387,37 @@ NHANES |>
 
 ---
 
+## Describing Continuous Data
+
+.pad-left[
+
+- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
+
+    - **skewed** data: distribution not symmetric around a central value  
+    
+    - **uniform** data: distributed with equal probability of each value  
+
+- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+
+- You can always calculate mean and SD from continuous data. But these parameters might not represent the data well.  
+  
+]
+
+
+
+---
+
 ## Dichotomizing Continuous Data 
 
 .pad-left[
-- See the diagnosis lecture: threshold of oxygen saturation (or $\beta$-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
 
 - Using a threshold to transform continuous data into dichotomous data means <mark>losing information about uncertainty</mark>.  
 
 - This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
+
+- See the diagnosis lecture: for example, threshold of oxygen saturation (or $\beta$-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
 
 
 ]
@@ -475,11 +477,8 @@ class: full-screen hide-count
 ## HIV Pandemic: MMWR June 5, 1981 
 
 .center[
-<span style="box-shadow: 5px 5px 5px gray;">
-![CDC [MMWR](https://www.hiv.gov/hiv-basics/overview/history/hiv-and-aids-timeline)](figs/hiv_timeline_mmwr_1981.png)
-</span>
+<img src="figs/hiv_timeline_mmwr_1981.png" alt="MMWR 1981" style="box-shadow: 3px 3px 3px gray;">
 ]
-
 
 
 ---
@@ -526,10 +525,11 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
 ]
 
 .pull-right[
-<span style="box-shadow: 5px 5px 5px gray;">
-![Radiolab: https://radiolab.org/podcast/ashes-lawn.](img/radiolab_ashes_on_the_lawn_tall.png)
-</span>
+  <img src="img/radiolab_ashes_on_the_lawn_tall.png" alt="Radiolab" style="box-shadow: 3px 3px 3px gray;">
 ]
+
+.footnote[[Radiolab "The Ashes on the Lawn"](https://radiolab.org/podcast/ashes-lawn)]
+
 
 
 ---
@@ -1205,6 +1205,20 @@ class: full-screen hide-count
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
+<div class="extension-tile gridset-e animated flipInY"><div>What<br>determines<br>risk?</div></div>
+<div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
+</div>
+
+
+
+---
+class: full-screen hide-count
+
+<div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-grey"><div>Prevalence</div></div>
+<div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-e animated flipInY"><div>Aggregate vs<br>Conditional Risk</div></div>
 <div class="extension-tile gridset-grey"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 </div>
@@ -1420,12 +1434,12 @@ tibble(`AIDS` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = fact
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-e animated flipInY"><div>2x2 tables<br>are HARD!</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>2x2 tables<br>are hard!</div></div>
 </div>
 
 
@@ -1434,12 +1448,12 @@ class: full-screen hide-count
 class: full-screen hide-count
 
 <div class="grid-3-2">
+<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
 <div class="extension-tile gridset-grey"><div>Case from 1981</div></div>
 <div class="extension-tile gridset-grey"><div>Prevalence</div></div>
 <div class="extension-tile gridset-grey"><div>Incidence</div></div>
 <div class="extension-tile gridset-grey"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-e animated flipInY"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-grey"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 </div>
 
 
@@ -1762,12 +1776,12 @@ tibble(Exposure = factor(x = c("+","-"), levels = c("-","+")), Outcome = factor(
 class: full-screen hide-count
 
 <div class="grid-3-2">
-<div class="extension-tile gridset-a animated flipInY"><div>Case from 1981</div></div>
-<div class="extension-tile gridset-b animated flipInX"><div>Prevalence</div></div>
-<div class="extension-tile gridset-c animated flipInY"><div>Incidence</div></div>
-<div class="extension-tile gridset-d animated flipInX"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
-<div class="extension-tile gridset-e animated flipInY"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
-<div class="extension-tile gridset-f animated flipInX"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-a animated flipInY"><div>Data Types<br>&<br>Distributions</div></div>
+<div class="extension-tile gridset-b animated flipInX"><div>Case from 1981</div></div>
+<div class="extension-tile gridset-c animated flipInY"><div>Prevalence</div></div>
+<div class="extension-tile gridset-d animated flipInX"><div>Incidence</div></div>
+<div class="extension-tile gridset-e animated flipInY"><div>Inference from<br>Exposures &<br>Outcomes</div></div>
+<div class="extension-tile gridset-f animated flipInX"><div>Relative Risk<br>&<br>Odds Ratios</div></div>
 </div>
 
 
