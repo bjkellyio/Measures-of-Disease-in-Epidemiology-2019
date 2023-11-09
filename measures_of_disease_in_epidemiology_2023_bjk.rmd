@@ -294,10 +294,22 @@ class: full-screen hide-count
     
     - IQR is the range of values between first and third quartiles  
   
-<p style="text-align: center;"><mark> (you do <strong>NOT</strong> need to memorize these formulas) </mark></p>
-
 ]
 
+<p style="text-align: center;"><mark> (you do <strong>NOT</strong> need to memorize these formulas) </mark></p>
+
+
+---
+
+## Describing Continuous Data
+
+.pad-left[
+
+- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well...  
+  
+]
 
 
 ---
@@ -429,7 +441,7 @@ NHANES |>
 ## Dichotomania 
 
 .pad-left[
-- As we discussed prevalence, incidence, RR, and OR, we focused on <ins>dichotomous</ins> exposures and outcomes.
+- As we discuss prevalence, incidence, RR, and OR, we focus on <ins>dichotomous</ins> exposures and outcomes.
 
 - Remember -- with dichotomous data:
 
@@ -552,7 +564,7 @@ All the above observations suggest the possibility of a <mark>cellular-immune dy
   <img src="img/covid_disparities_discrimination.png" alt="Radiolab" style="box-shadow: 3px 3px 3px gray;">
 ]
 
-.footnote[Bilal U et al _Lancet Reg Health Am_ 2022; Chastain DB et al _NEJM_ 2020; Lee JH _NEJM_ 2021]
+.footnote[Bilal U et al _Lancet Reg Health Am_ 2022;<br> Chastain DB et al _NEJM_ 2020; Lee JH _NEJM_ 2021]
 
 
 
@@ -887,7 +899,9 @@ class: full-screen hide-count
 ## Case from 1981... _Pneumocystis_ pneumonia? 
 
 .pull-left[
-![](figs/nejm_combined.png)
+
+<img src="figs/nejm_combined.png" alt="Masur & Gottlieb" style="box-shadow: 3px 3px 3px gray;">
+
 ]
 
 .pull-right[
@@ -1725,9 +1739,7 @@ tibble(`AIDS` = factor(x = c("+","-"), levels = c("-","+")), Pneumocystis = fact
 
 $$RR = \frac{\frac{A}{(A + B)}}{\frac{C}{(C + D)}} \sim \frac{\frac{A}{B}}{\frac{C}{D}} = \frac{A*D}{B*C} = \frac{\frac{A}{C}}{\frac{B}{D}} = OR$$  
 
-- OR approximates RR if outcome occurs infrequently (<15%). <mark>Though OR is fundamentally different from RR, we use it as an approximation of RR</mark>.  
-
-- If outcome is more common, OR will differ increasingly from RR.
+- OR approximates RR if outcome occurs infrequently (<15%). <mark>Though OR is fundamentally different from RR, we use it as an approximation of RR</mark>. If outcome is more common, OR & RR differ increasingly.
 
 ]
 
@@ -1800,6 +1812,7 @@ background-position: 50% 50%
 
 
 .footnote[Wickramasekaran et al _Mycoses_ 2017]
+
 
 ---
 class: center, middle, hide-count

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Measures of Disease in Clinical Epidemiology</title>
+    <title>Measures of Disease in Clinical Epidemiology </title>
     <meta charset="utf-8" />
     <meta name="author" content="Brendan J. Kelly, MD, MS" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
     <script src="libs/xaringanExtra-webcam/webcam.js"></script>
@@ -45,7 +46,7 @@ background-size: cover
 Brendan J. Kelly, MD, MS  
 Infectious Diseases, Epidemiology &amp; Microbiology  
 University of Pennsylvania  
-updated: 08 November 2023  
+updated: 09 November 2023  
 ]
 ]
 
@@ -290,10 +291,22 @@ class: full-screen hide-count
     
     - IQR is the range of values between first and third quartiles  
   
-&lt;p style="text-align: center;"&gt;&lt;mark&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/mark&gt;&lt;/p&gt;
-
 ]
 
+&lt;p style="text-align: center;"&gt;&lt;mark&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/mark&gt;&lt;/p&gt;
+
+
+---
+
+## Describing Continuous Data
+
+.pad-left[
+
+- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well...  
+  
+]
 
 
 ---
@@ -368,7 +381,7 @@ class: full-screen hide-count
 ## Dichotomania 
 
 .pad-left[
-- As we discussed prevalence, incidence, RR, and OR, we focused on &lt;ins&gt;dichotomous&lt;/ins&gt; exposures and outcomes.
+- As we discuss prevalence, incidence, RR, and OR, we focus on &lt;ins&gt;dichotomous&lt;/ins&gt; exposures and outcomes.
 
 - Remember -- with dichotomous data:
 
@@ -491,7 +504,7 @@ All the above observations suggest the possibility of a &lt;mark&gt;cellular-imm
   &lt;img src="img/covid_disparities_discrimination.png" alt="Radiolab" style="box-shadow: 3px 3px 3px gray;"&gt;
 ]
 
-.footnote[Bilal U et al _Lancet Reg Health Am_ 2022; Chastain DB et al _NEJM_ 2020; Lee JH _NEJM_ 2021]
+.footnote[Bilal U et al _Lancet Reg Health Am_ 2022;&lt;br&gt; Chastain DB et al _NEJM_ 2020; Lee JH _NEJM_ 2021]
 
 
 
@@ -760,7 +773,9 @@ class: full-screen hide-count
 ## Case from 1981... _Pneumocystis_ pneumonia? 
 
 .pull-left[
-![](figs/nejm_combined.png)
+
+&lt;img src="figs/nejm_combined.png" alt="Masur &amp; Gottlieb" style="box-shadow: 3px 3px 3px gray;"&gt;
+
 ]
 
 .pull-right[
@@ -1340,9 +1355,7 @@ class: full-screen hide-count
 
 `$$RR = \frac{\frac{A}{(A + B)}}{\frac{C}{(C + D)}} \sim \frac{\frac{A}{B}}{\frac{C}{D}} = \frac{A*D}{B*C} = \frac{\frac{A}{C}}{\frac{B}{D}} = OR$$`  
 
-- OR approximates RR if outcome occurs infrequently (&lt;15%). &lt;mark&gt;Though OR is fundamentally different from RR, we use it as an approximation of RR&lt;/mark&gt;.  
-
-- If outcome is more common, OR will differ increasingly from RR.
+- OR approximates RR if outcome occurs infrequently (&lt;15%). &lt;mark&gt;Though OR is fundamentally different from RR, we use it as an approximation of RR&lt;/mark&gt;. If outcome is more common, OR &amp; RR differ increasingly.
 
 ]
 
@@ -1396,6 +1409,7 @@ background-position: 50% 50%
 
 .footnote[Wickramasekaran et al _Mycoses_ 2017]
 
+
 ---
 class: center, middle, hide-count
 background-image: url(img/Pneumocystis_jirovecii_AO_AL_wikipedia_crop.png)
@@ -1406,6 +1420,9 @@ background-size: cover
 .footnote-right[
 &lt;span style='color:white'&gt;image: Federica Viazzi "Microscopy image of &lt;i&gt;P. jirovecii&lt;/i&gt;" [(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)&lt;/span&gt;
 ]
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
