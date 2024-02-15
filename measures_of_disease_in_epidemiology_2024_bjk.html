@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Measures of Disease in Clinical Epidemiology </title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Brendan J. Kelly, MD, MS" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <script src="libs/xaringanExtra-webcam/webcam.js"></script>
+    <script id="xaringanExtra-webcam-options" type="application/json">{"width":"200","height":"200","margin":"1em"}</script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
+    <script src="libs/htmlwidgets/htmlwidgets.js"></script>
+    <script src="libs/viz/viz.js"></script>
+    <link href="libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+    <script src="libs/grViz-binding/grViz.js"></script>
+    <link rel="stylesheet" href="xaringan-themer-inferno-grids-fade.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+exclude: true
+
+
+
+
+
+
+---
+class: top left hide-count
+background-image: url(img/Pneumocystis_jirovecii_AO_AL_wikipedia_crop.png)
+background-size: cover
+
+.move-top20[
+.title-text[&lt;span style="font-size:0.8em;"&gt;Measures of Disease in&lt;br&gt;Clinical Epidemiology&lt;/span&gt;]  
+]  
+  
+.callout-url-leftcorner[
+.title-nametext[
+Brendan J. Kelly, MD, MS  
+Infectious Diseases, Epidemiology &amp; Microbiology  
+University of Pennsylvania  
+updated: 15 February 2024  
+]
+]
+
+.footnote-right[
+&lt;span style='color:white'&gt;image: Federica Viazzi "Microscopy image of &lt;i&gt;P. jirovecii&lt;/i&gt;" [(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)&lt;/span&gt;
+]
+
+
+---
+
+## Disclosures  
+
+.pad-left[
+
+- No conflicts of interest.  
+
+]
+
+
+
+---
+
+## Learning Objectives
+
+.pad-left[
+- Measures of disease occurrence: use population data to describe health and disease.
+
+- Key concepts -- explain the meaning of:
+
+    - data types and terminology
+    - prevalence
+    - incidence (&lt;ins&gt;warning&lt;/ins&gt;: multiple types)
+    - relative risk (RR)
+    - odds ratio (OR)
+
+- Implementation: prevalence, incidence, RR, and OR from study data (2x2 tables!).
+
+]
+
+
+
+---
+
+## Why Do I Care? ... 
+
+.pad-left[
+- Why use these tools (prevalence, incidence, RR, OR)?
+
+     - inform differential diagnoses &amp; counsel patients (&lt;ins&gt;your job&lt;/ins&gt;)  
+     
+     - design public health interventions &amp; direct new diagnostics/therapies (society!)   
+     
+     - understand distributions and determinants of diseases (science!)  
+
+]
+
+
+
+---
+
+## ... What Do I Need to Know for the Test? 
+
+.pad-left[
+.grey-text[
+- Why use these tools (prevalence, incidence, RR, OR)?
+
+     - inform differential diagnoses &amp; counsel patients (&lt;ins&gt;your job&lt;/ins&gt;)  
+     
+     - design public health interventions &amp; direct new diagnostics/therapies (society!)   
+     
+     - understand distributions and determinants of diseases (science!)  
+     
+]
+- How to use these tools:
+
+     - precise definitions 
+     (e.g., RR vs OR, cumulative incidence vs incidence density)  
+     
+     - a bit of arithmetic  
+
+]
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a animated flipInY"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+---
+layout: false
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b animated flipInX"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+---
+layout: false
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c animated bounceInDown"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+layout: false
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d animated fadeInRight"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+layout: false
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-e animated bounceInUp"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-e"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-f animated slideInLeft"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a animated flipInY"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Data Types 
+
+.pad-left[
+- __Dichotomous__: binary 0 / 1, true / false
+
+    - the focus of most methods in this course (e.g., pneumonia, MI)
+    
+- __Continuous__: real values, infinite scale
+
+    - discussed in diagnostics lecture (e.g., age, height) 
+     
+- __Nominal__: discrete data  
+
+    - categories without intrinsic order (e.g., state)  
+    
+- __Ordinal__: discrete data  
+
+    - categories with intrinsic order (e.g., age category)
+    
+]
+
+
+---
+
+## How to Characterize Continuous Data 
+
+.pad-left[
+- Pair a measure of central tendency with a measure of dispersion:
+
+    - mean and SD (both affected by outliers)  
+    
+    - median and IQR  
+
+- In doing so, account for &lt;ins&gt;uncertainty&lt;/ins&gt; in measures.  
+
+]
+
+
+---
+
+## Characterize Continuous Data: Central Tendency 
+
+.pad-left[
+
+- **Mean ( `\(\mu\)`)**:
+    `$$\mu=\frac{1}{N}\sum_{i=1}^Nx_i$$`
+
+- **Median**: middle value, when values ordered / ranked
+
+- **Mode**: most frequently occurring value
+
+]
+
+&lt;p style="text-align: center;"&gt;&lt;mark&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/mark&gt;&lt;/p&gt;
+
+
+---
+
+## Characterize Continuous Data: Variation/Spread 
+
+.pad-left[
+
+- **Standard deviation (SD or `\(\sigma\)`)**: 
+    `$$\sigma=\sqrt{\frac{1}{N}*\sum_{i=1}^N(x_i - \mu)^2}$$`
+
+- **Interquartile range (IQR)** depends on ranking the values:
+
+    - the first quartile is the "middle" value of the first half of the ordered set  
+    
+    - the third quartile is the "middle" value of the second half of the ordered set  
+    
+    - IQR is the range of values between first and third quartiles  
+  
+]
+
+&lt;p style="text-align: center;"&gt;&lt;mark&gt; (you do &lt;strong&gt;NOT&lt;/strong&gt; need to memorize these formulas) &lt;/mark&gt;&lt;/p&gt;
+
+
+---
+
+## Describing Continuous Data
+
+.pad-left[
+
+- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well...  
+  
+]
+
+
+---
+
+## "Normally Distributed" Continuous Data 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/parametric_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+.footnote[[CDC National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm)]
+
+
+
+---
+
+## "Non-Parametric" Continuous Data: Skewed 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/skewed_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+.footnote[[CDC National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm)]
+
+
+---
+
+## "Non-Parametric" Continuous Data: Uniform 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/uniform_data-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+.footnote[[CDC National Health and Nutrition Examination Survey (NHANES)](https://www.cdc.gov/nchs/nhanes/index.htm)]
+
+
+---
+
+## Describing Continuous Data
+
+.pad-left[
+
+- "Normally distributed": data well characterized by **mean** and **standard deviation (SD)**.
+
+- “Non-parametric” data have a mean and standard deviation, but these parameters do NOT characterize the data well:  
+
+    - **skewed** data: distribution not symmetric around a central value  
+    
+    - **uniform** data: distributed with equal probability of each value  
+
+- For "non-parametric" data, we prefer to use **median** and **interquartile range (IQR)** to describe the distribution of a continuous variable because these are less affected by extreme values. 
+
+- You can always calculate mean and SD from continuous data. But these parameters might not represent the data well.  
+  
+]
+
+
+
+---
+
+## Dichotomizing Continuous Data 
+
+.pad-left[
+
+- Using a threshold to transform continuous data into dichotomous data means &lt;mark&gt;losing information about uncertainty&lt;/mark&gt;.  
+
+- This is on top of the fundamental uncertainty we face with any epidemiologic measure: does the measured population represent the population of interest?  
+
+- See the diagnosis lecture: for example, threshold of oxygen saturation (or `\(\beta\)`-D glucan) to diagnose _Pneumocystis_ pneumonia (PCP) means trade-off between sensitivity and specificity.
+
+
+]
+
+  
+  
+---
+
+## Dichotomania 
+
+.pad-left[
+- As we discuss prevalence, incidence, RR, and OR, we focus on &lt;ins&gt;dichotomous&lt;/ins&gt; exposures and outcomes.
+
+- Remember -- with dichotomous data:
+
+    - information about uncertainty is lost  
+    
+    - misclassification is a risk  
+
+- But we're doing it anyway &amp;#x1F600; ... why?
+
+- Medicine focuses on dichotomous diagnostic and treatment decisions.  
+  
+.footnote[[Altman &amp; Royston _BMJ_ 2006](https://www.bmj.com/content/332/7549/1080.1.full)]  
+
+]  
+  
+  
+---
+
+## What About Regression? (Not on the Test!)  
+
+.pad-left[
+- As we discuss prevalence, incidence, RR, and OR, we focus on &lt;ins&gt;dichotomous&lt;/ins&gt; exposures and outcomes.
+
+- 
+
+- 
+
+- 
+
+.footnote[[Altman &amp; Royston _BMJ_ 2006](https://www.bmj.com/content/332/7549/1080.1.full)]  
+
+]  
+  
+  
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b animated flipInX"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Case from 1981...   
+
+.pad-left[
+- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+]
+
+
+
+---
+
+## HIV Pandemic: MMWR June 5, 1981 
+
+.center[
+&lt;img src="figs/hiv_timeline_mmwr_1981.png" alt="MMWR 1981" style="box-shadow: 3px 3px 3px gray;"&gt;
+]
+
+
+---
+exclude: true
+background-image: url(figs/cover_mmwr_1981.jpg)
+background-size: 750px
+background-position: 50% 50%
+
+## HIV Pandemic: MMWR June 5, 1981
+
+
+
+---
+
+## HIV Pandemic: MMWR June 5, 1981 
+
+.bg-washed-gray.b--dark-gray.ba.bw2.br3.shadow-5.ph4.mt5.f4[
+All the above observations suggest the possibility of a &lt;mark&gt;cellular-immune dysfunction related to a common exposure that predisposes individuals to opportunistic infections such as pneumocystosis and candidiasis&lt;/mark&gt;. Although the role of CMV infection in the pathogenesis of pneumocystosis remains unknown, the possibility of _P. carinii_ infection must be carefully considered in a differential diagnosis for previously healthy homosexual males with dyspnea and pneumonia.
+.tr[
+— Gottlieb MS et al &lt;ins&gt;MMWR&lt;/ins&gt; 1981
+]]
+
+
+---
+
+## HIV Pandemic: Stigma &amp; Discrimination  
+
+.pull-left[
+
+- Socially vulnerable groups often at higher infection risk:  
+
+    - HIV, COVID-19  
+
+    - how we name infectious diseases has exacerbated stigma  
+
+    - _bad epidemiology exacerbates stigma_  
+    
+- Prejudice is used to gain political power:  
+  
+    - homophobia in the 1980s  
+    
+    - anti-Asian racism in the 2020s  
+
+]
+
+.pull-right[
+  &lt;img src="img/radiolab_ashes_on_the_lawn_tall.png" alt="Radiolab" style="box-shadow: 3px 3px 3px gray;"&gt;
+]
+
+.footnote[[Radiolab "The Ashes on the Lawn"](https://radiolab.org/podcast/ashes-lawn)]
+
+
+
+---
+
+## COVID-19 Pandemic: Stigma &amp; Discrimination  
+
+.pull-left[
+
+- As we proceed in course, think about causal versus proxy variables. For example:  
+
+    - Race is not a proxy for biology.  
+
+    - Race exerts large effects on health: structural racism &amp; direct / interpersonal racism  
+
+- High-risk work, access to care, and social networks are some ways social determinants and racism impact health.  
+  
+]
+
+.pull-right[
+  &lt;img src="img/covid_disparities_discrimination.png" alt="Radiolab" style="box-shadow: 3px 3px 3px gray;"&gt;
+]
+
+.footnote[Bilal U et al _Lancet Reg Health Am_ 2022;&lt;br&gt; Chastain DB et al _NEJM_ 2020; Lee JH _NEJM_ 2021]
+
+
+
+---
+
+## Case from 1981... _Pneumocystis_ pneumonia? 
+
+.pad-left[
+- 36-year-old man presents with a 4-month history of fever, dyspnea, and cough.
+
+- What is his diagnosis? Does he have _Pneumocystis_ pneumonia (PCP)?
+
+- As you collect data (history, vital signs, physical exam, laboratory test values, radiology results), you are making inferences about the diagnosis based on __associations__ between your findings and disease states.  
+  
+]
+
+
+---
+
+## Case from 1981... _Pneumocystis_ pneumonia? 
+
+.pad-left[
+- Differential diagnosis must be grounded in understanding:
+
+    - distributions of disease: we'll learn about **prevalence** &amp; **incidence**  
+    
+    - determinants of disease: we'll learn **2x2 tables** to relate exposures and outcomes  
+
+- PCP is a fungal pneumonia caused by _Pneumocystis jirovecii_ (formerly _Pneumocystis carinii_), which causes dyspnea, hypoxemia, and nonproductive cough, and eventually cystic lung changes.  
+
+- In 1981, _Pneumocystis_ was known to be a low &lt;ins&gt;prevalence&lt;/ins&gt; disease.
+
+- New data would show an increasing &lt;ins&gt;incidence&lt;/ins&gt;.  
+
+]
+
+
+---
+
+## Case from 1981... _Pneumocystis_ pneumonia? 
+
+.pad-left[
+- Does our patient have _Pneumocystis_ pneumonia (PCP)?
+
+- How is the distribution of _Pneumocystis_ pneumonia changing?
+
+- What are the determinants of _Pneumocystis_ pneumonia?
+  
+&lt;br/&gt;
+  
+.center[&lt;mark&gt;Note: questions depend on &lt;strong&gt;dichotomous&lt;/strong&gt; definition of disease (yes/no &lt;em&gt;Pneumocystis&lt;/em&gt;)&lt;/mark&gt;]
+  
+]
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c animated flipInY"&gt;&lt;div&gt;Measuring&lt;br&gt;Disease&lt;br&gt;Occurrence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c animated flipInY"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Prevalence 
+
+.pad-left[
+- How common is _Pneumocystis_ pneumonia (PCP)?
+
+- Prevalence: 
+
+    - number with the disease / number in specified population  
+    
+    - **point prevalence**: at a specific point in time  
+    
+    - **period prevalence**: during a given period (e.g., 12-month prevalence)  
+    
+    - a proportion (unitless, ranges from 0-1)  
+    
+    - numerator includes all people who have the disease, both new and ongoing cases  
+    
+    - represents a &lt;ins&gt;cross-sectional&lt;/ins&gt; “snapshot” of the population
+
+]
+
+
+ 
+---
+
+## Prevalence of _Pneumocystis_ pneumonia 
+
+.pad-left[
+- In 1967, CDC became the sole supplier of pentamidine in the United States and began collecting data on cases of PCP:
+
+    - period prevalence published in 1974&lt;sup&gt;*&lt;/sup&gt;: 579 cases (194 confirmed) over 3 years
+    - what’s the denominator?
+    - what’s the prevalence?
+
+- __Point prevalence__ of _Pneumocystis_ would be vanishingly small given limited duration of disease.
+
+- From 1967-1974, even the __period prevalence__ was very small.
+
+.footnote[[*] Walzer PD et al _Annals Int Med_ 1974]
+
+]
+
+
+
+---
+
+## Point Prevalence versus Period Prevalence 
+
+.pad-left[
+- To understand the difference between point and period prevalence, let's imagine a cohort of people living with HIV/AIDS at risk for _Pneumocystis_:  
+
+    - 50 high-risk subjects enrolled at the start of a two-year observation period  
+    
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red on plot)  
+    
+    - incomplete follow-up (grey on plot)
+    
+    - some subjects started on _Pneumocystis_ prophylaxis (blue on plot)  
+
+]
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/print_pcp_study-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/print_pcp_study_label_case-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/print_pcp_study_label_followup-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/print_pcp_study_label_prophylaxis-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk: Point Prevalence 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/pcp_point_prev-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+## Cohort at Risk: Period Prevalence 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/pcp_period_prev-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Prevalence 
+
+.pad-left[
+- Prevalence is **NOT** the same as risk.
+
+- Prevalence numerator includes all people who have the disease, both new and ongoing cases, so represents a cross-sectional “snapshot” of the population. 
+
+- Prevalence does **NOT** estimate the risk of developing the disease because &lt;mark&gt;prevalence does **NOT** fully account for time &lt;/mark&gt; (are the measured cases old cases or new cases?).
+
+- Prevalence can provide a useful snapshot of the burden of disease.  
+
+]
+
+
+
+
+---
+
+## Reflection Question 
+
+.pad-left[
+How can an infection have high prevalence if it occurs infrequently?
+
+- (A) the infection is rapidly fatal
+
+- (B) the infection rapidly resolves
+
+- (C) a few children get the infection every year, but the infection persists for the rest of their lives
+
+- (D) the infection results in lifelong protective immunity
+
+]
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d animated flipInX"&gt;&lt;div&gt;Measuring&lt;br&gt;Disease&lt;br&gt;Occurrence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d animated flipInX"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Case from 1981... _Pneumocystis_ pneumonia? 
+
+.pull-left[
+
+&lt;img src="figs/nejm_combined.png" alt="Masur &amp; Gottlieb" style="box-shadow: 3px 3px 3px gray;"&gt;
+
+]
+
+.pull-right[
+
+&lt;br/&gt;
+
+- new _Pneumocystis_ cases (NYC&lt;sup&gt;1&lt;/sup&gt;): 13 cases over 21 months  
+
+- new _Pneumocystis_ cases (LA&lt;sup&gt;2&lt;/sup&gt;): 5 cases over 7 months  
+
+- concurrent opportunistic infections:  
+
+    - CMV
+    - _Candida_
+    - Kaposi's sarcoma  
+
+]
+
+.footnote[[1,2] Masur H et al _NEJM_ 1981; Gottlieb MS et al _NEJM_ 1981]
+
+
+
+---
+
+## Incidence 
+
+.pad-left[
+- _Pneumocystis_ pneumonia (PCP) is occurring more frequently...
+
+- Incidence: occurrence of new cases over a given period of time.
+
+- **cumulative incidence**:  
+
+`$$cumulative\ incidence = \frac{{new\ cases}}{persons\ at\ risk\\at\ start\ time\ interval}$$`  
+
+- **incidence density**: (more precise)  
+
+`$$incidence\ density = \frac{new\ cases}{person\ time\\at\ risk}$$`  
+    
+]
+
+
+
+---
+
+## Cumulative Incidence 
+
+.pad-left[
+- Cumulative incidence:
+
+    - must specify population consisting of at-risk individuals  
+    
+    - must specify a time period of observation  
+    
+    - &lt;ins&gt;numerator&lt;/ins&gt; = all new cases during a specified time period  
+    
+    - &lt;ins&gt;denominator&lt;/ins&gt; = all individuals at risk in the specified population at the start of the specified time period (does NOT account for deaths due to other causes)  
+    
+    - ranges from 0 to 1 (a.k.a., “incidence proportion”)  
+    
+    - like prevalence, is a proportion and therefore has no units (but only makes sense if you specify the time period of observation, e.g., % per year)  
+    
+]
+
+
+    
+
+---
+
+## Incidence Density 
+
+.pad-left[
+- Incidence density:
+
+    - in a specified population consisting of at risk individuals over a specified period of observation, more precisely quantifies the person-time at risk  
+    
+    - &lt;ins&gt;numerator&lt;/ins&gt; = all new cases during a specified time period  
+    
+    - &lt;ins&gt;denominator&lt;/ins&gt; = the sum, over all individuals in the population, of time at risk until the event of interest, death, loss to follow-up, the end of the study, or when they are no longer at risk for whatever reason  
+    
+    - not a proportion; range depends on the units of person-time (0 to infinity)  
+    
+    - &lt;mark&gt;accounts for death from other causes!&lt;/mark&gt;
+
+]
+
+
+
+---
+
+## Incidence: Which Denominator? 
+
+.pad-left[
+- To understand the difference between cumulative incidence and incidence density, let's return to our imagined study of people living with HIV/AIDS at risk for _Pneumocystis_:  
+
+    - 50 high-risk subjects enrolled at the start of a two-year observation period  
+    
+    - cases of PCP each receive 3 weeks of antibiotic treatment (red on plot)  
+    
+    - incomplete follow-up (grey on plot)
+    
+    - some subjects started on _Pneumocystis_ prophylaxis (blue on plot)  
+
+]
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/reprint_pcp_study-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/print_pcp_study_label_case2-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/print_pcp_study_label_followup2-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk for _Pneumocystis_ 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/print_pcp_study_label_prophylaxis2-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Cohort at Risk: Cumulative Incidence (at risk at start) 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/pcp_incid_proportion-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+
+## Cohort at Risk: Incidence Density (person-time at risk) 
+
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/pcp_incid_density-1.png" width="864" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+## Incidence: Which Denominator? 
+
+.pad-left[
+- Cumulative incidence of _Pneumocystis_ versus incidence density:
+
+    - if the end of the grey line is death / loss to follow-up, how does incidence density compare to annual cumulative incidence?
+
+    - if you don’t count time on prophylaxis or treatment antibiotics as “time at risk”, how does the incidence density compare to the annual cumulative incidence?  
+
+
+]
+
+
+
+---
+
+## Notes on Population at Risk 
+
+.pad-left[
+- In a population, individuals are at risk of disease if they: 
+
+    - (1) do not have the disease at baseline  
+    
+    - (2) are capable of developing the disease (e.g., have the organ of interest; have not been successfully immunized against the disease; haven’t developed lifelong immunity)  
+    
+
+- The difference between cumulative incidence and incidence density is that the latter attempts a more precise quantification of population at risk -- it’s harder to evaluate, but more informative if you can.
+
+]
+
+
+
+---
+
+## Notes on Person-Time 
+
+.pad-left[
+- To improve precision of risk estimate (&lt;ins&gt;incidence density&lt;/ins&gt;), we measure:  
+
+    - population at risk of outcome  
+    
+    - actual time at risk (during which outcome could occur)
+
+- **Person-time**:  
+
+    - denominator for incidence density  
+    
+    - the product of population at risk and time at risk (e.g., patient-months)
+
+]
+
+
+
+---
+
+## Beware the Phrase “Incidence Rate”! 
+
+.pad-left[
+- “Incidence rate” is used to mean two different things:
+
+    - number new cases / number persons at risk @ start (short) time interval (e.g., “annual incidence rate” to mean cumulative incidence over one year)  
+    
+    - number new cases / person-time at risk (i.e., incidence density, the precise rate)
+
+]
+
+
+
+---
+
+## Reflection Question 
+
+.pad-left[
+Your patient with HIV is considering starting prophylactic antibiotics for PCP. You have PCP prevalence, cumulative incidence, and incidence density data available. Which data provide the most precise information on the patient’s risk of PCP off of prophylaxis?
+
+- (A) prevalence
+
+- (B) cumulative incidence
+
+- (C) incidence density
+
+]
+
+
+
+---
+background-image: url(figs/bathtub_labelled.svg)
+background-size: 520px
+background-position: 50% 70%
+
+## Can You Tell Prevalence from Incidence?
+
+
+---
+
+## Can You Tell Prevalence from Incidence?
+
+.pad-left[
+- HIV in Rakai, Uganda 1994-2003*:
+
+    - intensive “ABC” intervention (Abstinence, Be faithful, Condoms)
+    
+    - prevalence declined...  
+    
+    - incidence remained constant at 1.5% per year!
+    
+    - what happened?
+
+.footnote[[*] Wawer M et al _CROI_ 2005; Roehr B _BMJ_ 2005]
+
+]
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-e animated flipInY"&gt;&lt;div&gt;What&lt;br&gt;determines&lt;br&gt;risk?&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-e animated flipInY"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Basics of Study Types 
+
+.pad-left[
+- We want to understand the &lt;mark&gt;relationship between risk factors (exposures) and disease (outcomes)&lt;/mark&gt;. Move beyond risk in whole population -- what's risk conditional on particular risk factors?  
+  
+- To calculate incidence need to know how many are in a population:
+
+    - randomized trials: pick the population, randomize, control the treatment, and measure the outcome  
+    
+    - cohort studies: pick the population, divide into preselected exposure (treatment or risk factor) groups, and measure the outcome  
+
+- But do NOT know this in case control studies: pick the cases and control groups, then measure rates of exposure (do NOT know size of population at risk).  
+
+]
+
+
+
+---
+
+<div class="grViz html-widget html-fill-item" id="htmlwidget-6177be85d3f6beb704c5" style="width:1080px;height:648px;"></div>
+<script type="application/json" data-for="htmlwidget-6177be85d3f6beb704c5">{"x":{"diagram":"digraph {\n\ngraph [layout = \"neato\",\n       outputorder = \"edgesfirst\",\n       bgcolor = \"white\"]\n\nnode [fontname = \"Helvetica\",\n      fontsize = \"10\",\n      shape = \"circle\",\n      fixedsize = \"true\",\n      width = \"0.5\",\n      style = \"filled\",\n      fillcolor = \"aliceblue\",\n      color = \"gray70\",\n      fontcolor = \"gray50\"]\n\nedge [fontname = \"Helvetica\",\n     fontsize = \"8\",\n     len = \"1.5\",\n     color = \"gray80\",\n     arrowsize = \"0.5\"]\n\n  \"1\" [label = \"Study\nDesign\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"-3,0!\"] \n  \"2\" [label = \"Cohort\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"-2,0!\"] \n  \"3\" [label = \"Randomized\nControlled\nTrial\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"5.5\", fontcolor = \"black\", pos = \"-2,1!\"] \n  \"4\" [label = \"Case-\nControl\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"-2,-1!\"] \n  \"5\" [label = \"Denominator\nKnown\", color = \"black\", fillcolor = \"#00FF00\", fontsize = \"6\", fontcolor = \"black\", pos = \"-1,0.5!\"] \n  \"6\" [label = \"Denominator\nNOT Known\", color = \"black\", fillcolor = \"#1E90FF\", fontsize = \"6\", fontcolor = \"black\", pos = \"-1,-0.5!\"] \n  \"7\" [label = \"Measure\nOutcome\nIncidence\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"0,0.5!\"] \n  \"8\" [label = \"Measure\nExposure\nOdds\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"0,-0.5!\"] \n  \"9\" [label = \"Relative\nRisk\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"1,0.5!\"] \n  \"10\" [label = \"Odds\nRatio\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"1,-0.5!\"] \n  \"11\" [label = \"AR\nRD\nNNT\", color = \"black\", fillcolor = \"#E5E5E5\", fontsize = \"6\", fontcolor = \"black\", pos = \"2,0.5!\"] \n\"1\"->\"2\" [color = \"black\"] \n\"1\"->\"3\" [color = \"black\"] \n\"1\"->\"4\" [color = \"black\"] \n\"2\"->\"5\" [color = \"black\"] \n\"3\"->\"5\" [color = \"black\"] \n\"4\"->\"6\" [color = \"black\"] \n\"5\"->\"7\" [color = \"black\"] \n\"6\"->\"8\" [color = \"black\"] \n\"7\"->\"9\" [color = \"black\"] \n\"8\"->\"10\" [color = \"black\"] \n\"9\"->\"11\" [color = \"black\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+
+
+
+---
+
+## 2x2 Table 
+
+.pull-left[
+- Dichotomous exposures and outcomes.
+
+- Examine relationships between exposures and outcomes.  
+  
+- &lt;ins&gt;Goal&lt;/ins&gt;: inference about larger world.  
+
+]
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-2-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+---
+
+## 2x2 Table 
+
+.pull-left[
+- Dichotomous exposures and outcomes.
+
+- Examine relationships between exposures and outcomes.  
+  
+- &lt;ins&gt;Goal&lt;/ins&gt;: inference about larger world.  
+
+]
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-3-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+---
+
+## 2x2 Table: PICO 
+
+.pull-left[
+- Relationship to your evidence-based medicine (EBM) course:
+
+    - PICO: population, intervention, control, outcome  
+
+    - intervention/control are exposure groups; outcome is dichotomous for 2x2 table data  
+  
+- &lt;ins&gt;Goal&lt;/ins&gt;: inference about larger world.  
+
+]
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-4-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+  
+  
+  
+
+
+---
+
+## 2x2 Table 
+
+.pull-left[
+- Dichotomous exposures and outcomes.
+
+- Examine relationships between exposures and outcomes.  
+  
+- &lt;ins&gt;Goal&lt;/ins&gt;: inference about larger world.
+
+- &lt;mark&gt;Is study RCT/cohort or case-control?&lt;/mark&gt;  
+  
+- Can always calculate a &lt;ins&gt;relative risk (RR)&lt;/ins&gt; from 2x2 table but only appropriate for &lt;ins&gt;RCT/cohort&lt;/ins&gt;  
+  
+- Can always calculate an &lt;ins&gt;odds ratio (OR)&lt;/ins&gt; from 2x2 table but only appropriate for &lt;ins&gt;case-control study&lt;/ins&gt;&lt;br/&gt;(can do better with RR if RCT/cohort)  
+
+]
+
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-5-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-f animated flipInX"&gt;&lt;div&gt;Aggregate vs&lt;br&gt;Conditional Risk&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-grey"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-f animated flipInX"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## 2x2 Table: Calculate Relative Risk for Cohort/Trial 
+
+.pull-left[
+- Relative Risk (RR): risk (incidence) exposed / risk (incidence) unexposed:    
+
+`$$RR = \frac{\frac{A}{(A + B)}}{\frac{C}{(C + D)}}$$`  
+
+- Risk difference (RD): risk (incidence) exposed - risk (incidence) unexposed:  
+
+`$$RD = \frac{A}{(A + B)} - \frac{C}{(C + D)}$$`  
+
+]
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-6-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+## PCP ~ AIDS: Relative Risk (RR) 
+
+.pull-left[
+
+- Imagine a cohort study examining incidence (risk) for _Pneumocystis_ among patients with or without an Acquired Immunodeficiency Syndrome (AIDS):
+
+- Relative Risk (RR):
+
+`$$RR = \frac{\frac{10}{(10 + 10)}}{\frac{5}{(5 + 15)}} = \frac{0.5}{0.25} = 2$$`  
+
+- Risk difference (RD):
+
+`$$RD = \frac{10}{(10 + 10)} - \frac{5}{(5 + 15)} = 0.25$$`  
+
+]
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-7-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+
+
+---
+
+## 2x2 Table: Calculate NNT for Cohort/Trial 
+
+.pull-left[
+
+- Risk difference (RD): risk (incidence) exposed - risk (incidence) unexposed:  
+
+`$$RD = \frac{A}{(A + B)} - \frac{C}{(C + D)}$$`  
+
+- Number needed to treat (NNT): given RD between exposures, how many exposure switches needed to change one outcome:  
+
+`$$NNT = \frac{1}{RD} = \frac{1}{\frac{A}{(A + B)} - \frac{C}{(C + D)}}$$`  
+
+]
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-8-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## PCP ~ AIDS: Number Needed to Treat 
+
+.pull-left[
+
+- Cohort study examining incidence (risk) for _Pneumocystis_ among patients with or without AIDS:
+
+- Risk difference (RD):
+
+`$$RD = \frac{10}{(10 + 10)} - \frac{5}{(5 + 15)} = 0.25$$`  
+
+- Number needed to treat (NNT): given RD between exposures, how many exposure switches needed to change one outcome:  
+
+`$$NNT = \frac{1}{RD} = \frac{1}{\frac{10}{(10 + 10)} - \frac{5}{(5 + 15)}} = \frac{1}{0.25} = 4$$`  
+
+]
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-9-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+---
+
+## AR vs RD vs NNT 
+
+.pad-left[
+- **absolute risk (AR)**: risk of developing disease over a period of time (&lt;mark&gt;incidence!&lt;/mark&gt;)
+
+    - if 1 in 10 chance of developing skin cancer in your lifetime, AR = 10%
+
+- **risk difference (RD)**: difference in risk between treatment/exposure and control
+
+    - 3 in 10 cured with treatment vs 2 in 10 with control, RD = 3/10 – 2/10 = 10%
+
+- **number needed to treat (NNT)**: number treated for one person to benefit 
+
+    - NNT = 1/RD
+    - from RD numbers above, NNT = 1/RD = 1/0.1 = 10 (treat 10 people to cure 1 more)
+
+]
+
+
+
+---
+
+## 2x2 Table: Calculate Odds Ratio for Case-Control Study 
+
+.pull-left[
+
+- Denominators are deceptive in case-control study because determined by investigator.
+
+- Impossible to measure true risk/incidence. Instead, measure exposure odds in cases &amp; controls.
+
+- Odds Ratio (OR): odds exposure in cases / odds exposure in controls:    
+
+`$$OR = \frac{\frac{A}{C}}{\frac{B}{D}} = \frac{A*D}{B*C}$$`  
+]
+
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-10-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+---
+
+## PCP Cases vs Controls: Odds Ratio (OR) 
+
+.pull-left[
+
+- Imagine a different study: 100 _Pneumocystis_ cases and 100 controls; measure whether 'AIDS' (exposure) differs between groups chosen by investigator.
+
+- Odds Ratio (OR): odds exposure in cases / odds exposure in controls:    
+
+`$$OR = \frac{\frac{90}{10}}{\frac{50}{50}} = \frac{90*50}{50*10} = 9$$`  
+]
+
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-11-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Utility of Odds Ratio (OR) &amp; Case-Control Study Design 
+
+.pull-left[
+
+- Because ratio of cases and controls determined by investigator, not valid to calculate incidence of outcome (AR or RR, RD, NNT), but if outcome incidence is low, then A + B ~ B &amp; C + D ~ D:
+
+`$$RR = \frac{\frac{A}{(A + B)}}{\frac{C}{(C + D)}} \sim \frac{\frac{A}{B}}{\frac{C}{D}} = \frac{A*D}{B*C} = \frac{\frac{A}{C}}{\frac{B}{D}} = OR$$`  
+
+- OR approximates RR if outcome occurs infrequently (&lt;15%). &lt;mark&gt;Though OR is fundamentally different from RR, we use it as an approximation of RR&lt;/mark&gt;. If outcome is more common, OR &amp; RR differ increasingly.
+
+]
+
+
+.pull-right[
+&lt;img src="measures_of_disease_in_epidemiology_2024_bjk_files/figure-html/unnamed-chunk-12-1.png" width="360" style="display: block; margin: auto;" /&gt;
+]
+
+
+
+---
+class: full-screen hide-count
+
+&lt;div class="grid-3-2"&gt;
+&lt;div class="extension-tile gridset-a animated flipInY"&gt;&lt;div&gt;Data Types&lt;br&gt;&amp;&lt;br&gt;Distributions&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-b animated flipInX"&gt;&lt;div&gt;Case from 1981&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-c animated flipInY"&gt;&lt;div&gt;Prevalence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-d animated flipInX"&gt;&lt;div&gt;Incidence&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-e animated flipInY"&gt;&lt;div&gt;Inference from&lt;br&gt;Exposures &amp;&lt;br&gt;Outcomes&lt;/div&gt;&lt;/div&gt;
+&lt;div class="extension-tile gridset-f animated flipInX"&gt;&lt;div&gt;Relative Risk&lt;br&gt;&amp;&lt;br&gt;Odds Ratios&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Measures of Disease in Clinical Epidemiology 
+
+.pad-left[
+- Distribution of data determines how we describe them: mean + SD vs median + IQR.
+
+- Prevalence is determined by incidence and survival time.
+
+- Incidence density best accounts for time at risk for disease.
+
+- Relative risk (RR) is the ratio of incidence in exposed over incidence in unexposed. Odds ratio (OR) is the ratio of exposure odds in cases over exposure odds in controls.
+
+- OR approximates RR when outcome is rare.
+
+- NNT can be a clinically useful number.
+
+]
+
+
+
+---
+background-image: url(figs/Wickramasekaran_Mycoses_2017.jpg)
+background-size: 900px
+background-position: 50% 50%
+
+
+.footnote[Wickramasekaran et al _Mycoses_ 2017]
+
+
+---
+class: center, middle, hide-count
+background-image: url(img/Pneumocystis_jirovecii_AO_AL_wikipedia_crop.png)
+background-size: cover
+
+.title-subtext[Questions?]
+
+.footnote-right[
+&lt;span style='color:white'&gt;image: Federica Viazzi "Microscopy image of &lt;i&gt;P. jirovecii&lt;/i&gt;" [(Wikipedia)](https://en.wikipedia.org/wiki/Pneumocystis_jirovecii#/media/File:Pneumocystis_jirovecii_AO_AL.jpg)&lt;/span&gt;
+]
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"slideNumberFormat": "%current%"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
