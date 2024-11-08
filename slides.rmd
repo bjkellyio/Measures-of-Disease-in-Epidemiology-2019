@@ -6,6 +6,7 @@ institute: "Infectious Diseases & Epidemiology<br/><br/>![](penn_logos/Penn-Shie
 date: "updated: `r format(Sys.Date(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
+    self_contained: true
     css: xaringan-themer-inferno-grids-fade.css
     lib_dir: libs
     chakra: libs/remark-latest.min.js
